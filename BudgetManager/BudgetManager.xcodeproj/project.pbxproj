@@ -27,6 +27,8 @@
 		A2672BB22BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BAD2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png */; };
 		A2672BB32BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BAE2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png */; };
 		A2672BB52BA7488C006A5634 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2672BB42BA7488C006A5634 /* Colors.xcassets */; };
+		A2672BB82BA76B64006A5634 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BB72BA76B64006A5634 /* PasswordTextField.swift */; };
+		A2672BBB2BA76C3E006A5634 /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BBA2BA76C3E006A5634 /* UIControl+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		A2672BAD2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGIN_LIGHT_VIEW_iPad.png; sourceTree = "<group>"; };
 		A2672BAE2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGIN_LIGHT_VIEW_iPhone.png; sourceTree = "<group>"; };
 		A2672BB42BA7488C006A5634 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		A2672BB72BA76B64006A5634 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		A2672BBA2BA76C3E006A5634 /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 		A2672B862BA73350006A5634 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				A2672BB92BA76C30006A5634 /* Extensions */,
+				A2672BB62BA76B53006A5634 /* Views */,
 				A2672B562BA732DE006A5634 /* AppDelegate.swift */,
 				A2672B582BA732DE006A5634 /* SceneDelegate.swift */,
 				A2672B5F2BA732E0006A5634 /* Assets.xcassets */,
@@ -222,6 +228,22 @@
 				A2672BAE2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png */,
 			);
 			path = snapshots;
+			sourceTree = "<group>";
+		};
+		A2672BB62BA76B53006A5634 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2672BB72BA76B64006A5634 /* PasswordTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A2672BB92BA76C30006A5634 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2672BBA2BA76C3E006A5634 /* UIControl+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +353,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2672B962BA73B9D006A5634 /* LoginPresenter.swift in Sources */,
+				A2672BBB2BA76C3E006A5634 /* UIControl+Extensions.swift in Sources */,
 				A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */,
+				A2672BB82BA76B64006A5634 /* PasswordTextField.swift in Sources */,
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,

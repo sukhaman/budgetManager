@@ -28,8 +28,8 @@ class LoginVC: UIViewController {
         return textField
     }()
     
-    let passwordTextField: UITextField = {
-        let textField = UITextField()
+    let passwordTextField: PasswordTextField = {
+        let textField = PasswordTextField()
         textField.isSecureTextEntry = true
         textField.borderStyle = .roundedRect
         textField.textColor = .white
@@ -114,8 +114,8 @@ class LoginVC: UIViewController {
             
             // Forgot Password Button
             forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor),
-            forgotPasswordButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -20),
-            forgotPasswordButton.widthAnchor.constraint(equalToConstant: 150),
+            forgotPasswordButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+            forgotPasswordButton.widthAnchor.constraint(equalToConstant: 180),
             forgotPasswordButton.heightAnchor.constraint(equalToConstant: 30),
             
             // Sign In Button
