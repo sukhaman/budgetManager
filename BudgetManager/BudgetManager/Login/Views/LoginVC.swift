@@ -8,6 +8,11 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        configureViewController()
+    }
+    
+    private func configureViewController() {
+        view.backgroundColor = UIColor(resource: .primaryGreen)
+        
     }
 }

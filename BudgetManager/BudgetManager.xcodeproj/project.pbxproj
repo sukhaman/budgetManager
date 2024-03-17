@@ -26,6 +26,7 @@
 		A2672BB12BA7425C006A5634 /* LOGIN_DARK_VIEW_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BAC2BA7425C006A5634 /* LOGIN_DARK_VIEW_iPhone.png */; };
 		A2672BB22BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BAD2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png */; };
 		A2672BB32BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BAE2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png */; };
+		A2672BB52BA7488C006A5634 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2672BB42BA7488C006A5634 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		A2672BAC2BA7425C006A5634 /* LOGIN_DARK_VIEW_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGIN_DARK_VIEW_iPhone.png; sourceTree = "<group>"; };
 		A2672BAD2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGIN_LIGHT_VIEW_iPad.png; sourceTree = "<group>"; };
 		A2672BAE2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGIN_LIGHT_VIEW_iPhone.png; sourceTree = "<group>"; };
+		A2672BB42BA7488C006A5634 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				A2672B562BA732DE006A5634 /* AppDelegate.swift */,
 				A2672B582BA732DE006A5634 /* SceneDelegate.swift */,
 				A2672B5F2BA732E0006A5634 /* Assets.xcassets */,
+				A2672BB42BA7488C006A5634 /* Colors.xcassets */,
 				A2672B612BA732E0006A5634 /* LaunchScreen.storyboard */,
 				A2672B642BA732E0006A5634 /* Info.plist */,
 			);
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2672B602BA732E0006A5634 /* Assets.xcassets in Resources */,
+				A2672BB52BA7488C006A5634 /* Colors.xcassets in Resources */,
 				A2672B632BA732E0006A5634 /* Base in Resources */,
 				A2672B982BA73BF8006A5634 /* Login.xcstrings in Resources */,
 			);
