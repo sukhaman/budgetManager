@@ -11,9 +11,12 @@
 		A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B582BA732DE006A5634 /* SceneDelegate.swift */; };
 		A2672B602BA732E0006A5634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2672B5F2BA732E0006A5634 /* Assets.xcassets */; };
 		A2672B632BA732E0006A5634 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A2672B622BA732E0006A5634 /* Base */; };
-		A2672B6E2BA732E1006A5634 /* BudgetManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B6D2BA732E1006A5634 /* BudgetManagerTests.swift */; };
 		A2672B892BA73850006A5634 /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B882BA73850006A5634 /* SceneDelegateTests.swift */; };
 		A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B8C2BA739C6006A5634 /* LoginVC.swift */; };
+		A2672B912BA73AAD006A5634 /* LoginUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B902BA73AAD006A5634 /* LoginUnitTests.swift */; };
+		A2672B962BA73B9D006A5634 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B952BA73B9D006A5634 /* LoginPresenter.swift */; };
+		A2672B982BA73BF8006A5634 /* Login.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A2672B972BA73BF8006A5634 /* Login.xcstrings */; };
+		A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B9B2BA73C5E006A5634 /* LoginUIComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +37,12 @@
 		A2672B622BA732E0006A5634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2672B642BA732E0006A5634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2672B692BA732E1006A5634 /* BudgetManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2672B6D2BA732E1006A5634 /* BudgetManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetManagerTests.swift; sourceTree = "<group>"; };
 		A2672B882BA73850006A5634 /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 		A2672B8C2BA739C6006A5634 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		A2672B902BA73AAD006A5634 /* LoginUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUnitTests.swift; sourceTree = "<group>"; };
+		A2672B952BA73B9D006A5634 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		A2672B972BA73BF8006A5634 /* Login.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Login.xcstrings; sourceTree = "<group>"; };
+		A2672B9B2BA73C5E006A5634 /* LoginUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUIComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +93,8 @@
 		A2672B6C2BA732E1006A5634 /* BudgetManagerTests */ = {
 			isa = PBXGroup;
 			children = (
+				A2672B8E2BA73A8F006A5634 /* Login */,
 				A2672B872BA73839006A5634 /* SceneDelegateTests */,
-				A2672B6D2BA732E1006A5634 /* BudgetManagerTests.swift */,
 			);
 			path = BudgetManagerTests;
 			sourceTree = "<group>";
@@ -116,6 +122,8 @@
 		A2672B8A2BA739B4006A5634 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A2672B9A2BA73C55006A5634 /* Composer */,
+				A2672B942BA73B92006A5634 /* Presenter */,
 				A2672B8B2BA739BD006A5634 /* Views */,
 			);
 			path = Login;
@@ -127,6 +135,39 @@
 				A2672B8C2BA739C6006A5634 /* LoginVC.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A2672B8E2BA73A8F006A5634 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A2672B8F2BA73A9D006A5634 /* LoginUnitTests */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A2672B8F2BA73A9D006A5634 /* LoginUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2672B902BA73AAD006A5634 /* LoginUnitTests.swift */,
+			);
+			path = LoginUnitTests;
+			sourceTree = "<group>";
+		};
+		A2672B942BA73B92006A5634 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A2672B952BA73B9D006A5634 /* LoginPresenter.swift */,
+				A2672B972BA73BF8006A5634 /* Login.xcstrings */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A2672B9A2BA73C55006A5634 /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				A2672B9B2BA73C5E006A5634 /* LoginUIComposer.swift */,
+			);
+			path = Composer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +253,7 @@
 			files = (
 				A2672B602BA732E0006A5634 /* Assets.xcassets in Resources */,
 				A2672B632BA732E0006A5634 /* Base in Resources */,
+				A2672B982BA73BF8006A5634 /* Login.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2672B962BA73B9D006A5634 /* LoginPresenter.swift in Sources */,
 				A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */,
+				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
 			);
@@ -239,8 +283,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2672B6E2BA732E1006A5634 /* BudgetManagerTests.swift in Sources */,
 				A2672B892BA73850006A5634 /* SceneDelegateTests.swift in Sources */,
+				A2672B912BA73AAD006A5634 /* LoginUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
