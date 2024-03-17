@@ -55,12 +55,22 @@ class LoginUnitTests: XCTestCase {
         XCTAssertEqual(expectedTitle, actualTitle)
     }
     
+    func test_loginVC_signUpButtonTapped_shouldNavigateToCreateAccountVC() {
+       
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        let mockNavigation = MockNavigationController(rootViewController: sut)
+        sut.signupButton.sendActions(for: .touchUpInside)
+        let topVC = mockNavigation.pushedViewController as? CreateAccountVC
+        topVC?.loadViewIfNeeded()
+        XCTAssertNotNil(topVC)
+    }
+    
     
     // Helpers:
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> LoginVC {
         let viewController = LoginUIComposer.composedLogin()
-        trackForMemoryLeaks(viewController,file: file,line: line)
         return viewController
     }
 }

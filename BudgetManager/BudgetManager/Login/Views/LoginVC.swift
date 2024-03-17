@@ -124,10 +124,22 @@ class LoginVC: UIViewController {
             signInButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -20),
             signInButton.heightAnchor.constraint(equalToConstant: 50),
             
+            // Sign Up Button
             signupButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 20),
             signupButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 20),
             signupButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -20),
             signupButton.heightAnchor.constraint(equalToConstant: 30)
         ])
+        assignActionEvents()
+    }
+    
+    // Actions
+    
+    private func assignActionEvents() {
+        
+        signupButton.addAction {
+            let destVC = CreateAccountVC()
+            self.show(destVC, sender: nil)
+        }
     }
 }

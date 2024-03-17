@@ -29,6 +29,8 @@
 		A2672BB52BA7488C006A5634 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2672BB42BA7488C006A5634 /* Colors.xcassets */; };
 		A2672BB82BA76B64006A5634 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BB72BA76B64006A5634 /* PasswordTextField.swift */; };
 		A2672BBB2BA76C3E006A5634 /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BBA2BA76C3E006A5634 /* UIControl+Extensions.swift */; };
+		A2672BBF2BA76E48006A5634 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BBE2BA76E48006A5634 /* CreateAccountVC.swift */; };
+		A2672BC12BA7745A006A5634 /* MockNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BC02BA7745A006A5634 /* MockNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		A2672BB42BA7488C006A5634 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A2672BB72BA76B64006A5634 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		A2672BBA2BA76C3E006A5634 /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
+		A2672BBE2BA76E48006A5634 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		A2672BC02BA7745A006A5634 /* MockNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		A2672B552BA732DE006A5634 /* BudgetManager */ = {
 			isa = PBXGroup;
 			children = (
+				A2672BBC2BA76E3B006A5634 /* CreateAccount */,
 				A2672B8A2BA739B4006A5634 /* Login */,
 				A2672B862BA73350006A5634 /* SupportingFiles */,
 			);
@@ -206,6 +211,7 @@
 				A2672BA12BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift */,
 				A2672BA72BA741BE006A5634 /* UIViewController+Snapshot.swift */,
 				A2672BA92BA741D9006A5634 /* XCTestCase+Snapshot.swift */,
+				A2672BC02BA7745A006A5634 /* MockNavigation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -244,6 +250,22 @@
 				A2672BBA2BA76C3E006A5634 /* UIControl+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A2672BBC2BA76E3B006A5634 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				A2672BBD2BA76E40006A5634 /* Views */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		A2672BBD2BA76E40006A5634 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2672BBE2BA76E48006A5634 /* CreateAccountVC.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +381,7 @@
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
+				A2672BBF2BA76E48006A5634 /* CreateAccountVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2672BA62BA741A5006A5634 /* LoginSnapshotTests.swift in Sources */,
+				A2672BC12BA7745A006A5634 /* MockNavigation.swift in Sources */,
 				A2672BAA2BA741D9006A5634 /* XCTestCase+Snapshot.swift in Sources */,
 				A2672BA02BA740FB006A5634 /* Locaized+TestHelpers.swift in Sources */,
 				A2672BA22BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
