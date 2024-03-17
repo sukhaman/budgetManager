@@ -9,6 +9,7 @@ class LoginUnitTests: XCTestCase {
     
     func test_loginVC_hasTitle() {
         let sut = makeSUT()
+        sut.loadViewIfNeeded()
         let expectedTitle = "Sign in"
         let actualTitle = sut.title
         XCTAssertEqual(expectedTitle, actualTitle)
@@ -16,6 +17,7 @@ class LoginUnitTests: XCTestCase {
     
     func test_loginVC_emailTextFieldHasPlacholder() {
         let sut = makeSUT()
+        sut.loadViewIfNeeded()
         let expectedTitle = "Email"
         let actualTitle = sut.emailTextField.placeholder
         XCTAssertEqual(expectedTitle, actualTitle)
@@ -23,8 +25,17 @@ class LoginUnitTests: XCTestCase {
     
     func test_loginVC_passwordTextFieldHasPlacholder() {
         let sut = makeSUT()
+        sut.loadViewIfNeeded()
         let expectedTitle = "Password"
         let actualTitle = sut.passwordTextField.placeholder
+        XCTAssertEqual(expectedTitle, actualTitle)
+    }
+    
+    func test_loginVC_forgotPasswordButtonHasTitle() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        let expectedTitle = "Forgot Password?"
+        let actualTitle = sut.forgotPasswordButton.titleLabel?.text
         XCTAssertEqual(expectedTitle, actualTitle)
     }
     
