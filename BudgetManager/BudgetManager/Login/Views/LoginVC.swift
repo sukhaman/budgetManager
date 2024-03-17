@@ -19,7 +19,7 @@ class LoginVC: UIViewController {
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
         ]
-        let attributedPlaceholder = NSAttributedString(string: "Email", attributes: attributes)
+        let attributedPlaceholder = NSAttributedString(string: "\(LoginPresenter.email)", attributes: attributes)
 
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
@@ -36,7 +36,7 @@ class LoginVC: UIViewController {
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
         ]
-        let attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributes)
+        let attributedPlaceholder = NSAttributedString(string: "\(LoginPresenter.password)", attributes: attributes)
 
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
@@ -48,7 +48,7 @@ class LoginVC: UIViewController {
     let forgotPasswordButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(.white, for: .normal)
-        button.setTitle("Forgot Password?", for: .normal)
+        button.setTitle("\(LoginPresenter.forgotPassword)?", for: .normal)
         var buttonConfig = UIButton.Configuration.borderless()
          // Adjust contentInsets to provide padding
         buttonConfig.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
@@ -60,7 +60,7 @@ class LoginVC: UIViewController {
     
     let signInButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Sign in", for: .normal)
+        button.setTitle("\(LoginPresenter.signin)", for: .normal)
         button.backgroundColor = UIColor(resource: .secondaryGreen)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 22.5
@@ -76,7 +76,7 @@ class LoginVC: UIViewController {
         buttonConfig.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
         // Apply configuration to the button
         button.configuration = buttonConfig
-        button.setTitle("Don't have an account? Click Sign up", for: .normal)
+        button.setTitle("\(LoginPresenter.signup)", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
