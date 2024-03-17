@@ -20,7 +20,7 @@ class SceneDelegateTests: XCTestCase {
         
         // Assert
         let navigationController = rootViewController as? UINavigationController
-        let viewController = navigationController?.topViewController as? ViewController
+        let viewController = navigationController?.topViewController as? LoginVC
         viewController?.loadViewIfNeeded()
         XCTAssertNotNil(viewController)
     }

@@ -9,24 +9,15 @@
 /* Begin PBXBuildFile section */
 		A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B562BA732DE006A5634 /* AppDelegate.swift */; };
 		A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B582BA732DE006A5634 /* SceneDelegate.swift */; };
-		A2672B5B2BA732DE006A5634 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B5A2BA732DE006A5634 /* ViewController.swift */; };
 		A2672B602BA732E0006A5634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2672B5F2BA732E0006A5634 /* Assets.xcassets */; };
 		A2672B632BA732E0006A5634 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A2672B622BA732E0006A5634 /* Base */; };
 		A2672B6E2BA732E1006A5634 /* BudgetManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B6D2BA732E1006A5634 /* BudgetManagerTests.swift */; };
-		A2672B782BA732E1006A5634 /* BudgetManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B772BA732E1006A5634 /* BudgetManagerUITests.swift */; };
-		A2672B7A2BA732E1006A5634 /* BudgetManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B792BA732E1006A5634 /* BudgetManagerUITestsLaunchTests.swift */; };
 		A2672B892BA73850006A5634 /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B882BA73850006A5634 /* SceneDelegateTests.swift */; };
+		A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B8C2BA739C6006A5634 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A2672B6A2BA732E1006A5634 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A2672B4B2BA732DE006A5634 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A2672B522BA732DE006A5634;
-			remoteInfo = BudgetManager;
-		};
-		A2672B742BA732E1006A5634 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A2672B4B2BA732DE006A5634 /* Project object */;
 			proxyType = 1;
@@ -39,16 +30,13 @@
 		A2672B532BA732DE006A5634 /* BudgetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2672B562BA732DE006A5634 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2672B582BA732DE006A5634 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A2672B5A2BA732DE006A5634 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A2672B5F2BA732E0006A5634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2672B622BA732E0006A5634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2672B642BA732E0006A5634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2672B692BA732E1006A5634 /* BudgetManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2672B6D2BA732E1006A5634 /* BudgetManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetManagerTests.swift; sourceTree = "<group>"; };
-		A2672B732BA732E1006A5634 /* BudgetManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudgetManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2672B772BA732E1006A5634 /* BudgetManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetManagerUITests.swift; sourceTree = "<group>"; };
-		A2672B792BA732E1006A5634 /* BudgetManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A2672B882BA73850006A5634 /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
+		A2672B8C2BA739C6006A5634 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +54,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2672B702BA732E1006A5634 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,7 +62,6 @@
 			children = (
 				A2672B552BA732DE006A5634 /* BudgetManager */,
 				A2672B6C2BA732E1006A5634 /* BudgetManagerTests */,
-				A2672B762BA732E1006A5634 /* BudgetManagerUITests */,
 				A2672B542BA732DE006A5634 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +71,6 @@
 			children = (
 				A2672B532BA732DE006A5634 /* BudgetManager.app */,
 				A2672B692BA732E1006A5634 /* BudgetManagerTests.xctest */,
-				A2672B732BA732E1006A5634 /* BudgetManagerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +78,7 @@
 		A2672B552BA732DE006A5634 /* BudgetManager */ = {
 			isa = PBXGroup;
 			children = (
+				A2672B8A2BA739B4006A5634 /* Login */,
 				A2672B862BA73350006A5634 /* SupportingFiles */,
 			);
 			path = BudgetManager;
@@ -113,21 +93,11 @@
 			path = BudgetManagerTests;
 			sourceTree = "<group>";
 		};
-		A2672B762BA732E1006A5634 /* BudgetManagerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A2672B772BA732E1006A5634 /* BudgetManagerUITests.swift */,
-				A2672B792BA732E1006A5634 /* BudgetManagerUITestsLaunchTests.swift */,
-			);
-			path = BudgetManagerUITests;
-			sourceTree = "<group>";
-		};
 		A2672B862BA73350006A5634 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				A2672B562BA732DE006A5634 /* AppDelegate.swift */,
 				A2672B582BA732DE006A5634 /* SceneDelegate.swift */,
-				A2672B5A2BA732DE006A5634 /* ViewController.swift */,
 				A2672B5F2BA732E0006A5634 /* Assets.xcassets */,
 				A2672B612BA732E0006A5634 /* LaunchScreen.storyboard */,
 				A2672B642BA732E0006A5634 /* Info.plist */,
@@ -141,6 +111,22 @@
 				A2672B882BA73850006A5634 /* SceneDelegateTests.swift */,
 			);
 			path = SceneDelegateTests;
+			sourceTree = "<group>";
+		};
+		A2672B8A2BA739B4006A5634 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A2672B8B2BA739BD006A5634 /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A2672B8B2BA739BD006A5634 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2672B8C2BA739C6006A5634 /* LoginVC.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,24 +167,6 @@
 			productReference = A2672B692BA732E1006A5634 /* BudgetManagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A2672B722BA732E1006A5634 /* BudgetManagerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A2672B832BA732E1006A5634 /* Build configuration list for PBXNativeTarget "BudgetManagerUITests" */;
-			buildPhases = (
-				A2672B6F2BA732E1006A5634 /* Sources */,
-				A2672B702BA732E1006A5634 /* Frameworks */,
-				A2672B712BA732E1006A5634 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A2672B752BA732E1006A5634 /* PBXTargetDependency */,
-			);
-			name = BudgetManagerUITests;
-			productName = BudgetManagerUITests;
-			productReference = A2672B732BA732E1006A5634 /* BudgetManagerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -213,10 +181,6 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					A2672B682BA732E1006A5634 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = A2672B522BA732DE006A5634;
-					};
-					A2672B722BA732E1006A5634 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = A2672B522BA732DE006A5634;
 					};
@@ -237,7 +201,6 @@
 			targets = (
 				A2672B522BA732DE006A5634 /* BudgetManager */,
 				A2672B682BA732E1006A5634 /* BudgetManagerTests */,
-				A2672B722BA732E1006A5634 /* BudgetManagerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,13 +222,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2672B712BA732E1006A5634 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -273,8 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2672B5B2BA732DE006A5634 /* ViewController.swift in Sources */,
 				A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */,
+				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,15 +244,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2672B6F2BA732E1006A5634 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A2672B782BA732E1006A5634 /* BudgetManagerUITests.swift in Sources */,
-				A2672B7A2BA732E1006A5634 /* BudgetManagerUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -304,11 +251,6 @@
 			isa = PBXTargetDependency;
 			target = A2672B522BA732DE006A5634 /* BudgetManager */;
 			targetProxy = A2672B6A2BA732E1006A5634 /* PBXContainerItemProxy */;
-		};
-		A2672B752BA732E1006A5634 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A2672B522BA732DE006A5634 /* BudgetManager */;
-			targetProxy = A2672B742BA732E1006A5634 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -537,42 +479,6 @@
 			};
 			name = Release;
 		};
-		A2672B842BA732E1006A5634 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A5T33ABXDL;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sukhdev.BudgetManagerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BudgetManager;
-			};
-			name = Debug;
-		};
-		A2672B852BA732E1006A5634 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A5T33ABXDL;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sukhdev.BudgetManagerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BudgetManager;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -599,15 +505,6 @@
 			buildConfigurations = (
 				A2672B812BA732E1006A5634 /* Debug */,
 				A2672B822BA732E1006A5634 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A2672B832BA732E1006A5634 /* Build configuration list for PBXNativeTarget "BudgetManagerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A2672B842BA732E1006A5634 /* Debug */,
-				A2672B852BA732E1006A5634 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
