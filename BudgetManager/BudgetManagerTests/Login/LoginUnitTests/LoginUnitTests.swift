@@ -39,6 +39,22 @@ class LoginUnitTests: XCTestCase {
         XCTAssertEqual(expectedTitle, actualTitle)
     }
     
+    func test_loginVC_signInButtonHasTitle() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        let expectedTitle = "Sign in"
+        let actualTitle = sut.signInButton.titleLabel?.text
+        XCTAssertEqual(expectedTitle, actualTitle)
+    }
+    
+    func test_loginVC_signUpButtonHasTitle() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        let expectedTitle = "Don't have an account? Click Here"
+        let actualTitle = sut.signupButton.titleLabel?.text
+        XCTAssertEqual(expectedTitle, actualTitle)
+    }
+    
     
     // Helpers:
     
