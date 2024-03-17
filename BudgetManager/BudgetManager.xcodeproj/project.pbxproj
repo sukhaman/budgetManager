@@ -39,6 +39,7 @@
 		A2672BD02BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BCB2BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png */; };
 		A2672BD32BA79E2B006A5634 /* CreateAccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BD22BA79E2B006A5634 /* CreateAccountPresenter.swift */; };
 		A2672BD52BA79E81006A5634 /* CreateAccount.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A2672BD42BA79E81006A5634 /* CreateAccount.xcstrings */; };
+		A2672BD82BA7A3C0006A5634 /* CreateAccountUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BD72BA7A3C0006A5634 /* CreateAccountUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		A2672BCB2BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png; sourceTree = "<group>"; };
 		A2672BD22BA79E2B006A5634 /* CreateAccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountPresenter.swift; sourceTree = "<group>"; };
 		A2672BD42BA79E81006A5634 /* CreateAccount.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = CreateAccount.xcstrings; sourceTree = "<group>"; };
+		A2672BD72BA7A3C0006A5634 /* CreateAccountUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 		A2672BC42BA7999D006A5634 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
+				A2672BD62BA7A3A7006A5634 /* UnitTests */,
 				A2672BC52BA799A2006A5634 /* SnapshotTests */,
 			);
 			path = CreateAccount;
@@ -322,6 +325,14 @@
 				A2672BD42BA79E81006A5634 /* CreateAccount.xcstrings */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A2672BD62BA7A3A7006A5634 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2672BD72BA7A3C0006A5634 /* CreateAccountUnitTests.swift */,
+			);
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +468,7 @@
 				A2672BC72BA799B7006A5634 /* CreateSnapshotTests.swift in Sources */,
 				A2672BAA2BA741D9006A5634 /* XCTestCase+Snapshot.swift in Sources */,
 				A2672BA02BA740FB006A5634 /* Locaized+TestHelpers.swift in Sources */,
+				A2672BD82BA7A3C0006A5634 /* CreateAccountUnitTests.swift in Sources */,
 				A2672BA22BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				A2672B892BA73850006A5634 /* SceneDelegateTests.swift in Sources */,
 				A2672BA82BA741BE006A5634 /* UIViewController+Snapshot.swift in Sources */,
