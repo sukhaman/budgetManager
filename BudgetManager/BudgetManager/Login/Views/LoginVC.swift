@@ -83,6 +83,11 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewController()
+    }
+    
+    // Set up UI
+    private func configureViewController() {
         view.backgroundColor  = UIColor(resource: .primaryGreen)
         view.addSubview(loginView)
         loginView.addSubview(emailTextField)

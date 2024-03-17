@@ -31,6 +31,12 @@
 		A2672BBB2BA76C3E006A5634 /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BBA2BA76C3E006A5634 /* UIControl+Extensions.swift */; };
 		A2672BBF2BA76E48006A5634 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BBE2BA76E48006A5634 /* CreateAccountVC.swift */; };
 		A2672BC12BA7745A006A5634 /* MockNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BC02BA7745A006A5634 /* MockNavigation.swift */; };
+		A2672BC32BA7984A006A5634 /* PrivacyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BC22BA7984A006A5634 /* PrivacyTextView.swift */; };
+		A2672BC72BA799B7006A5634 /* CreateSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BC62BA799B7006A5634 /* CreateSnapshotTests.swift */; };
+		A2672BCD2BA79B0B006A5634 /* CREATE_ACCOUNT_DARK_VIEW_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BC82BA79B0B006A5634 /* CREATE_ACCOUNT_DARK_VIEW_iPad.png */; };
+		A2672BCE2BA79B0B006A5634 /* CREATE_ACCOUNT_DARK_VIEW_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BC92BA79B0B006A5634 /* CREATE_ACCOUNT_DARK_VIEW_iPhone.png */; };
+		A2672BCF2BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BCA2BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPad.png */; };
+		A2672BD02BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BCB2BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +77,12 @@
 		A2672BBA2BA76C3E006A5634 /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
 		A2672BBE2BA76E48006A5634 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		A2672BC02BA7745A006A5634 /* MockNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigation.swift; sourceTree = "<group>"; };
+		A2672BC22BA7984A006A5634 /* PrivacyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyTextView.swift; sourceTree = "<group>"; };
+		A2672BC62BA799B7006A5634 /* CreateSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSnapshotTests.swift; sourceTree = "<group>"; };
+		A2672BC82BA79B0B006A5634 /* CREATE_ACCOUNT_DARK_VIEW_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CREATE_ACCOUNT_DARK_VIEW_iPad.png; sourceTree = "<group>"; };
+		A2672BC92BA79B0B006A5634 /* CREATE_ACCOUNT_DARK_VIEW_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CREATE_ACCOUNT_DARK_VIEW_iPhone.png; sourceTree = "<group>"; };
+		A2672BCA2BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CREATE_ACCOUNT_LIGHT_VIEW_iPad.png; sourceTree = "<group>"; };
+		A2672BCB2BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,7 @@
 		A2672B6C2BA732E1006A5634 /* BudgetManagerTests */ = {
 			isa = PBXGroup;
 			children = (
+				A2672BC42BA7999D006A5634 /* CreateAccount */,
 				A2672B8E2BA73A8F006A5634 /* Login */,
 				A2672B872BA73839006A5634 /* SceneDelegateTests */,
 				A2672B9E2BA740E9006A5634 /* Helpers */,
@@ -264,8 +277,37 @@
 			isa = PBXGroup;
 			children = (
 				A2672BBE2BA76E48006A5634 /* CreateAccountVC.swift */,
+				A2672BC22BA7984A006A5634 /* PrivacyTextView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A2672BC42BA7999D006A5634 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				A2672BC52BA799A2006A5634 /* SnapshotTests */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		A2672BC52BA799A2006A5634 /* SnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2672BCC2BA79B0B006A5634 /* snapshots */,
+				A2672BC62BA799B7006A5634 /* CreateSnapshotTests.swift */,
+			);
+			path = SnapshotTests;
+			sourceTree = "<group>";
+		};
+		A2672BCC2BA79B0B006A5634 /* snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				A2672BC82BA79B0B006A5634 /* CREATE_ACCOUNT_DARK_VIEW_iPad.png */,
+				A2672BC92BA79B0B006A5634 /* CREATE_ACCOUNT_DARK_VIEW_iPhone.png */,
+				A2672BCA2BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPad.png */,
+				A2672BCB2BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png */,
+			);
+			path = snapshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,10 +402,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2672BCD2BA79B0B006A5634 /* CREATE_ACCOUNT_DARK_VIEW_iPad.png in Resources */,
 				A2672BB02BA7425C006A5634 /* LOGIN_DARK_VIEW_iPad.png in Resources */,
+				A2672BD02BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png in Resources */,
 				A2672BB22BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png in Resources */,
 				A2672BB32BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png in Resources */,
 				A2672BB12BA7425C006A5634 /* LOGIN_DARK_VIEW_iPhone.png in Resources */,
+				A2672BCE2BA79B0B006A5634 /* CREATE_ACCOUNT_DARK_VIEW_iPhone.png in Resources */,
+				A2672BCF2BA79B0B006A5634 /* CREATE_ACCOUNT_LIGHT_VIEW_iPad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +426,7 @@
 				A2672BB82BA76B64006A5634 /* PasswordTextField.swift in Sources */,
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
+				A2672BC32BA7984A006A5634 /* PrivacyTextView.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
 				A2672BBF2BA76E48006A5634 /* CreateAccountVC.swift in Sources */,
 			);
@@ -391,6 +438,7 @@
 			files = (
 				A2672BA62BA741A5006A5634 /* LoginSnapshotTests.swift in Sources */,
 				A2672BC12BA7745A006A5634 /* MockNavigation.swift in Sources */,
+				A2672BC72BA799B7006A5634 /* CreateSnapshotTests.swift in Sources */,
 				A2672BAA2BA741D9006A5634 /* XCTestCase+Snapshot.swift in Sources */,
 				A2672BA02BA740FB006A5634 /* Locaized+TestHelpers.swift in Sources */,
 				A2672BA22BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
