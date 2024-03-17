@@ -49,6 +49,11 @@ class LoginVC: UIViewController {
         let button = UIButton(type: .system)
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Forgot Password?", for: .normal)
+        var buttonConfig = UIButton.Configuration.borderless()
+         // Adjust contentInsets to provide padding
+        buttonConfig.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
+        // Apply configuration to the button
+        button.configuration = buttonConfig
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -63,6 +68,19 @@ class LoginVC: UIViewController {
         return button
     }()
     
+    let signupButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitleColor(.white, for: .normal)
+        var buttonConfig = UIButton.Configuration.borderless()
+         // Adjust contentInsets to provide padding
+        buttonConfig.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
+        // Apply configuration to the button
+        button.configuration = buttonConfig
+        button.setTitle("Don't have an account? Click Sign up", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor  = UIColor(resource: .primaryGreen)
@@ -71,6 +89,7 @@ class LoginVC: UIViewController {
         loginView.addSubview(passwordTextField)
         loginView.addSubview(forgotPasswordButton)
         loginView.addSubview(signInButton)
+        loginView.addSubview(signupButton)
         let screenWidth = view.frame.width
         
         
@@ -103,7 +122,12 @@ class LoginVC: UIViewController {
             signInButton.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor, constant: 20),
             signInButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 20),
             signInButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -20),
-            signInButton.heightAnchor.constraint(equalToConstant: 50)
+            signInButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            signupButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 20),
+            signupButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 20),
+            signupButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -20),
+            signupButton.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
 }
