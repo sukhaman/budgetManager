@@ -17,8 +17,8 @@ class PrivacyTextView: UITextView {
     }
     
     private func configure() {
-        let privacyText = "Privacy Policy"
-        let termsText = "Terms of Service"
+        let privacyText = CreateAccountPresenter.privacyPolicy
+        let termsText = CreateAccountPresenter.termsCondition
         let attributedString = NSMutableAttributedString()
 
         // Define attributes for the main text (white color)
@@ -26,7 +26,7 @@ class PrivacyTextView: UITextView {
             .foregroundColor: UIColor.white,
             .font: UIFont.systemFont(ofSize: 14)
         ]
-        let mainAttributedString = NSAttributedString(string: "By signing up, you agree to our ", attributes: mainAttributes)
+        let mainAttributedString = NSAttributedString(string: "\(CreateAccountPresenter.agree) ", attributes: mainAttributes)
         attributedString.append(mainAttributedString)
 
         // Define attributes for the Privacy Policy text (different color)
@@ -39,7 +39,7 @@ class PrivacyTextView: UITextView {
         attributedString.append(privacyAttributedString)
 
         // Append " and " with main attributes
-        let andAttributedString = NSAttributedString(string: " and ", attributes: mainAttributes)
+        let andAttributedString = NSAttributedString(string: " \(CreateAccountPresenter.and) ", attributes: mainAttributes)
         attributedString.append(andAttributedString)
 
         // Define attributes for the Terms of Service text (different color)

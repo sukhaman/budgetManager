@@ -14,7 +14,7 @@ class CreateAccountVC: UIViewController {
     }()
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sign Up"
+        label.text = CreateAccountPresenter.signup
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.textAlignment = .left
@@ -28,7 +28,7 @@ class CreateAccountVC: UIViewController {
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
         ]
-        let attributedPlaceholder = NSAttributedString(string: "Name", attributes: attributes)
+        let attributedPlaceholder = NSAttributedString(string: CreateAccountPresenter.name, attributes: attributes)
 
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
@@ -43,7 +43,7 @@ class CreateAccountVC: UIViewController {
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
         ]
-        let attributedPlaceholder = NSAttributedString(string: "\(LoginPresenter.email)", attributes: attributes)
+        let attributedPlaceholder = NSAttributedString(string: CreateAccountPresenter.email, attributes: attributes)
 
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
@@ -60,7 +60,7 @@ class CreateAccountVC: UIViewController {
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
         ]
-        let attributedPlaceholder = NSAttributedString(string: "\(LoginPresenter.password)", attributes: attributes)
+        let attributedPlaceholder = NSAttributedString(string: CreateAccountPresenter.password, attributes: attributes)
 
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
@@ -71,7 +71,7 @@ class CreateAccountVC: UIViewController {
     let privacyTextView = PrivacyTextView()
     let signupButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Sign Up", for: .normal)
+        button.setTitle(CreateAccountPresenter.signup, for: .normal)
         button.backgroundColor = UIColor(resource: .secondaryGreen)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 22.5
