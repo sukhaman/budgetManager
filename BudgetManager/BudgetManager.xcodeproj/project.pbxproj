@@ -19,6 +19,13 @@
 		A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B9B2BA73C5E006A5634 /* LoginUIComposer.swift */; };
 		A2672BA02BA740FB006A5634 /* Locaized+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672B9F2BA740FB006A5634 /* Locaized+TestHelpers.swift */; };
 		A2672BA22BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BA12BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift */; };
+		A2672BA62BA741A5006A5634 /* LoginSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BA52BA741A5006A5634 /* LoginSnapshotTests.swift */; };
+		A2672BA82BA741BE006A5634 /* UIViewController+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BA72BA741BE006A5634 /* UIViewController+Snapshot.swift */; };
+		A2672BAA2BA741D9006A5634 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BA92BA741D9006A5634 /* XCTestCase+Snapshot.swift */; };
+		A2672BB02BA7425C006A5634 /* LOGIN_DARK_VIEW_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BAB2BA7425C006A5634 /* LOGIN_DARK_VIEW_iPad.png */; };
+		A2672BB12BA7425C006A5634 /* LOGIN_DARK_VIEW_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BAC2BA7425C006A5634 /* LOGIN_DARK_VIEW_iPhone.png */; };
+		A2672BB22BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BAD2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png */; };
+		A2672BB32BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A2672BAE2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		A2672B9B2BA73C5E006A5634 /* LoginUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUIComposer.swift; sourceTree = "<group>"; };
 		A2672B9F2BA740FB006A5634 /* Locaized+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locaized+TestHelpers.swift"; sourceTree = "<group>"; };
 		A2672BA12BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		A2672BA52BA741A5006A5634 /* LoginSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSnapshotTests.swift; sourceTree = "<group>"; };
+		A2672BA72BA741BE006A5634 /* UIViewController+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Snapshot.swift"; sourceTree = "<group>"; };
+		A2672BA92BA741D9006A5634 /* XCTestCase+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Snapshot.swift"; sourceTree = "<group>"; };
+		A2672BAB2BA7425C006A5634 /* LOGIN_DARK_VIEW_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGIN_DARK_VIEW_iPad.png; sourceTree = "<group>"; };
+		A2672BAC2BA7425C006A5634 /* LOGIN_DARK_VIEW_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGIN_DARK_VIEW_iPhone.png; sourceTree = "<group>"; };
+		A2672BAD2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGIN_LIGHT_VIEW_iPad.png; sourceTree = "<group>"; };
+		A2672BAE2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGIN_LIGHT_VIEW_iPhone.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +159,7 @@
 		A2672B8E2BA73A8F006A5634 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A2672BA42BA74191006A5634 /* SnapshotTests */,
 				A2672B8F2BA73A9D006A5634 /* LoginUnitTests */,
 			);
 			path = Login;
@@ -180,8 +195,30 @@
 			children = (
 				A2672B9F2BA740FB006A5634 /* Locaized+TestHelpers.swift */,
 				A2672BA12BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift */,
+				A2672BA72BA741BE006A5634 /* UIViewController+Snapshot.swift */,
+				A2672BA92BA741D9006A5634 /* XCTestCase+Snapshot.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A2672BA42BA74191006A5634 /* SnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2672BAF2BA7425C006A5634 /* snapshots */,
+				A2672BA52BA741A5006A5634 /* LoginSnapshotTests.swift */,
+			);
+			path = SnapshotTests;
+			sourceTree = "<group>";
+		};
+		A2672BAF2BA7425C006A5634 /* snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				A2672BAB2BA7425C006A5634 /* LOGIN_DARK_VIEW_iPad.png */,
+				A2672BAC2BA7425C006A5634 /* LOGIN_DARK_VIEW_iPhone.png */,
+				A2672BAD2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png */,
+				A2672BAE2BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png */,
+			);
+			path = snapshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +312,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2672BB02BA7425C006A5634 /* LOGIN_DARK_VIEW_iPad.png in Resources */,
+				A2672BB22BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPad.png in Resources */,
+				A2672BB32BA7425C006A5634 /* LOGIN_LIGHT_VIEW_iPhone.png in Resources */,
+				A2672BB12BA7425C006A5634 /* LOGIN_DARK_VIEW_iPhone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,9 +338,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2672BA62BA741A5006A5634 /* LoginSnapshotTests.swift in Sources */,
+				A2672BAA2BA741D9006A5634 /* XCTestCase+Snapshot.swift in Sources */,
 				A2672BA02BA740FB006A5634 /* Locaized+TestHelpers.swift in Sources */,
 				A2672BA22BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				A2672B892BA73850006A5634 /* SceneDelegateTests.swift in Sources */,
+				A2672BA82BA741BE006A5634 /* UIViewController+Snapshot.swift in Sources */,
 				A2672B912BA73AAD006A5634 /* LoginUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

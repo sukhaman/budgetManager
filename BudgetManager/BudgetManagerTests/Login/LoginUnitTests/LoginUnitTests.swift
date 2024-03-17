@@ -16,8 +16,9 @@ class LoginUnitTests: XCTestCase {
     
     // Helpers:
     
-    private func makeSUT() -> LoginVC {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> LoginVC {
         let viewController = LoginUIComposer.composedLogin()
+        trackForMemoryLeaks(viewController,file: file,line: line)
         return viewController
     }
 }
