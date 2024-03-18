@@ -18,7 +18,11 @@ class LoginViewModel {
     
     func login(_ email: String, password: String) {
         isLoading = true
-        loginLoader.login(email: email, password: password)
+        let loginRequest = LoginRequest(email: email, password: password)
+        var request = URLRequest(url: LoginEndpoint.post.url)
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONEncoder().encode(loginRequest)
+        loginLoader.login(from: request)
             .sink(receiveCompletion: { [weak self] completion in
                 self?.isLoading = false
                 switch completion {

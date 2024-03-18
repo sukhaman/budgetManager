@@ -8,9 +8,15 @@ import Combine
 
 class APILoginLoaderSpy: LoginLoader {
     
-    func login(email: String, password: String) -> AnyPublisher<BudgetManager.User, any Error> {
-        let publisher = Result<User,Error>.Publisher(.failure(MockError(mockError: "Invalid Request")))
-            .eraseToAnyPublisher()
-        return publisher
+    func login(from request: URLRequest) -> AnyPublisher<BudgetManager.User, any Error> {
+        if request.allHTTPHeaderFields?.isEmpty == false {
+            let publisher = Result<User,Error>.Publisher(.success(User(email: "good@email.com", username: "Any username")))
+                .eraseToAnyPublisher()
+            return publisher
+        } else {
+            let publisher = Result<User,Error>.Publisher(.failure(MockError(mockError: "Invalid Request")))
+                .eraseToAnyPublisher()
+            return publisher
+        }
     }
 }

@@ -6,15 +6,15 @@ import Foundation
 import Combine
 
 protocol LoginLoader {
-    func login(email: String, password: String) -> AnyPublisher<User, Error>
+    func login(from request: URLRequest) -> AnyPublisher<User, Error>
 }
 
 struct APILoginLoader: LoginLoader {
-    func login(email: String, password: String) -> AnyPublisher<User, Error> {
-        // Simulate network request
-        return URLSession.shared.dataTaskPublisher(for: LoginEndpoint.post.url)
+    func login(from request: URLRequest) -> AnyPublisher<User, Error> {
+        return URLSession.shared.dataTaskPublisher(for: request)
             .map { data, _ in data }
             .decode(type: User.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 }
