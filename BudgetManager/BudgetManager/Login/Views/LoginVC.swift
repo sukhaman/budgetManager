@@ -182,5 +182,15 @@ class LoginVC: UIViewController {
                 }
             })
             .store(in: &cancellables)
+        
+        self.viewModel?.$userProfile
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] user in
+                if let self, let user {
+                    let destVC = HomeVC(profile: user)
+                    self.show(destVC, sender: nil)
+                }
+            })
+            .store(in: &cancellables)
     }
 }

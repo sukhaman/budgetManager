@@ -8,7 +8,7 @@ import Combine
 class LoginViewModel {
     @Published var isLoading = false
     @Published var loginError: Error?
-    
+    @Published var userProfile: User?
     private let loginLoader: LoginLoader
     private var cancellables = Set<AnyCancellable>()
     
@@ -17,10 +17,13 @@ class LoginViewModel {
     }
     
     func login(_ email: String, password: String) {
+        loginError = nil
+        userProfile = nil
         isLoading = true
         let loginRequest = LoginRequest(email: email, password: password)
         var request = URLRequest(url: LoginEndpoint.post.url)
         request.httpMethod = "POST"
+        request.allHTTPHeaderFields = ["Accept": "application/json","Content-Type": "application/json"]
         request.httpBody = try? JSONEncoder().encode(loginRequest)
         loginLoader.login(from: request)
             .sink(receiveCompletion: { [weak self] completion in
@@ -31,7 +34,9 @@ class LoginViewModel {
                 case .finished:
                     break
                 }
-            }, receiveValue: { _ in })
+            }, receiveValue: { [weak self] user in
+                self?.userProfile = user
+            })
             .store(in: &cancellables)
     }
 }

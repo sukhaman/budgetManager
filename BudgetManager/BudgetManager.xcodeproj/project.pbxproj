@@ -50,6 +50,7 @@
 		A2B5B3072BA7D0F800C9D05D /* RawRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3062BA7D0F800C9D05D /* RawRepresentable+Extensions.swift */; };
 		A2B5B30A2BA7D4CF00C9D05D /* APILoginLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3092BA7D4CF00C9D05D /* APILoginLoaderSpy.swift */; };
 		A2B5B30C2BA7D72200C9D05D /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B30B2BA7D72200C9D05D /* MockError.swift */; };
+		A2B5B3102BA907A900C9D05D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B30F2BA907A900C9D05D /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		A2B5B3062BA7D0F800C9D05D /* RawRepresentable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+Extensions.swift"; sourceTree = "<group>"; };
 		A2B5B3092BA7D4CF00C9D05D /* APILoginLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoginLoaderSpy.swift; sourceTree = "<group>"; };
 		A2B5B30B2BA7D72200C9D05D /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		A2B5B30F2BA907A900C9D05D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		A2672B552BA732DE006A5634 /* BudgetManager */ = {
 			isa = PBXGroup;
 			children = (
+				A2B5B30D2BA9079B00C9D05D /* Home */,
 				A2672BBC2BA76E3B006A5634 /* CreateAccount */,
 				A2672B8A2BA739B4006A5634 /* Login */,
 				A2672B862BA73350006A5634 /* SupportingFiles */,
@@ -421,6 +424,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A2B5B30D2BA9079B00C9D05D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B30E2BA9079F00C9D05D /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A2B5B30E2BA9079F00C9D05D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B30F2BA907A900C9D05D /* HomeVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -536,6 +555,7 @@
 				A2672B962BA73B9D006A5634 /* LoginPresenter.swift in Sources */,
 				A2B5B2FD2BA7CB7000C9D05D /* LoginLoader.swift in Sources */,
 				A2672BBB2BA76C3E006A5634 /* UIControl+Extensions.swift in Sources */,
+				A2B5B3102BA907A900C9D05D /* HomeVC.swift in Sources */,
 				A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */,
 				A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */,
 				A2B5B3072BA7D0F800C9D05D /* RawRepresentable+Extensions.swift in Sources */,
