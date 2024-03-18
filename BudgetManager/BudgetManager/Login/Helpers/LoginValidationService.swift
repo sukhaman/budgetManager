@@ -18,6 +18,13 @@ struct LoginValidationService {
         }
         return userEmail
     }
+    
+    func validateUserPassword(_ password: String?) throws -> String {
+        guard let password = password, !password.isEmpty else {
+            throw ValidationError.enterPassword
+        }
+        return password
+    }
 }
 
 
@@ -25,6 +32,7 @@ enum ValidationError: LocalizedError {
    
     case enterEmail
     case invalidEmail
+    case enterPassword
     
     var errorDescription: String? {
         switch self {
@@ -32,6 +40,8 @@ enum ValidationError: LocalizedError {
             return "Please enter email"
         case .invalidEmail:
             return "You have entered invalid email"
+        case .enterPassword:
+            return "Please enter password"
         }
     }
 }

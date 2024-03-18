@@ -32,6 +32,19 @@ class LoginIntegrationTests: XCTestCase {
         XCTAssertEqual(expectedMessage, actualMessage)
     }
     
+    func test_loginVC_shouldThrowMissingInvalidPasswordAlert() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        let mockNavigation = MockNavigationController(rootViewController: sut)
+        sut.emailTextField.text = "valid@email.com"
+        sut.signInButton.sendActions(for: .touchUpInside)
+        let alertController = mockNavigation.presentViewController as? UIAlertController
+        XCTAssertNotNil(alertController)
+        let expectedMessage = ValidationError.enterPassword.localizedDescription
+        let actualMessage = alertController?.message
+        XCTAssertEqual(expectedMessage, actualMessage)
+    }
+    
     // MARK: Helpers
     
     private func makeSUT() -> LoginVC {
