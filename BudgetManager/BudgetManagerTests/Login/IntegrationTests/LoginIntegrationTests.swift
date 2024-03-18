@@ -14,6 +14,22 @@ class LoginIntegrationTests: XCTestCase {
         sut.signInButton.sendActions(for: .touchUpInside)
         let alertController = mockNavigation.presentViewController as? UIAlertController
         XCTAssertNotNil(alertController)
+        let expectedMessage = ValidationError.enterEmail.localizedDescription
+        let actualMessage = alertController?.message
+        XCTAssertEqual(expectedMessage, actualMessage)
+    }
+    
+    func test_loginVC_shouldThrowMissingInvalidEmailAlert() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        let mockNavigation = MockNavigationController(rootViewController: sut)
+        sut.emailTextField.text = "hdaks"
+        sut.signInButton.sendActions(for: .touchUpInside)
+        let alertController = mockNavigation.presentViewController as? UIAlertController
+        XCTAssertNotNil(alertController)
+        let expectedMessage = ValidationError.invalidEmail.localizedDescription
+        let actualMessage = alertController?.message
+        XCTAssertEqual(expectedMessage, actualMessage)
     }
     
     // MARK: Helpers
