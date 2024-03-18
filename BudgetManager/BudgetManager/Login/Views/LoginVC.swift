@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import Combine
 
 class LoginVC: UIViewController {
     
@@ -80,7 +81,12 @@ class LoginVC: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+    var viewModel: LoginViewModel? {
+        didSet {
+            bindServerResponse()
+        }
+    }
+    private var cancellables: Set<AnyCancellable> = []
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -151,6 +157,7 @@ class LoginVC: UIViewController {
             do {
                 let email  = try LoginValidationService().validateUserEmail(self.emailTextField.text)
                 let password  = try LoginValidationService().validateUserPassword(self.passwordTextField.text)
+                self.viewModel?.login(email, password: password)
             } catch {
                 self.showAlert(error.localizedDescription)
             }
@@ -164,5 +171,16 @@ class LoginVC: UIViewController {
         })
         alertController.addAction(OkAction)
         navigationController?.present(alertController, animated: true , completion: nil)
+    }
+    
+    private func bindServerResponse() {
+        self.viewModel?.$loginError
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] errorMessage in
+                if let self, let errorMessage {
+                    self.showAlert(errorMessage.localizedDescription)
+                }
+            })
+            .store(in: &cancellables)
     }
 }

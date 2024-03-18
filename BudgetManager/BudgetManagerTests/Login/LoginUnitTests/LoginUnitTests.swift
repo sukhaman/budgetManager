@@ -70,7 +70,7 @@ class LoginUnitTests: XCTestCase {
     // Helpers:
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> LoginVC {
-        let viewController = LoginUIComposer.composedLogin()
+        let viewController = LoginUIComposer.composedLogin(viewModel: LoginViewModel(loginLoader: APILoginLoaderSpy()))
         return viewController
     }
 }

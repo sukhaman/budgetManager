@@ -25,7 +25,7 @@ class LoginSnapshotTests: XCTestCase {
     // MARK: Helpers
     
     private func makeSUT() -> LoginVC {
-        let view = LoginUIComposer.composedLogin()
+        let view = LoginUIComposer.composedLogin(viewModel: LoginViewModel(loginLoader: APILoginLoaderSpy()))
         return view
     }
 }

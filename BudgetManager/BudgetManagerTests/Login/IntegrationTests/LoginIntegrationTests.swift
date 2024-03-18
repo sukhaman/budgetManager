@@ -45,10 +45,29 @@ class LoginIntegrationTests: XCTestCase {
         XCTAssertEqual(expectedMessage, actualMessage)
     }
     
+    func test_loginVC_loginRequestMade_shouldFinishWithError() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        let mockNavigation = MockNavigationController(rootViewController: sut)
+        sut.emailTextField.text = "valid@email.com"
+        sut.passwordTextField.text = "password"
+        sut.signInButton.sendActions(for: .touchUpInside)
+        let expectation = XCTestExpectation(description: "Wait for server response")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 2.0)
+        let alertController = mockNavigation.presentViewController as? UIAlertController
+        XCTAssertNotNil(alertController)
+        let expectedMessage = "Invalid Request"
+        let actualMessage = alertController?.message
+        XCTAssertEqual(expectedMessage, actualMessage)
+    }
+    
     // MARK: Helpers
     
     private func makeSUT() -> LoginVC {
-        let view = LoginUIComposer.composedLogin()
+        let view = LoginUIComposer.composedLogin(viewModel: LoginViewModel(loginLoader: APILoginLoaderSpy()))
         return view
     }
 }

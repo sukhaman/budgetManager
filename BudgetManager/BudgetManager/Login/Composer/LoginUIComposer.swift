@@ -5,8 +5,9 @@
 import Foundation
 
 struct LoginUIComposer {
-    public static func composedLogin() -> LoginVC {
+    public static func composedLogin(viewModel: LoginViewModel) -> LoginVC {
         let loginController = makeLoginVC(LoginPresenter.title)
+        loginController.viewModel = viewModel
         return loginController
     }
     

@@ -42,6 +42,14 @@
 		A2672BD82BA7A3C0006A5634 /* CreateAccountUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BD72BA7A3C0006A5634 /* CreateAccountUnitTests.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
+		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
+		A2B5B2FD2BA7CB7000C9D05D /* LoginLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2FC2BA7CB7000C9D05D /* LoginLoader.swift */; };
+		A2B5B3002BA7CC0800C9D05D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2FF2BA7CC0800C9D05D /* User.swift */; };
+		A2B5B3032BA7CFAC00C9D05D /* LoginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3022BA7CFAC00C9D05D /* LoginEndpoint.swift */; };
+		A2B5B3052BA7D09F00C9D05D /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3042BA7D09F00C9D05D /* URL+Extensions.swift */; };
+		A2B5B3072BA7D0F800C9D05D /* RawRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3062BA7D0F800C9D05D /* RawRepresentable+Extensions.swift */; };
+		A2B5B30A2BA7D4CF00C9D05D /* APILoginLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3092BA7D4CF00C9D05D /* APILoginLoaderSpy.swift */; };
+		A2B5B30C2BA7D72200C9D05D /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B30B2BA7D72200C9D05D /* MockError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +101,14 @@
 		A2672BD72BA7A3C0006A5634 /* CreateAccountUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountUnitTests.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
+		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A2B5B2FC2BA7CB7000C9D05D /* LoginLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLoader.swift; sourceTree = "<group>"; };
+		A2B5B2FF2BA7CC0800C9D05D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A2B5B3022BA7CFAC00C9D05D /* LoginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoint.swift; sourceTree = "<group>"; };
+		A2B5B3042BA7D09F00C9D05D /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		A2B5B3062BA7D0F800C9D05D /* RawRepresentable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+Extensions.swift"; sourceTree = "<group>"; };
+		A2B5B3092BA7D4CF00C9D05D /* APILoginLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoginLoaderSpy.swift; sourceTree = "<group>"; };
+		A2B5B30B2BA7D72200C9D05D /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +194,10 @@
 		A2672B8A2BA739B4006A5634 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A2B5B3012BA7CF9D00C9D05D /* API */,
+				A2B5B2FE2BA7CBD800C9D05D /* Model */,
+				A2B5B2FB2BA7CB6600C9D05D /* Loader */,
+				A2B5B2F82BA7CABE00C9D05D /* ViewModel */,
 				A2B5B2F52BA7BD0900C9D05D /* Helpers */,
 				A2672B9A2BA73C55006A5634 /* Composer */,
 				A2672B942BA73B92006A5634 /* Presenter */,
@@ -197,6 +217,7 @@
 		A2672B8E2BA73A8F006A5634 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A2B5B3082BA7D4BF00C9D05D /* Helpers */,
 				A2B5B2F22BA7BBBD00C9D05D /* IntegrationTests */,
 				A2672BA42BA74191006A5634 /* SnapshotTests */,
 				A2672B8F2BA73A9D006A5634 /* LoginUnitTests */,
@@ -237,6 +258,7 @@
 				A2672BA72BA741BE006A5634 /* UIViewController+Snapshot.swift */,
 				A2672BA92BA741D9006A5634 /* XCTestCase+Snapshot.swift */,
 				A2672BC02BA7745A006A5634 /* MockNavigation.swift */,
+				A2B5B30B2BA7D72200C9D05D /* MockError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -273,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				A2672BBA2BA76C3E006A5634 /* UIControl+Extensions.swift */,
+				A2B5B3042BA7D09F00C9D05D /* URL+Extensions.swift */,
+				A2B5B3062BA7D0F800C9D05D /* RawRepresentable+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -353,6 +377,46 @@
 			isa = PBXGroup;
 			children = (
 				A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A2B5B2F82BA7CABE00C9D05D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A2B5B2FB2BA7CB6600C9D05D /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B2FC2BA7CB7000C9D05D /* LoginLoader.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		A2B5B2FE2BA7CBD800C9D05D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B2FF2BA7CC0800C9D05D /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A2B5B3012BA7CF9D00C9D05D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B3022BA7CFAC00C9D05D /* LoginEndpoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A2B5B3082BA7D4BF00C9D05D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B3092BA7D4CF00C9D05D /* APILoginLoaderSpy.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -470,14 +534,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2672B962BA73B9D006A5634 /* LoginPresenter.swift in Sources */,
+				A2B5B2FD2BA7CB7000C9D05D /* LoginLoader.swift in Sources */,
 				A2672BBB2BA76C3E006A5634 /* UIControl+Extensions.swift in Sources */,
 				A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */,
 				A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */,
+				A2B5B3072BA7D0F800C9D05D /* RawRepresentable+Extensions.swift in Sources */,
 				A2672BB82BA76B64006A5634 /* PasswordTextField.swift in Sources */,
+				A2B5B3002BA7CC0800C9D05D /* User.swift in Sources */,
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
+				A2B5B3032BA7CFAC00C9D05D /* LoginEndpoint.swift in Sources */,
 				A2672BC32BA7984A006A5634 /* PrivacyTextView.swift in Sources */,
+				A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
+				A2B5B3052BA7D09F00C9D05D /* URL+Extensions.swift in Sources */,
 				A2672BD32BA79E2B006A5634 /* CreateAccountPresenter.swift in Sources */,
 				A2672BBF2BA76E48006A5634 /* CreateAccountVC.swift in Sources */,
 			);
@@ -492,9 +562,11 @@
 				A2672BC72BA799B7006A5634 /* CreateSnapshotTests.swift in Sources */,
 				A2672BAA2BA741D9006A5634 /* XCTestCase+Snapshot.swift in Sources */,
 				A2672BA02BA740FB006A5634 /* Locaized+TestHelpers.swift in Sources */,
+				A2B5B30C2BA7D72200C9D05D /* MockError.swift in Sources */,
 				A2672BD82BA7A3C0006A5634 /* CreateAccountUnitTests.swift in Sources */,
 				A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */,
 				A2672BA22BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				A2B5B30A2BA7D4CF00C9D05D /* APILoginLoaderSpy.swift in Sources */,
 				A2672B892BA73850006A5634 /* SceneDelegateTests.swift in Sources */,
 				A2672BA82BA741BE006A5634 /* UIViewController+Snapshot.swift in Sources */,
 				A2672B912BA73AAD006A5634 /* LoginUnitTests.swift in Sources */,
