@@ -146,5 +146,22 @@ class LoginVC: UIViewController {
             let destVC = CreateAccountVC()
             self.show(destVC, sender: nil)
         }
+        
+        signInButton.addAction {
+            do {
+                let email  = try LoginValidationService().validateUserEmail(self.emailTextField.text)
+            } catch {
+                self.showAlert(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func showAlert(_ message: String) {
+        let alertController = UIAlertController (title: nil, message:message, preferredStyle: .alert)
+        let OkAction = UIAlertAction(title: "OK", style:  .default , handler: { (actionSheetController) -> Void in
+            
+        })
+        alertController.addAction(OkAction)
+        navigationController?.present(alertController, animated: true , completion: nil)
     }
 }

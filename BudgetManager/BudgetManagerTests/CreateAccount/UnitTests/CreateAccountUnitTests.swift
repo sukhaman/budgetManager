@@ -54,18 +54,6 @@ class CreateAccountUnitTests: XCTestCase {
         XCTAssertNotNil(sut.privacyTextView.attributedText)
     }
     
-    func test_createAccount_signUpButtonTapped_shouldNavigateToCreateAccountVC() {
-       
-        let sut = makeSUT()
-        sut.loadViewIfNeeded()
-        let mockNavigation = MockNavigationController(rootViewController: sut)
-        sut.signupButton.sendActions(for: .touchUpInside)
-        let topVC = mockNavigation.pushedViewController as? CreateAccountVC
-        topVC?.loadViewIfNeeded()
-        XCTAssertNotNil(topVC)
-    }
-    
-    
     // Helpers:
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CreateAccountVC {

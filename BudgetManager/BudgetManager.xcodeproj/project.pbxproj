@@ -40,6 +40,8 @@
 		A2672BD32BA79E2B006A5634 /* CreateAccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BD22BA79E2B006A5634 /* CreateAccountPresenter.swift */; };
 		A2672BD52BA79E81006A5634 /* CreateAccount.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A2672BD42BA79E81006A5634 /* CreateAccount.xcstrings */; };
 		A2672BD82BA7A3C0006A5634 /* CreateAccountUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2672BD72BA7A3C0006A5634 /* CreateAccountUnitTests.swift */; };
+		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
+		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		A2672BD22BA79E2B006A5634 /* CreateAccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountPresenter.swift; sourceTree = "<group>"; };
 		A2672BD42BA79E81006A5634 /* CreateAccount.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = CreateAccount.xcstrings; sourceTree = "<group>"; };
 		A2672BD72BA7A3C0006A5634 /* CreateAccountUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountUnitTests.swift; sourceTree = "<group>"; };
+		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
+		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 		A2672B8A2BA739B4006A5634 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A2B5B2F52BA7BD0900C9D05D /* Helpers */,
 				A2672B9A2BA73C55006A5634 /* Composer */,
 				A2672B942BA73B92006A5634 /* Presenter */,
 				A2672B8B2BA739BD006A5634 /* Views */,
@@ -192,6 +197,7 @@
 		A2672B8E2BA73A8F006A5634 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				A2B5B2F22BA7BBBD00C9D05D /* IntegrationTests */,
 				A2672BA42BA74191006A5634 /* SnapshotTests */,
 				A2672B8F2BA73A9D006A5634 /* LoginUnitTests */,
 			);
@@ -335,6 +341,22 @@
 			path = UnitTests;
 			sourceTree = "<group>";
 		};
+		A2B5B2F22BA7BBBD00C9D05D /* IntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */,
+			);
+			path = IntegrationTests;
+			sourceTree = "<group>";
+		};
+		A2B5B2F52BA7BD0900C9D05D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,6 +421,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = A2672B4A2BA732DE006A5634;
 			productRefGroup = A2672B542BA732DE006A5634 /* Products */;
@@ -449,6 +472,7 @@
 				A2672B962BA73B9D006A5634 /* LoginPresenter.swift in Sources */,
 				A2672BBB2BA76C3E006A5634 /* UIControl+Extensions.swift in Sources */,
 				A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */,
+				A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */,
 				A2672BB82BA76B64006A5634 /* PasswordTextField.swift in Sources */,
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
@@ -469,6 +493,7 @@
 				A2672BAA2BA741D9006A5634 /* XCTestCase+Snapshot.swift in Sources */,
 				A2672BA02BA740FB006A5634 /* Locaized+TestHelpers.swift in Sources */,
 				A2672BD82BA7A3C0006A5634 /* CreateAccountUnitTests.swift in Sources */,
+				A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */,
 				A2672BA22BA7411B006A5634 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				A2672B892BA73850006A5634 /* SceneDelegateTests.swift in Sources */,
 				A2672BA82BA741BE006A5634 /* UIViewController+Snapshot.swift in Sources */,
