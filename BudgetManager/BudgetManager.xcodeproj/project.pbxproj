@@ -58,6 +58,7 @@
 		A2B5B31F2BA91A4400C9D05D /* RegistrationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B31E2BA91A4400C9D05D /* RegistrationEndpoint.swift */; };
 		A2B5B3222BA91B4800C9D05D /* APIRegistrationLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3212BA91B4800C9D05D /* APIRegistrationLoaderSpy.swift */; };
 		A2B5B3252BA91BA900C9D05D /* RegistrationUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3242BA91BA900C9D05D /* RegistrationUIComposer.swift */; };
+		A2B5B3282BA91E2000C9D05D /* RegistrationUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3272BA91E2000C9D05D /* RegistrationUserRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		A2B5B31E2BA91A4400C9D05D /* RegistrationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationEndpoint.swift; sourceTree = "<group>"; };
 		A2B5B3212BA91B4800C9D05D /* APIRegistrationLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRegistrationLoaderSpy.swift; sourceTree = "<group>"; };
 		A2B5B3242BA91BA900C9D05D /* RegistrationUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUIComposer.swift; sourceTree = "<group>"; };
+		A2B5B3272BA91E2000C9D05D /* RegistrationUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUserRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +323,7 @@
 		A2672BBC2BA76E3B006A5634 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
+				A2B5B3262BA91E1500C9D05D /* Model */,
 				A2B5B3232BA91B9900C9D05D /* Composer */,
 				A2B5B31D2BA91A3A00C9D05D /* API */,
 				A2B5B31A2BA9193200C9D05D /* Loader */,
@@ -517,6 +520,14 @@
 			path = Composer;
 			sourceTree = "<group>";
 		};
+		A2B5B3262BA91E1500C9D05D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B3272BA91E2000C9D05D /* RegistrationUserRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -648,6 +659,7 @@
 				A2B5B3252BA91BA900C9D05D /* RegistrationUIComposer.swift in Sources */,
 				A2672BC32BA7984A006A5634 /* PrivacyTextView.swift in Sources */,
 				A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */,
+				A2B5B3282BA91E2000C9D05D /* RegistrationUserRequest.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
 				A2B5B3052BA7D09F00C9D05D /* URL+Extensions.swift in Sources */,
 				A2672BD32BA79E2B006A5634 /* CreateAccountPresenter.swift in Sources */,

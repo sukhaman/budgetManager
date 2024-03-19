@@ -102,6 +102,25 @@ class CreateAccountIntegrationTests: XCTestCase {
         XCTAssertEqual(expectedMessage, actualMessage)
     }
     
+    func test_createAccount_sendCreateAccountRequestFinishWithSuccess() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        let mockNavigation = MockNavigationController(rootViewController: sut)
+        sut.nameTextField.text = "Good Name"
+        sut.emailTextField.text = "asdas@test.com"
+        sut.passwordTextField.text = "good_pass"
+        sut.signupButton.sendActions(for: .touchUpInside)
+        let expectation = XCTestExpectation(description: "Server response received")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 2.0)
+        let topVC = mockNavigation.pushedViewController as? HomeVC
+        topVC?.loadViewIfNeeded()
+        XCTAssertNotNil(topVC)
+        XCTAssertNotNil(topVC?.profile)
+    }
+    
     // Helpers:
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CreateAccountVC {

@@ -161,7 +161,7 @@ class CreateAccountVC: UIViewController {
             let name  = try CreateAccountValidationService().validateUsername(self.nameTextField.text)
             let email = try CreateAccountValidationService().validateUserEmail(self.emailTextField.text)
             let password = try CreateAccountValidationService().validateUserPassword(self.passwordTextField.text)
-            self.viewModel?.register()
+            self.viewModel?.register(name, email, password)
         } catch {
             self.showAlert(error.localizedDescription)
         }
@@ -182,6 +182,16 @@ class CreateAccountVC: UIViewController {
             .sink(receiveValue: { [weak self] errorMessage in
                 if let self, let errorMessage {
                     self.showAlert(errorMessage.localizedDescription)
+                }
+            })
+            .store(in: &cancellables)
+        
+        self.viewModel?.$userProfile
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] user in
+                if let self, let user {
+                    let destVC = HomeVC(profile: user)
+                    self.show(destVC, sender: nil)
                 }
             })
             .store(in: &cancellables)
