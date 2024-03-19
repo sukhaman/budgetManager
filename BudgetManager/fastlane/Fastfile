@@ -1,0 +1,29 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :all_tests do
+   run_tests(
+      scheme: "BudgetManager",
+testplan: "BudgetManager",
+      devices: ["iPhone 15 Pro"],
+      clean: true,
+code_coverage: true
+    )
+ run_tests(
+      scheme: "BudgetManager",
+testplan: "BudgetManagerUI",
+      devices: ["iPhone 15 Pro"],
+      clean: true,
+code_coverage: true
+    )
+if $?.exitstatus == 0
+after_tests
+else
+UI.error("Tests have been failed!")
+end 
+end
+end
+lane :after_tests do
+puts "Tests passed! Next Steps can be taken now!"
+end

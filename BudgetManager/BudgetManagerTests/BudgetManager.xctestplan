@@ -1,0 +1,27 @@
+{
+  "configurations" : [
+    {
+      "id" : "D0F01AE0-2EC6-48CF-AF5C-577FD37E509D",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "CreateSnapshotTests"
+      ],
+      "target" : {
+        "containerPath" : "container:BudgetManager.xcodeproj",
+        "identifier" : "A2672B682BA732E1006A5634",
+        "name" : "BudgetManagerTests"
+      }
+    }
+  ],
+  "version" : 1
+}
