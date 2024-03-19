@@ -34,7 +34,7 @@
             default = "YES">
          </TestPlanReference>
          <TestPlanReference
-            reference = "container:BudgetManagerUITests/BudgetManagerUI.xctestplan">
+            reference = "container:BudgetManagerSnapshotTests/BudgetManagerUI.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
