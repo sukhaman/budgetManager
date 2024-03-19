@@ -27,26 +27,25 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:BudgetManagerTests/BudgetManager.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:BudgetManagerUITests/BudgetManagerUI.xctestplan">
+         </TestPlanReference>
+      </TestPlans>
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A2672B682BA732E1006A5634"
-               BuildableName = "BudgetManagerTests.xctest"
-               BlueprintName = "BudgetManagerTests"
-               ReferencedContainer = "container:BudgetManager.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A2672B722BA732E1006A5634"
-               BuildableName = "BudgetManagerUITests.xctest"
-               BlueprintName = "BudgetManagerUITests"
+               BlueprintIdentifier = "A27A5C092BA92A8E00DADBEC"
+               BuildableName = "BudgetManagerSnapshotTests.xctest"
+               BlueprintName = "BudgetManagerSnapshotTests"
                ReferencedContainer = "container:BudgetManager.xcodeproj">
             </BuildableReference>
          </TestableReference>

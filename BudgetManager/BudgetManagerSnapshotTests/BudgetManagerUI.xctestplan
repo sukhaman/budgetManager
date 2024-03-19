@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "163B0F89-FE0C-4452-91CA-322FA22A9D9E",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:BudgetManager.xcodeproj",
+        "identifier" : "A27A5C092BA92A8E00DADBEC",
+        "name" : "BudgetManagerSnapshotTests"
+      }
+    }
+  ],
+  "version" : 1
+}
