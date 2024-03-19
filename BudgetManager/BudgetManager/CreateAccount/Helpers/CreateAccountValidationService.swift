@@ -20,7 +20,11 @@ struct CreateAccountValidationService {
         guard let userEmail = userEmail, !userEmail.isEmpty else {
             throw CreateAccountValidationError.enterEmail
         }
-    
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            if !emailTest.evaluate(with: userEmail) {
+               throw CreateAccountValidationError.invalidEmail
+            }
         return userEmail
     }
 }
@@ -31,6 +35,7 @@ enum CreateAccountValidationError: LocalizedError {
     case enterName
     case tooShortName
     case enterEmail
+    case invalidEmail
     var errorDescription: String? {
         switch self {
         case .enterName:
@@ -39,6 +44,8 @@ enum CreateAccountValidationError: LocalizedError {
             return "Full name is too short"
         case .enterEmail:
             return "Please enter email"
+        case .invalidEmail:
+            return "You have entered invalid email"
         }
     }
 }
