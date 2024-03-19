@@ -32,6 +32,9 @@ struct CreateAccountValidationService {
         guard let password = password, !password.isEmpty else {
             throw ValidationError.enterPassword
         }
+        if password.count < 4 {
+           throw CreateAccountValidationError.tooShortName
+        }
         return password
     }
 }
@@ -44,6 +47,7 @@ enum CreateAccountValidationError: LocalizedError {
     case enterEmail
     case invalidEmail
     case enterPassword
+    case tooShortPassword
     var errorDescription: String? {
         switch self {
         case .enterName:
@@ -56,6 +60,8 @@ enum CreateAccountValidationError: LocalizedError {
             return "You have entered invalid email"
         case .enterPassword:
             return "Please enter password"
+        case .tooShortPassword:
+            return "Please enter password minimum 6 characters"
         }
     }
 }
