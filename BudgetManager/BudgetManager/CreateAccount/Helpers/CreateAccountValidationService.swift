@@ -30,10 +30,10 @@ struct CreateAccountValidationService {
     
     func validateUserPassword(_ password: String?) throws -> String {
         guard let password = password, !password.isEmpty else {
-            throw ValidationError.enterPassword
+            throw CreateAccountValidationError.enterPassword
         }
-        if password.count < 4 {
-           throw CreateAccountValidationError.tooShortName
+        if password.count <= 5 {
+           throw CreateAccountValidationError.tooShortPassword
         }
         return password
     }

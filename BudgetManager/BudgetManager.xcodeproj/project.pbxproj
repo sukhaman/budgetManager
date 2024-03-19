@@ -53,6 +53,11 @@
 		A2B5B3102BA907A900C9D05D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B30F2BA907A900C9D05D /* HomeVC.swift */; };
 		A2B5B3132BA90D4300C9D05D /* CreateAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3122BA90D4300C9D05D /* CreateAccountIntegrationTests.swift */; };
 		A2B5B3162BA90D6400C9D05D /* CreateAccountValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3152BA90D6400C9D05D /* CreateAccountValidationService.swift */; };
+		A2B5B3192BA9192300C9D05D /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3182BA9192300C9D05D /* RegistrationViewModel.swift */; };
+		A2B5B31C2BA9195100C9D05D /* RegistrationLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B31B2BA9195100C9D05D /* RegistrationLoader.swift */; };
+		A2B5B31F2BA91A4400C9D05D /* RegistrationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B31E2BA91A4400C9D05D /* RegistrationEndpoint.swift */; };
+		A2B5B3222BA91B4800C9D05D /* APIRegistrationLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3212BA91B4800C9D05D /* APIRegistrationLoaderSpy.swift */; };
+		A2B5B3252BA91BA900C9D05D /* RegistrationUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3242BA91BA900C9D05D /* RegistrationUIComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +120,11 @@
 		A2B5B30F2BA907A900C9D05D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A2B5B3122BA90D4300C9D05D /* CreateAccountIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B3152BA90D6400C9D05D /* CreateAccountValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountValidationService.swift; sourceTree = "<group>"; };
+		A2B5B3182BA9192300C9D05D /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		A2B5B31B2BA9195100C9D05D /* RegistrationLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLoader.swift; sourceTree = "<group>"; };
+		A2B5B31E2BA91A4400C9D05D /* RegistrationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationEndpoint.swift; sourceTree = "<group>"; };
+		A2B5B3212BA91B4800C9D05D /* APIRegistrationLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRegistrationLoaderSpy.swift; sourceTree = "<group>"; };
+		A2B5B3242BA91BA900C9D05D /* RegistrationUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUIComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +321,10 @@
 		A2672BBC2BA76E3B006A5634 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
+				A2B5B3232BA91B9900C9D05D /* Composer */,
+				A2B5B31D2BA91A3A00C9D05D /* API */,
+				A2B5B31A2BA9193200C9D05D /* Loader */,
+				A2B5B3172BA9190700C9D05D /* ViewModel */,
 				A2B5B3142BA90D4A00C9D05D /* Helpers */,
 				A2672BD12BA79E1E006A5634 /* Presenter */,
 				A2672BBD2BA76E40006A5634 /* Views */,
@@ -330,6 +344,7 @@
 		A2672BC42BA7999D006A5634 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
+				A2B5B3202BA91B3300C9D05D /* Helpers */,
 				A2B5B3112BA90D1C00C9D05D /* IntegrationTests */,
 				A2672BD62BA7A3A7006A5634 /* UnitTests */,
 				A2672BC52BA799A2006A5634 /* SnapshotTests */,
@@ -462,6 +477,46 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A2B5B3172BA9190700C9D05D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B3182BA9192300C9D05D /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A2B5B31A2BA9193200C9D05D /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B31B2BA9195100C9D05D /* RegistrationLoader.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		A2B5B31D2BA91A3A00C9D05D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B31E2BA91A4400C9D05D /* RegistrationEndpoint.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A2B5B3202BA91B3300C9D05D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B3212BA91B4800C9D05D /* APIRegistrationLoaderSpy.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A2B5B3232BA91B9900C9D05D /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B3242BA91BA900C9D05D /* RegistrationUIComposer.swift */,
+			);
+			path = Composer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -577,8 +632,10 @@
 				A2672B962BA73B9D006A5634 /* LoginPresenter.swift in Sources */,
 				A2B5B2FD2BA7CB7000C9D05D /* LoginLoader.swift in Sources */,
 				A2672BBB2BA76C3E006A5634 /* UIControl+Extensions.swift in Sources */,
+				A2B5B31F2BA91A4400C9D05D /* RegistrationEndpoint.swift in Sources */,
 				A2B5B3102BA907A900C9D05D /* HomeVC.swift in Sources */,
 				A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */,
+				A2B5B3192BA9192300C9D05D /* RegistrationViewModel.swift in Sources */,
 				A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */,
 				A2B5B3072BA7D0F800C9D05D /* RawRepresentable+Extensions.swift in Sources */,
 				A2672BB82BA76B64006A5634 /* PasswordTextField.swift in Sources */,
@@ -586,7 +643,9 @@
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
 				A2B5B3162BA90D6400C9D05D /* CreateAccountValidationService.swift in Sources */,
+				A2B5B31C2BA9195100C9D05D /* RegistrationLoader.swift in Sources */,
 				A2B5B3032BA7CFAC00C9D05D /* LoginEndpoint.swift in Sources */,
+				A2B5B3252BA91BA900C9D05D /* RegistrationUIComposer.swift in Sources */,
 				A2672BC32BA7984A006A5634 /* PrivacyTextView.swift in Sources */,
 				A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
@@ -614,6 +673,7 @@
 				A2672B892BA73850006A5634 /* SceneDelegateTests.swift in Sources */,
 				A2672BA82BA741BE006A5634 /* UIViewController+Snapshot.swift in Sources */,
 				A2672B912BA73AAD006A5634 /* LoginUnitTests.swift in Sources */,
+				A2B5B3222BA91B4800C9D05D /* APIRegistrationLoaderSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

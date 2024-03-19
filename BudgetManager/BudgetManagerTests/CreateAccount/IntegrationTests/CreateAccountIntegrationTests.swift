@@ -78,7 +78,26 @@ class CreateAccountIntegrationTests: XCTestCase {
         sut.passwordTextField.text = "1234"
         sut.signupButton.sendActions(for: .touchUpInside)
         let alertController = mockNavigation.presentViewController as? UIAlertController
-        let expectedMessage = CreateAccountValidationError.enterPassword.localizedDescription
+        let expectedMessage = CreateAccountValidationError.tooShortPassword.localizedDescription
+        let actualMessage = alertController?.message
+        XCTAssertEqual(expectedMessage, actualMessage)
+    }
+    
+    func test_createAccount_sendCreateAccountRequestFinishWithError() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        let mockNavigation = MockNavigationController(rootViewController: sut)
+        sut.nameTextField.text = "Good Name"
+        sut.emailTextField.text = "asdas@test.com"
+        sut.passwordTextField.text = "test1234"
+        sut.signupButton.sendActions(for: .touchUpInside)
+        let expectation = XCTestExpectation(description: "Server response received")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 2.0)
+        let alertController = mockNavigation.presentViewController as? UIAlertController
+        let expectedMessage = "Invalid request"
         let actualMessage = alertController?.message
         XCTAssertEqual(expectedMessage, actualMessage)
     }
@@ -86,7 +105,8 @@ class CreateAccountIntegrationTests: XCTestCase {
     // Helpers:
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CreateAccountVC {
-        let viewController = CreateAccountVC()
+        let viewModel = RegistrationViewModel(loader: APIRegistrationLoaderSpy())
+        let viewController = RegistrationUIComposer.composedRegistration(viewModel: viewModel)
         return viewController
     }
 }

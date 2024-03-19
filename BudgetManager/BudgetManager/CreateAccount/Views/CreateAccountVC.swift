@@ -3,7 +3,7 @@
 //
 
 import UIKit
-
+import Combine
 class CreateAccountVC: UIViewController {
     
     let signupView: UIView = {
@@ -78,7 +78,12 @@ class CreateAccountVC: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-
+    var viewModel: RegistrationViewModel? {
+        didSet {
+            bindServerResponse()
+        }
+    }
+    private var cancellables: Set<AnyCancellable> = []
     override func viewDidLoad() {
         super.viewDidLoad()
      configureViewController()
@@ -156,7 +161,7 @@ class CreateAccountVC: UIViewController {
             let name  = try CreateAccountValidationService().validateUsername(self.nameTextField.text)
             let email = try CreateAccountValidationService().validateUserEmail(self.emailTextField.text)
             let password = try CreateAccountValidationService().validateUserPassword(self.passwordTextField.text)
-            
+            self.viewModel?.register()
         } catch {
             self.showAlert(error.localizedDescription)
         }
@@ -169,5 +174,17 @@ class CreateAccountVC: UIViewController {
         })
         alertController.addAction(OkAction)
         navigationController?.present(alertController, animated: true , completion: nil)
+    }
+    
+    private func bindServerResponse() {
+        self.viewModel?.$error
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] errorMessage in
+                if let self, let errorMessage {
+                    self.showAlert(errorMessage.localizedDescription)
+                }
+            })
+            .store(in: &cancellables)
+
     }
 }
