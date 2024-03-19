@@ -16,6 +16,13 @@ struct CreateAccountValidationService {
         return name
     }
     
+    func validateUserEmail(_ userEmail: String?) throws -> String {
+        guard let userEmail = userEmail, !userEmail.isEmpty else {
+            throw CreateAccountValidationError.enterEmail
+        }
+    
+        return userEmail
+    }
 }
 
 
@@ -23,12 +30,15 @@ enum CreateAccountValidationError: LocalizedError {
    
     case enterName
     case tooShortName
+    case enterEmail
     var errorDescription: String? {
         switch self {
         case .enterName:
             return "Please enter name"
         case .tooShortName:
             return "Full name is too short"
+        case .enterEmail:
+            return "Please enter email"
         }
     }
 }
