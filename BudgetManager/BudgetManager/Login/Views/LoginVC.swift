@@ -153,13 +153,13 @@ class LoginVC: UIViewController {
             self.show(destVC, sender: nil)
         }
         
-        signInButton.addAction {
+        signInButton.addAction { [weak self] in
             do {
-                let email  = try LoginValidationService().validateUserEmail(self.emailTextField.text)
-                let password  = try LoginValidationService().validateUserPassword(self.passwordTextField.text)
-                self.viewModel?.login(email, password: password)
+                let email  = try LoginValidationService().validateUserEmail(self?.emailTextField.text)
+                let password  = try LoginValidationService().validateUserPassword(self?.passwordTextField.text)
+                self?.viewModel?.login(email, password: password)
             } catch {
-                self.showAlert(error.localizedDescription)
+                self?.showAlert(error.localizedDescription)
             }
         }
     }

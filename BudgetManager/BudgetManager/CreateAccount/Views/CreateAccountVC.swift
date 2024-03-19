@@ -141,5 +141,31 @@ class CreateAccountVC: UIViewController {
             privacyTextView.heightAnchor.constraint(equalToConstant: 50),
             
         ])
+        assignActions()
+    
+    }
+    
+    private func assignActions() {
+        signupButton.addAction { [weak self] in
+            self?.createAccountRequest()
+        }
+    }
+    
+    private func createAccountRequest() {
+        do {
+            let name  = try CreateAccountValidationService().validateUsername(self.nameTextField.text)
+            
+        } catch {
+            self.showAlert(error.localizedDescription)
+        }
+    }
+    
+    private func showAlert(_ message: String) {
+        let alertController = UIAlertController (title: nil, message:message, preferredStyle: .alert)
+        let OkAction = UIAlertAction(title: "OK", style:  .default , handler: { (actionSheetController) -> Void in
+            
+        })
+        alertController.addAction(OkAction)
+        navigationController?.present(alertController, animated: true , completion: nil)
     }
 }
