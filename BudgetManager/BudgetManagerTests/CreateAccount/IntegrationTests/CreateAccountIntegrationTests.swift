@@ -19,6 +19,18 @@ class CreateAccountIntegrationTests: XCTestCase {
         XCTAssertEqual(expectedMessage, actualMessage)
     }
     
+    func test_createAccount_shouldThrowShortFullNameAlert() {
+        let sut = makeSUT()
+        sut.loadViewIfNeeded()
+        let mockNavigation = MockNavigationController(rootViewController: sut)
+        sut.nameTextField.text = "Any"
+        sut.signupButton.sendActions(for: .touchUpInside)
+        let alertController = mockNavigation.presentViewController as? UIAlertController
+        let expectedMessage = CreateAccountValidationError.tooShortName.localizedDescription
+        let actualMessage = alertController?.message
+        XCTAssertEqual(expectedMessage, actualMessage)
+    }
+    
     // Helpers:
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CreateAccountVC {
