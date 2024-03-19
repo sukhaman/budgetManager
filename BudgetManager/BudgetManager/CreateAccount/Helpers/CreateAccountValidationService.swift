@@ -27,6 +27,13 @@ struct CreateAccountValidationService {
             }
         return userEmail
     }
+    
+    func validateUserPassword(_ password: String?) throws -> String {
+        guard let password = password, !password.isEmpty else {
+            throw ValidationError.enterPassword
+        }
+        return password
+    }
 }
 
 
@@ -36,6 +43,7 @@ enum CreateAccountValidationError: LocalizedError {
     case tooShortName
     case enterEmail
     case invalidEmail
+    case enterPassword
     var errorDescription: String? {
         switch self {
         case .enterName:
@@ -46,6 +54,8 @@ enum CreateAccountValidationError: LocalizedError {
             return "Please enter email"
         case .invalidEmail:
             return "You have entered invalid email"
+        case .enterPassword:
+            return "Please enter password"
         }
     }
 }

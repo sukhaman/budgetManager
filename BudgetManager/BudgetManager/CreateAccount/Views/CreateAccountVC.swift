@@ -155,6 +155,7 @@ class CreateAccountVC: UIViewController {
         do {
             let name  = try CreateAccountValidationService().validateUsername(self.nameTextField.text)
             let email = try CreateAccountValidationService().validateUserEmail(self.emailTextField.text)
+            let password = try CreateAccountValidationService().validateUserPassword(self.passwordTextField.text)
             
         } catch {
             self.showAlert(error.localizedDescription)
