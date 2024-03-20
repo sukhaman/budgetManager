@@ -6,14 +6,12 @@ platform :ios do
    run_tests(
       scheme: "BudgetManager",
 testplan: "BudgetManager",
-      devices: ["iPhone 15 Pro"],
       clean: true,
 code_coverage: true
     )
  run_tests(
       scheme: "BudgetManager",
 testplan: "BudgetManagerUI",
-      devices: ["iPhone 15 Pro"],
       clean: true,
 code_coverage: true
     )
