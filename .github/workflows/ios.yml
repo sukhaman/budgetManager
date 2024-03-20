@@ -21,4 +21,4 @@ jobs:
           fastlane update_fastlane
 
       - name: Run Fastlane Tests
-        run: fastlane run_tests
+        run: bundle exec fastlane all_tests
