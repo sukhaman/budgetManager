@@ -21,4 +21,4 @@ jobs:
           fastlane update_fastlane
 
       - name: Run Fastlane Tests
-        run: fastlane all_tests  --non_interactive
+        run: fastlane all_tests
