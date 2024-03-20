@@ -16,14 +16,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Create iPhone 14 Pro with iOS 16.2 Simulator
-        run: |
-          xcrun simctl create "iPhone 14 Pro" com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro com.apple.CoreSimulator.SimRuntime.iOS-16-2
-          export IOS_SIMULATOR_UUID=$(xcrun simctl list devices | grep "iPhone 14 Pro" | awk '{print $3}')
-          echo "Found Simulator UUID: $IOS_SIMULATOR_UUID"
+      - name: Install Bundler
+        run: gem install bundler
 
-      - name: Run Tests on Specified Simulator
-        run: xcodebuild test -scheme BudgetManager -destination "platform=iOS Simulator,id=$IOS_SIMULATOR_UUID"
+      - name: Install Dependencies
+        run: bundle install
         
       - name: Run Fastlane Tests
         run: fastlane all_tests
