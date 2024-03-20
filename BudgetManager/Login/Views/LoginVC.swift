@@ -24,7 +24,7 @@ class LoginVC: UIViewController {
 
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
-        textField.backgroundColor = UIColor(resource: .textFieldBG)
+        textField.backgroundColor =  .textFieldBG
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -41,7 +41,7 @@ class LoginVC: UIViewController {
 
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
-        textField.backgroundColor = UIColor(resource: .textFieldBG)
+        textField.backgroundColor =  .textFieldBG
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -62,7 +62,7 @@ class LoginVC: UIViewController {
     let signInButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("\(LoginPresenter.signin)", for: .normal)
-        button.backgroundColor = UIColor(resource: .secondaryGreen)
+        button.backgroundColor = .secondaryGreen
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 22.5
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -94,7 +94,7 @@ class LoginVC: UIViewController {
     
     // Set up UI
     private func configureViewController() {
-        view.backgroundColor  = UIColor(resource: .primaryGreen)
+        view.backgroundColor  =  .primaryGreen
         view.addSubview(loginView)
         loginView.addSubview(emailTextField)
         loginView.addSubview(passwordTextField)

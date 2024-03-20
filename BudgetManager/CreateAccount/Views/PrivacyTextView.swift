@@ -31,7 +31,7 @@ class PrivacyTextView: UITextView {
 
         // Define attributes for the Privacy Policy text (different color)
         let privacyAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor(resource: .secondaryGreen),
+            .foregroundColor:  UIColor.secondaryGreen,
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .font: UIFont.systemFont(ofSize: 14)
         ]
@@ -44,7 +44,7 @@ class PrivacyTextView: UITextView {
 
         // Define attributes for the Terms of Service text (different color)
         let termsAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor(resource: .secondaryGreen),
+            .foregroundColor: UIColor.secondaryGreen,
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .font: UIFont.systemFont(ofSize: 14)
         ]
