@@ -23,7 +23,7 @@ jobs:
           echo "Found Simulator UUID: $IOS_SIMULATOR_UUID"
 
       - name: Run Tests on Specified Simulator
-        run: xcodebuild test -scheme YourScheme -destination "platform=iOS Simulator,id=$IOS_SIMULATOR_UUID"
+        run: xcodebuild test -scheme BudgetManager -destination "platform=iOS Simulator,id=$IOS_SIMULATOR_UUID"
         
       - name: Run Fastlane Tests
         run: fastlane all_tests
