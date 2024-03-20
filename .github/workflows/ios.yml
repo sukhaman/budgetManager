@@ -1,4 +1,4 @@
-name: Fastlane
+name: Run iOS Tests
 
 on:
   push:
@@ -8,22 +8,23 @@ on:
     branches: [ "main" ]
 
 jobs:
-  fastlane:
-    runs-on: macOS-latest
+  test:
+    name: Run Tests on iOS Simulator
+    runs-on: macos-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Install Fastlane
-        run: brew install fastlane
-        
       - name: List Available Simulators
-        run: xcrun simctl list devices
-      - name: Create Simulator
-        run: xcrun simctl create "My iPhone 14 Pro" com.apple.CoreSimulator.SimDeviceType.iPhone-14 Pro com.apple.CoreSimulator.SimRuntime.iOS-16-2
-      - name: Run Tests with Simulator
-        run: xcodebuild test -scheme BugetManager -destination "platform=iOS Simulator,id=<UUID>"
-        
+        run: |
+          simulators=$(xcrun simctl list devices)
+          echo "$simulators"
+          export IOS_SIMULATOR_UUID=$(echo "$simulators" | grep -oE 'iPhone.*?\((.*?)\)' | awk -F'[()]' '{print $2}' | head -n 1)
+          echo "Found Simulator UUID: $IOS_SIMULATOR_UUID"
+
+      - name: Run Tests on Specified Simulator
+        run: xcodebuild test -scheme BugetManager -destination "platform=iOS Simulator,id=$IOS_SIMULATOR_UUID"
+
       - name: Run Fastlane Tests
         run: fastlane all_tests
