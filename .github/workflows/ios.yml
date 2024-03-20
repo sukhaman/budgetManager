@@ -1,24 +1,33 @@
-name: iOS starter workflow
+name: Fastlane
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
     branches: [ "main" ]
 
 jobs:
-  build:
-    name: Build and Test default scheme using any available iPhone simulator
-    runs-on: macos-latest
+  fastlane:
+    runs-on: macOS-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-      - name: Install Fastlane
-        run: |
-          gem install fastlane -NV
-          fastlane update_fastlane
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+
+      - name: Install Bundler
+        run: gem install bundler
+        env:
+          GEM_HOME: ${{github.workspace}}/vendor/bundle
+          BUNDLE_PATH: ${{github.workspace}}/vendor/bundle
+
+      - name: Install Dependencies
+        run: bundle install --jobs 4 --retry 3
 
       - name: Run Fastlane Tests
         run: bundle exec fastlane all_tests
