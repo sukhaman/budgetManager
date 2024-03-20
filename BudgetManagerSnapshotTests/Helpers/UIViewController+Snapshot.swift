@@ -18,41 +18,79 @@ struct SnapshotConfiguration {
     let traitCollection: UITraitCollection
 
     static func iPhone(style: UIUserInterfaceStyle, contentSize: UIContentSizeCategory = .medium) -> SnapshotConfiguration {
-        return SnapshotConfiguration(
+        if #available(iOS 17.0, *) {
+            return SnapshotConfiguration(
+                size: CGSize(width: 390, height: 844),
+                safeAreaInsets: UIEdgeInsets(top: 47, left: 0, bottom: 34, right: 0),
+                layoutMargins: UIEdgeInsets(top: 55, left: 8, bottom: 42, right: 8),
+                traitCollection: UITraitCollection(mutations: { mutableTraits in
+                    mutableTraits.forceTouchCapability = .unavailable
+                    mutableTraits.layoutDirection = .leftToRight
+                    mutableTraits.preferredContentSizeCategory = contentSize
+                    mutableTraits.userInterfaceIdiom = .phone
+                    mutableTraits.horizontalSizeClass = .compact
+                    mutableTraits.verticalSizeClass = .regular
+                    mutableTraits.displayScale = 3
+                    mutableTraits.accessibilityContrast = .normal
+                    mutableTraits.displayGamut = .P3
+                    mutableTraits.userInterfaceStyle = style
+                }))
+        } else {
+          return SnapshotConfiguration(
             size: CGSize(width: 390, height: 844),
             safeAreaInsets: UIEdgeInsets(top: 47, left: 0, bottom: 34, right: 0),
             layoutMargins: UIEdgeInsets(top: 55, left: 8, bottom: 42, right: 8),
-            traitCollection: UITraitCollection(mutations: { mutableTraits in
-                mutableTraits.forceTouchCapability = .unavailable
-                mutableTraits.layoutDirection = .leftToRight
-                mutableTraits.preferredContentSizeCategory = contentSize
-                mutableTraits.userInterfaceIdiom = .phone
-                mutableTraits.horizontalSizeClass = .compact
-                mutableTraits.verticalSizeClass = .regular
-                mutableTraits.displayScale = 3
-                mutableTraits.accessibilityContrast = .normal
-                mutableTraits.displayGamut = .P3
-                mutableTraits.userInterfaceStyle = style
-            }))
+            traitCollection: UITraitCollection(traitsFrom: [
+                .init(forceTouchCapability: .unavailable),
+                .init(layoutDirection: .leftToRight),
+                .init(preferredContentSizeCategory: .medium),
+                .init(userInterfaceIdiom: .phone),
+                .init(horizontalSizeClass: .compact),
+                .init(verticalSizeClass: .regular),
+                .init(displayScale: 3),
+                .init(accessibilityContrast: .normal),
+                .init(displayGamut: .P3),
+                .init(userInterfaceStyle: style)
+            ]))
+        }
     }
     
     static func iPad(style: UIUserInterfaceStyle, contentSize: UIContentSizeCategory = .medium) -> SnapshotConfiguration {
-        return SnapshotConfiguration(
-            size: CGSize(width: 810, height: 1080),
-            safeAreaInsets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0),
-            layoutMargins: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0),
-            traitCollection: UITraitCollection(mutations: { mutableTraits in
-                mutableTraits.forceTouchCapability = .unavailable
-                mutableTraits.layoutDirection = .leftToRight
-                mutableTraits.preferredContentSizeCategory = contentSize
-                mutableTraits.userInterfaceIdiom = .phone
-                mutableTraits.horizontalSizeClass = .compact
-                mutableTraits.verticalSizeClass = .regular
-                mutableTraits.displayScale = 3
-                mutableTraits.accessibilityContrast = .normal
-                mutableTraits.displayGamut = .P3
-                mutableTraits.userInterfaceStyle = style
-            }))
+        if #available(iOS 17.0, *) {
+            return SnapshotConfiguration(
+                size: CGSize(width: 810, height: 1080),
+                safeAreaInsets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0),
+                layoutMargins: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0),
+                traitCollection: UITraitCollection(mutations: { mutableTraits in
+                    mutableTraits.forceTouchCapability = .unavailable
+                    mutableTraits.layoutDirection = .leftToRight
+                    mutableTraits.preferredContentSizeCategory = contentSize
+                    mutableTraits.userInterfaceIdiom = .phone
+                    mutableTraits.horizontalSizeClass = .compact
+                    mutableTraits.verticalSizeClass = .regular
+                    mutableTraits.displayScale = 3
+                    mutableTraits.accessibilityContrast = .normal
+                    mutableTraits.displayGamut = .P3
+                    mutableTraits.userInterfaceStyle = style
+                }))
+        } else {
+            return SnapshotConfiguration(
+                size: CGSize(width: 810, height: 1080),
+                safeAreaInsets: UIEdgeInsets(top: 47, left: 0, bottom: 34, right: 0),
+                layoutMargins: UIEdgeInsets(top: 55, left: 8, bottom: 42, right: 8),
+                traitCollection: UITraitCollection(traitsFrom: [
+                    .init(forceTouchCapability: .unavailable),
+                    .init(layoutDirection: .leftToRight),
+                    .init(preferredContentSizeCategory: .medium),
+                    .init(userInterfaceIdiom: .phone),
+                    .init(horizontalSizeClass: .compact),
+                    .init(verticalSizeClass: .regular),
+                    .init(displayScale: 3),
+                    .init(accessibilityContrast: .normal),
+                    .init(displayGamut: .P3),
+                    .init(userInterfaceStyle: style)
+                ]))
+        }
     }
 }
 
