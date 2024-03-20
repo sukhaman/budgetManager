@@ -32,7 +32,7 @@ class CreateAccountVC: UIViewController {
 
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
-        textField.backgroundColor = UIColor.textFieldBG
+        textField.backgroundColor = BudgetManagerColors.textFieldBGColor.color
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -47,7 +47,7 @@ class CreateAccountVC: UIViewController {
 
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
-        textField.backgroundColor = UIColor.textFieldBG
+        textField.backgroundColor = BudgetManagerColors.textFieldBGColor.color
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -64,7 +64,7 @@ class CreateAccountVC: UIViewController {
 
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
-        textField.backgroundColor = UIColor.textFieldBG
+        textField.backgroundColor = BudgetManagerColors.textFieldBGColor.color
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -72,7 +72,7 @@ class CreateAccountVC: UIViewController {
     let signupButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle(CreateAccountPresenter.signup, for: .normal)
-        button.backgroundColor =  UIColor.secondaryGreen
+        button.backgroundColor =  BudgetManagerColors.secondaryGreen.color
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 22.5
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -91,7 +91,7 @@ class CreateAccountVC: UIViewController {
     
     // Set up UI
     func configureViewController() {
-        view.backgroundColor  =  UIColor.primaryGreen
+        view.backgroundColor  =  BudgetManagerColors.primaryGreen.color
         view.addSubview(signupView)
         signupView.addSubview(titleLabel)
         signupView.addSubview(nameTextField)

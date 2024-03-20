@@ -40,6 +40,8 @@
 		A27A5C262BAB0C0000DADBEC /* CREATE_ACCOUNT_DARK_VIEW_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C212BAB0C0000DADBEC /* CREATE_ACCOUNT_DARK_VIEW_iPhone.png */; };
 		A27A5C272BAB0C0000DADBEC /* CREATE_ACCOUNT_LIGHT_VIEW_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C222BAB0C0000DADBEC /* CREATE_ACCOUNT_LIGHT_VIEW_iPad.png */; };
 		A27A5C282BAB0C0000DADBEC /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C232BAB0C0000DADBEC /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png */; };
+		A27A5C2B2BAB3EFE00DADBEC /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C2A2BAB3EFE00DADBEC /* swiftgen.yml */; };
+		A27A5C2D2BAB3FFF00DADBEC /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C2C2BAB3FFF00DADBEC /* XCAssets+Generated.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -116,6 +118,8 @@
 		A27A5C212BAB0C0000DADBEC /* CREATE_ACCOUNT_DARK_VIEW_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CREATE_ACCOUNT_DARK_VIEW_iPhone.png; sourceTree = "<group>"; };
 		A27A5C222BAB0C0000DADBEC /* CREATE_ACCOUNT_LIGHT_VIEW_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CREATE_ACCOUNT_LIGHT_VIEW_iPad.png; sourceTree = "<group>"; };
 		A27A5C232BAB0C0000DADBEC /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png; sourceTree = "<group>"; };
+		A27A5C2A2BAB3EFE00DADBEC /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		A27A5C2C2BAB3FFF00DADBEC /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 		A2672B862BA73350006A5634 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				A27A5C2C2BAB3FFF00DADBEC /* XCAssets+Generated.swift */,
+				A27A5C2A2BAB3EFE00DADBEC /* swiftgen.yml */,
 				A2672BB92BA76C30006A5634 /* Extensions */,
 				A2672BB62BA76B53006A5634 /* Views */,
 				A2672B562BA732DE006A5634 /* AppDelegate.swift */,
@@ -690,6 +696,7 @@
 				A2672B632BA732E0006A5634 /* Base in Resources */,
 				A2672B982BA73BF8006A5634 /* Login.xcstrings in Resources */,
 				A2672BD52BA79E81006A5634 /* CreateAccount.xcstrings in Resources */,
+				A27A5C2B2BAB3EFE00DADBEC /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +749,7 @@
 				A2672BC32BA7984A006A5634 /* PrivacyTextView.swift in Sources */,
 				A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */,
 				A2B5B3282BA91E2000C9D05D /* RegistrationUserRequest.swift in Sources */,
+				A27A5C2D2BAB3FFF00DADBEC /* XCAssets+Generated.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
 				A2B5B3052BA7D09F00C9D05D /* URL+Extensions.swift in Sources */,
 				A2672BD32BA79E2B006A5634 /* CreateAccountPresenter.swift in Sources */,
