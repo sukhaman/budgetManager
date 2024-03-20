@@ -15,16 +15,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0
-
-      - name: Install Bundler
-        run: gem install bundler
-        env:
-          GEM_HOME: ${{github.workspace}}/vendor/bundle
-          BUNDLE_PATH: ${{github.workspace}}/vendor/bundle
+      - name: Install Fastlane
+        run: brew install fastlane
 
       - name: Run Fastlane Tests
         run: fastlane all_tests
