@@ -27,4 +27,4 @@ jobs:
           BUNDLE_PATH: ${{github.workspace}}/vendor/bundle
 
       - name: Run Fastlane Tests
-        run: bundle exec fastlane all_tests
+        run: fastlane all_tests
