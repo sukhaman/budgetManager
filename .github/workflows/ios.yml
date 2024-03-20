@@ -20,6 +20,10 @@ jobs:
         
       - name: List Available Simulators
         run: xcrun simctl list devices
+      - name: Create Simulator
+        run: xcrun simctl create "My iPhone 14 Pro" com.apple.CoreSimulator.SimDeviceType.iPhone-14 Pro com.apple.CoreSimulator.SimRuntime.iOS-16-2
+      - name: Run Tests with Simulator
+        run: xcodebuild test -scheme BugetManager -destination "platform=iOS Simulator,id=<UUID>"
         
       - name: Run Fastlane Tests
         run: fastlane all_tests
