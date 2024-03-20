@@ -10,7 +10,7 @@ class LoginUnitTests: XCTestCase {
     func test_loginVC_hasTitle() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let expectedTitle = "Sign in"
+        let expectedTitle = localized("login_view_title")
         let actualTitle = sut.title
         XCTAssertEqual(expectedTitle, actualTitle)
     }
@@ -18,7 +18,7 @@ class LoginUnitTests: XCTestCase {
     func test_loginVC_emailTextFieldHasPlacholder() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let expectedTitle = "Email"
+        let expectedTitle = localized("email")
         let actualTitle = sut.emailTextField.placeholder
         XCTAssertEqual(expectedTitle, actualTitle)
     }
@@ -26,7 +26,7 @@ class LoginUnitTests: XCTestCase {
     func test_loginVC_passwordTextFieldHasPlacholder() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let expectedTitle = "Password"
+        let expectedTitle = localized("password")
         let actualTitle = sut.passwordTextField.placeholder
         XCTAssertEqual(expectedTitle, actualTitle)
     }
@@ -34,7 +34,7 @@ class LoginUnitTests: XCTestCase {
     func test_loginVC_forgotPasswordButtonHasTitle() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let expectedTitle = "Forgot Password?"
+        let expectedTitle = localized("forgot_password")
         let actualTitle = sut.forgotPasswordButton.titleLabel?.text
         XCTAssertEqual(expectedTitle, actualTitle)
     }
@@ -42,7 +42,7 @@ class LoginUnitTests: XCTestCase {
     func test_loginVC_signInButtonHasTitle() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let expectedTitle = "Sign in"
+        let expectedTitle = localized("sign_in")
         let actualTitle = sut.signInButton.titleLabel?.text
         XCTAssertEqual(expectedTitle, actualTitle)
     }
@@ -50,7 +50,7 @@ class LoginUnitTests: XCTestCase {
     func test_loginVC_signUpButtonHasTitle() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let expectedTitle = "Don't have an account? Click Here"
+        let expectedTitle = localized("create_account")
         let actualTitle = sut.signupButton.titleLabel?.text
         XCTAssertEqual(expectedTitle, actualTitle)
     }
@@ -72,5 +72,15 @@ class LoginUnitTests: XCTestCase {
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> LoginVC {
         let viewController = LoginUIComposer.composedLogin(viewModel: LoginViewModel(loginLoader: APILoginLoaderSpy()))
         return viewController
+    }
+    
+    private func localized(_ key: String, file: StaticString = #filePath, line: UInt = #line) -> String {
+        let table = "Login"
+        let bundle = Bundle(for: LoginPresenter.self)
+        let value = bundle.localizedString(forKey: key, value: nil, table: table)
+        if value == key {
+            XCTFail("Missing localized string for key: \(key) in table: \(table)", file: file, line: line)
+        }
+        return value
     }
 }
