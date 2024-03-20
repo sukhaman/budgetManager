@@ -26,8 +26,5 @@ jobs:
           GEM_HOME: ${{github.workspace}}/vendor/bundle
           BUNDLE_PATH: ${{github.workspace}}/vendor/bundle
 
-      - name: Install Dependencies
-        run: bundle install --jobs 4 --retry 3
-
       - name: Run Fastlane Tests
         run: bundle exec fastlane all_tests
