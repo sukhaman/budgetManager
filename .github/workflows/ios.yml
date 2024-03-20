@@ -18,7 +18,7 @@ jobs:
       - name: Install Fastlane
         run: |
           gem install fastlane -NV
-          fastlane update_fastlane --non_interactive
+          fastlane update_fastlane
 
       - name: Run Fastlane Tests
         run: fastlane all_tests  --non_interactive
