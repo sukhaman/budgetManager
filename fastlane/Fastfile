@@ -11,6 +11,7 @@ code_coverage: true
     )
  run_tests(
       scheme: "BudgetManager",
+device:"iPhone 14 Pro",
 testplan: "BudgetManagerUI",
       clean: true,
 code_coverage: true
