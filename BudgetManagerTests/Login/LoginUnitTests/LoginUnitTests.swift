@@ -59,9 +59,10 @@ class LoginUnitTests: XCTestCase {
        
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let mockNavigation = MockNavigationController(rootViewController: sut)
+        let navigation = UINavigationController()
+        sut.router = DefaultLoginRouter(navigationControler: navigation)
         sut.signupButton.sendActions(for: .touchUpInside)
-        let topVC = mockNavigation.pushedViewController as? CreateAccountVC
+        let topVC = navigation.topViewController as? CreateAccountVC
         topVC?.loadViewIfNeeded()
         XCTAssertNotNil(topVC)
     }
@@ -71,6 +72,7 @@ class LoginUnitTests: XCTestCase {
     
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> LoginVC {
         let viewController = LoginUIComposer.composedLogin(viewModel: LoginViewModel(loginLoader: APILoginLoaderSpy()))
+        trackForMemoryLeaks(viewController,file: file,line: line)
         return viewController
     }
     
@@ -84,3 +86,5 @@ class LoginUnitTests: XCTestCase {
         return value
     }
 }
+
+

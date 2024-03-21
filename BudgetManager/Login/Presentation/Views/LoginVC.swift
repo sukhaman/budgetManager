@@ -87,9 +87,11 @@ class LoginVC: UIViewController {
         }
     }
     private var cancellables: Set<AnyCancellable> = []
+    var router: LoginRouter?
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
+        
     }
     
     // Set up UI
@@ -148,9 +150,8 @@ class LoginVC: UIViewController {
     
     private func assignActionEvents() {
         
-        signupButton.addAction {
-            let destVC = CreateAccountVC()
-            self.show(destVC, sender: nil)
+        signupButton.addAction { [weak self] in
+            self?.router?.showScreen(loginScreen: .signup)
         }
         
         signInButton.addAction { [weak self] in

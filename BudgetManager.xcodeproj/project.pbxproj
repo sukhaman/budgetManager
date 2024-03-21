@@ -42,6 +42,7 @@
 		A27A5C302BAB465500DADBEC /* CreateAccount.strings in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C2E2BAB465500DADBEC /* CreateAccount.strings */; };
 		A27A5C342BAB470600DADBEC /* Login.strings in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C322BAB470600DADBEC /* Login.strings */; };
 		A27A5C4D2BABACC400DADBEC /* LoginLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C4C2BABACC400DADBEC /* LoginLocalizationTests.swift */; };
+		A27A5C6D2BABCA6300DADBEC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C6C2BABCA6300DADBEC /* LoginRouter.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -123,6 +124,7 @@
 		A27A5C352BAB48C300DADBEC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Login.strings; sourceTree = "<group>"; };
 		A27A5C4A2BABABF100DADBEC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A27A5C4C2BABACC400DADBEC /* LoginLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLocalizationTests.swift; sourceTree = "<group>"; };
+		A27A5C6C2BABCA6300DADBEC /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -242,14 +244,11 @@
 		A2672B8A2BA739B4006A5634 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				A2B5B3012BA7CF9D00C9D05D /* API */,
+				A27A5C6A2BABC95F00DADBEC /* Domains */,
 				A2B5B2FE2BA7CBD800C9D05D /* Model */,
-				A2B5B2FB2BA7CB6600C9D05D /* Loader */,
 				A2B5B2F82BA7CABE00C9D05D /* ViewModel */,
 				A2B5B2F52BA7BD0900C9D05D /* Helpers */,
-				A2672B9A2BA73C55006A5634 /* Composer */,
-				A2672B942BA73B92006A5634 /* Presenter */,
-				A2672B8B2BA739BD006A5634 /* Views */,
+				A27A5C6B2BABC97800DADBEC /* Presentation */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -437,6 +436,25 @@
 			path = "Login Presentation";
 			sourceTree = "<group>";
 		};
+		A27A5C6A2BABC95F00DADBEC /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				A2B5B3012BA7CF9D00C9D05D /* API */,
+				A2B5B2FB2BA7CB6600C9D05D /* Loader */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		A27A5C6B2BABC97800DADBEC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A2672B9A2BA73C55006A5634 /* Composer */,
+				A2672B942BA73B92006A5634 /* Presenter */,
+				A2672B8B2BA739BD006A5634 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		A2B5B2F22BA7BBBD00C9D05D /* IntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */,
+				A27A5C6C2BABCA6300DADBEC /* LoginRouter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -763,6 +782,7 @@
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
 				A2B5B3052BA7D09F00C9D05D /* URL+Extensions.swift in Sources */,
 				A2672BD32BA79E2B006A5634 /* CreateAccountPresenter.swift in Sources */,
+				A27A5C6D2BABCA6300DADBEC /* LoginRouter.swift in Sources */,
 				A2672BBF2BA76E48006A5634 /* CreateAccountVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
