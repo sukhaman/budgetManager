@@ -44,6 +44,7 @@
 		A27A5C4D2BABACC400DADBEC /* LoginLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C4C2BABACC400DADBEC /* LoginLocalizationTests.swift */; };
 		A27A5C6D2BABCA6300DADBEC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C6C2BABCA6300DADBEC /* LoginRouter.swift */; };
 		A27A5C702BACF97400DADBEC /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C6F2BACF97400DADBEC /* TabBarRouter.swift */; };
+		A27A5C752BAD14BE00DADBEC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C742BAD14BE00DADBEC /* SettingsVC.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -127,6 +128,7 @@
 		A27A5C4C2BABACC400DADBEC /* LoginLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLocalizationTests.swift; sourceTree = "<group>"; };
 		A27A5C6C2BABCA6300DADBEC /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		A27A5C6F2BACF97400DADBEC /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
+		A27A5C742BAD14BE00DADBEC /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		A2672B552BA732DE006A5634 /* BudgetManager */ = {
 			isa = PBXGroup;
 			children = (
+				A27A5C722BAD134E00DADBEC /* Settings */,
 				A27A5C6E2BACF96300DADBEC /* TabBarController */,
 				A2B5B30D2BA9079B00C9D05D /* Home */,
 				A2672BBC2BA76E3B006A5634 /* CreateAccount */,
@@ -461,9 +464,33 @@
 		A27A5C6E2BACF96300DADBEC /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				A27A5C6F2BACF97400DADBEC /* TabBarRouter.swift */,
+				A27A5C712BAD127C00DADBEC /* Router */,
 			);
 			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		A27A5C712BAD127C00DADBEC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A27A5C6F2BACF97400DADBEC /* TabBarRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A27A5C722BAD134E00DADBEC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A27A5C732BAD14B100DADBEC /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A27A5C732BAD14B100DADBEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A27A5C742BAD14BE00DADBEC /* SettingsVC.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A2B5B2F22BA7BBBD00C9D05D /* IntegrationTests */ = {
@@ -782,6 +809,7 @@
 				A2B5B3002BA7CC0800C9D05D /* User.swift in Sources */,
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
+				A27A5C752BAD14BE00DADBEC /* SettingsVC.swift in Sources */,
 				A2B5B3162BA90D6400C9D05D /* CreateAccountValidationService.swift in Sources */,
 				A2B5B31C2BA9195100C9D05D /* RegistrationLoader.swift in Sources */,
 				A2B5B3032BA7CFAC00C9D05D /* LoginEndpoint.swift in Sources */,
