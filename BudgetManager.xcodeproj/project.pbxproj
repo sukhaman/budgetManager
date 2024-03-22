@@ -43,6 +43,7 @@
 		A27A5C342BAB470600DADBEC /* Login.strings in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C322BAB470600DADBEC /* Login.strings */; };
 		A27A5C4D2BABACC400DADBEC /* LoginLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C4C2BABACC400DADBEC /* LoginLocalizationTests.swift */; };
 		A27A5C6D2BABCA6300DADBEC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C6C2BABCA6300DADBEC /* LoginRouter.swift */; };
+		A27A5C702BACF97400DADBEC /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C6F2BACF97400DADBEC /* TabBarRouter.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -125,6 +126,7 @@
 		A27A5C4A2BABABF100DADBEC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A27A5C4C2BABACC400DADBEC /* LoginLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLocalizationTests.swift; sourceTree = "<group>"; };
 		A27A5C6C2BABCA6300DADBEC /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		A27A5C6F2BACF97400DADBEC /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		A2672B552BA732DE006A5634 /* BudgetManager */ = {
 			isa = PBXGroup;
 			children = (
+				A27A5C6E2BACF96300DADBEC /* TabBarController */,
 				A2B5B30D2BA9079B00C9D05D /* Home */,
 				A2672BBC2BA76E3B006A5634 /* CreateAccount */,
 				A2672B8A2BA739B4006A5634 /* Login */,
@@ -453,6 +456,14 @@
 				A2672B8B2BA739BD006A5634 /* Views */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A27A5C6E2BACF96300DADBEC /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				A27A5C6F2BACF97400DADBEC /* TabBarRouter.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		A2B5B2F22BA7BBBD00C9D05D /* IntegrationTests */ = {
@@ -776,6 +787,7 @@
 				A2B5B3032BA7CFAC00C9D05D /* LoginEndpoint.swift in Sources */,
 				A2B5B3252BA91BA900C9D05D /* RegistrationUIComposer.swift in Sources */,
 				A2672BC32BA7984A006A5634 /* PrivacyTextView.swift in Sources */,
+				A27A5C702BACF97400DADBEC /* TabBarRouter.swift in Sources */,
 				A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */,
 				A2B5B3282BA91E2000C9D05D /* RegistrationUserRequest.swift in Sources */,
 				A27A5C2D2BAB3FFF00DADBEC /* XCAssets+Generated.swift in Sources */,

@@ -67,7 +67,9 @@ class LoginIntegrationTests: XCTestCase {
     func test_loginVC_loginRequestMade_shouldFinishWithSuccess() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let mockNavigation = MockNavigationController(rootViewController: sut)
+        let navigation = UINavigationController()
+        let router = DefaultLoginRouter(navigationControler: navigation)
+        sut.router = router
         sut.emailTextField.text = "good@email.com"
         sut.passwordTextField.text = "password"
         sut.signInButton.sendActions(for: .touchUpInside)
@@ -76,10 +78,10 @@ class LoginIntegrationTests: XCTestCase {
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 2.0)
-        let topVC = mockNavigation.pushedViewController as? HomeVC
-        topVC?.loadViewIfNeeded()
+        
+        let topVC = navigation.topViewController as? UITabBarController
         XCTAssertNotNil(topVC)
-        XCTAssertNotNil(topVC?.profile)
+
     }
     
     

@@ -9,6 +9,7 @@ class HomeVC: UIViewController {
     public private (set) var profile: User?
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
     }
     
     convenience init(profile: User? = nil) {

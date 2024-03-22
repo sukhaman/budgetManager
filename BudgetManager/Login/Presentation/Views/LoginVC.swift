@@ -91,6 +91,9 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
+        if let navigationController {
+            self.router = DefaultLoginRouter(navigationControler: navigationController)
+        }
         
     }
     
@@ -188,8 +191,8 @@ class LoginVC: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] user in
                 if let self, let user {
-                    let destVC = HomeVC(profile: user)
-                    self.show(destVC, sender: nil)
+                    self.router?.showScreen(loginScreen: .home(user))
+                    
                 }
             })
             .store(in: &cancellables)

@@ -9,6 +9,7 @@ enum LoginScreen {
     case login
     case forgotPassword
     case signup
+    case home(_ user: User?)
 }
 
 protocol LoginRouter {
@@ -33,6 +34,10 @@ class DefaultLoginRouter: LoginRouter {
         case .signup:
             let destVC = RegistrationUIComposer.composedRegistration(viewModel: RegistrationViewModel(loader: APIRegistrationLoader()))
             navigationControler?.pushViewController(destVC, animated: true)
+        case .home(let user):
+            let tabBarController = UITabBarController()
+            _ = TabBarRouter(tabBarController: tabBarController, user: user)
+            navigationControler?.pushViewController(tabBarController, animated: true)
         }
     }
     func initialViewController() -> UIViewController {
