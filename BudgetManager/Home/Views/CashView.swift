@@ -15,7 +15,7 @@ class CashView: UIView {
         return label
     }()
     
-   private let nameLabel: UILabel = {
+   private let amountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
        label.text = "$ 12,000"
@@ -44,7 +44,7 @@ class CashView: UIView {
        layoutSubviews()
        layer.cornerRadius = 10
         addSubview(titleLabel)
-        addSubview(nameLabel)
+        addSubview(amountLabel)
         
         
         NSLayoutConstraint.activate([
@@ -53,10 +53,10 @@ class CashView: UIView {
             titleLabel.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -10),
             titleLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 10),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            nameLabel.heightAnchor.constraint(equalToConstant: 20)
+            amountLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            amountLabel.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 10),
+            amountLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            amountLabel.heightAnchor.constraint(equalToConstant: 20)
             
         ])
     

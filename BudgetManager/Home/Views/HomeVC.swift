@@ -7,6 +7,16 @@ import UIKit
 class HomeVC: UIViewController {
     
     public private (set) var profile: User?
+    let scrollView: UIScrollView = {
+     let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    let contentView: UIView = {
+     let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     let headerView: HomeHeaderView = {
         let view = HomeHeaderView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -29,6 +39,11 @@ class HomeVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    let loanView: LoanView = {
+        let view = LoanView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = BudgetManagerColors.primaryGreen.color
@@ -42,12 +57,25 @@ class HomeVC: UIViewController {
     }
     
     private func configureViewController() {
-       self.view.addSubview(headerView)
-        view.addSubview(cashView)
-        view.addSubview(creditView)
-        view.addSubview(investmentView)
+        self.view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(headerView)
+        contentView.addSubview(cashView)
+        contentView.addSubview(creditView)
+        contentView.addSubview(investmentView)
+        contentView.addSubview(loanView)
         
         NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            
         // Header view constraints
             headerView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
@@ -68,6 +96,14 @@ class HomeVC: UIViewController {
             investmentView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
             investmentView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             investmentView.heightAnchor.constraint(equalToConstant: 50),
+            
+            loanView.topAnchor.constraint(equalTo: self.investmentView.bottomAnchor, constant: 20),
+            loanView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            loanView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            loanView.heightAnchor.constraint(equalToConstant: 50),
+            
+            contentView.bottomAnchor.constraint(equalTo: loanView.bottomAnchor, constant: 20),
+            scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }

@@ -4,10 +4,10 @@
 
 import UIKit
 
-class InvestmentView: UIView {
+class LoanView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Investment"
+        label.text = "Load"
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.textAlignment = .left
@@ -18,7 +18,7 @@ class InvestmentView: UIView {
    private let amountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-       label.text = "$ 32,000"
+       label.text = "$ 532,000"
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
