@@ -27,14 +27,19 @@ class TabBarRouter: TabBarRouterProtocol {
     private func setupViewControllers() {
         
         setTabBarAppearance()
+        // MARK: Home Controller
         let homeViewController = HomeVC(profile: user)
         homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "list.bullet.clipboard"), tag: 0)
         
+        // MARK: BUdget Controller
+        let budgetController = BudgetOverviewVC()
+        budgetController.tabBarItem = UITabBarItem(title: "Report", image: UIImage(systemName: "banknote"), tag: 1)
         
+        // MARK: Settings Controller
         let settingViewController = SettingsVC()
-        settingViewController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"),tag: 1)
+        settingViewController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"),tag: 2)
         
-        tabBarController?.viewControllers = [homeViewController,settingViewController]
+        tabBarController?.viewControllers = [homeViewController,budgetController,settingViewController]
         
     }
     
