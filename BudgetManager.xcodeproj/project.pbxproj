@@ -45,6 +45,8 @@
 		A27A5C6D2BABCA6300DADBEC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C6C2BABCA6300DADBEC /* LoginRouter.swift */; };
 		A27A5C702BACF97400DADBEC /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C6F2BACF97400DADBEC /* TabBarRouter.swift */; };
 		A27A5C752BAD14BE00DADBEC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C742BAD14BE00DADBEC /* SettingsVC.swift */; };
+		A27A5C792BAE510600DADBEC /* HomeSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C782BAE510600DADBEC /* HomeSnapshotTests.swift */; };
+		A27A5C7B2BAE520600DADBEC /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C7A2BAE520600DADBEC /* HomeHeaderView.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -129,6 +131,8 @@
 		A27A5C6C2BABCA6300DADBEC /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		A27A5C6F2BACF97400DADBEC /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		A27A5C742BAD14BE00DADBEC /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		A27A5C782BAE510600DADBEC /* HomeSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSnapshotTests.swift; sourceTree = "<group>"; };
+		A27A5C7A2BAE520600DADBEC /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -404,6 +408,7 @@
 		A27A5C0B2BA92A8E00DADBEC /* BudgetManagerSnapshotTests */ = {
 			isa = PBXGroup;
 			children = (
+				A27A5C762BAE50E400DADBEC /* Home */,
 				A2B5B3402BA9272800C9D05D /* Helpers */,
 				A2B5B33B2BA926D200C9D05D /* Login */,
 				A2B5B33A2BA926CA00C9D05D /* CreateAccount */,
@@ -493,6 +498,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A27A5C762BAE50E400DADBEC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A27A5C772BAE50F300DADBEC /* SnapshotTests */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A27A5C772BAE50F300DADBEC /* SnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				A27A5C782BAE510600DADBEC /* HomeSnapshotTests.swift */,
+			);
+			path = SnapshotTests;
+			sourceTree = "<group>";
+		};
 		A2B5B2F22BA7BBBD00C9D05D /* IntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -562,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				A2B5B30F2BA907A900C9D05D /* HomeVC.swift */,
+				A27A5C7A2BAE520600DADBEC /* HomeHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -816,6 +838,7 @@
 				A2B5B3252BA91BA900C9D05D /* RegistrationUIComposer.swift in Sources */,
 				A2672BC32BA7984A006A5634 /* PrivacyTextView.swift in Sources */,
 				A27A5C702BACF97400DADBEC /* TabBarRouter.swift in Sources */,
+				A27A5C7B2BAE520600DADBEC /* HomeHeaderView.swift in Sources */,
 				A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */,
 				A2B5B3282BA91E2000C9D05D /* RegistrationUserRequest.swift in Sources */,
 				A27A5C2D2BAB3FFF00DADBEC /* XCAssets+Generated.swift in Sources */,
@@ -854,6 +877,7 @@
 				A27A5C132BA92AD400DADBEC /* CreateSnapshotTests.swift in Sources */,
 				A27A5C162BA92AE800DADBEC /* UIViewController+Snapshot.swift in Sources */,
 				A27A5C142BA92ADC00DADBEC /* LoginSnapshotTests.swift in Sources */,
+				A27A5C792BAE510600DADBEC /* HomeSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

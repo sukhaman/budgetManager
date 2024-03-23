@@ -158,8 +158,6 @@ class LoginVC: UIViewController {
         }
         
         signInButton.addAction { [weak self] in
-            self?.router?.showScreen(loginScreen: .home(User(email: "sasda@test.com", username: "Usernam")))
-            return
             do {
                 let email  = try LoginValidationService().validateUserEmail(self?.emailTextField.text)
                 let password  = try LoginValidationService().validateUserPassword(self?.passwordTextField.text)

@@ -41,7 +41,7 @@ class TabBarRouter: TabBarRouterProtocol {
     private func setTabBarAppearance() {
         let appearance = UITabBarAppearance()
         appearance.configureWithDefaultBackground()
-        appearance.backgroundColor = BudgetManagerColors.primaryGreen.color
+        appearance.backgroundColor = BudgetManagerColors.secondaryGreen.color
         
         appearance.compactInlineLayoutAppearance.normal.iconColor = .lightText
         appearance.compactInlineLayoutAppearance.normal.titleTextAttributes = [.foregroundColor : UIColor.lightText]
