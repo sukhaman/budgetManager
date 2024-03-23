@@ -48,6 +48,8 @@
 		A27A5C792BAE510600DADBEC /* HomeSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C782BAE510600DADBEC /* HomeSnapshotTests.swift */; };
 		A27A5C7B2BAE520600DADBEC /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C7A2BAE520600DADBEC /* HomeHeaderView.swift */; };
 		A27A5C7D2BAE688400DADBEC /* CashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C7C2BAE688400DADBEC /* CashView.swift */; };
+		A27A5C7F2BAE6F0200DADBEC /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C7E2BAE6F0200DADBEC /* CreditView.swift */; };
+		A27A5C812BAE747500DADBEC /* InvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C802BAE747500DADBEC /* InvestmentView.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -135,6 +137,8 @@
 		A27A5C782BAE510600DADBEC /* HomeSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSnapshotTests.swift; sourceTree = "<group>"; };
 		A27A5C7A2BAE520600DADBEC /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		A27A5C7C2BAE688400DADBEC /* CashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashView.swift; sourceTree = "<group>"; };
+		A27A5C7E2BAE6F0200DADBEC /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
+		A27A5C802BAE747500DADBEC /* InvestmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentView.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -587,6 +591,8 @@
 				A2B5B30F2BA907A900C9D05D /* HomeVC.swift */,
 				A27A5C7A2BAE520600DADBEC /* HomeHeaderView.swift */,
 				A27A5C7C2BAE688400DADBEC /* CashView.swift */,
+				A27A5C7E2BAE6F0200DADBEC /* CreditView.swift */,
+				A27A5C802BAE747500DADBEC /* InvestmentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -839,10 +845,12 @@
 				A2B5B31C2BA9195100C9D05D /* RegistrationLoader.swift in Sources */,
 				A2B5B3032BA7CFAC00C9D05D /* LoginEndpoint.swift in Sources */,
 				A2B5B3252BA91BA900C9D05D /* RegistrationUIComposer.swift in Sources */,
+				A27A5C7F2BAE6F0200DADBEC /* CreditView.swift in Sources */,
 				A2672BC32BA7984A006A5634 /* PrivacyTextView.swift in Sources */,
 				A27A5C702BACF97400DADBEC /* TabBarRouter.swift in Sources */,
 				A27A5C7B2BAE520600DADBEC /* HomeHeaderView.swift in Sources */,
 				A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */,
+				A27A5C812BAE747500DADBEC /* InvestmentView.swift in Sources */,
 				A2B5B3282BA91E2000C9D05D /* RegistrationUserRequest.swift in Sources */,
 				A27A5C2D2BAB3FFF00DADBEC /* XCAssets+Generated.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
