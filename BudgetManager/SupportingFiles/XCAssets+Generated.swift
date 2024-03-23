@@ -23,6 +23,7 @@ internal typealias AssetColorTypeAlias = ColorAsset.Color
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum BudgetManagerColors {
   internal static let primaryGreen = ColorAsset(name: "primaryGreen")
+  internal static let primaryRed = ColorAsset(name: "primaryRed")
   internal static let secondaryGreen = ColorAsset(name: "secondaryGreen")
   internal static let tabBarBGColor = ColorAsset(name: "tabBarBGColor")
   internal static let textFieldBGColor = ColorAsset(name: "textFieldBGColor")

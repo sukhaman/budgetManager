@@ -51,6 +51,7 @@
 		A27A5C7F2BAE6F0200DADBEC /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C7E2BAE6F0200DADBEC /* CreditView.swift */; };
 		A27A5C812BAE747500DADBEC /* InvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C802BAE747500DADBEC /* InvestmentView.swift */; };
 		A27A5C832BAE751800DADBEC /* LoanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C822BAE751800DADBEC /* LoanView.swift */; };
+		A27A5C852BAF111400DADBEC /* MonthlyIncomeExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C842BAF111400DADBEC /* MonthlyIncomeExpenseView.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -141,6 +142,7 @@
 		A27A5C7E2BAE6F0200DADBEC /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
 		A27A5C802BAE747500DADBEC /* InvestmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentView.swift; sourceTree = "<group>"; };
 		A27A5C822BAE751800DADBEC /* LoanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanView.swift; sourceTree = "<group>"; };
+		A27A5C842BAF111400DADBEC /* MonthlyIncomeExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyIncomeExpenseView.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 				A27A5C7E2BAE6F0200DADBEC /* CreditView.swift */,
 				A27A5C802BAE747500DADBEC /* InvestmentView.swift */,
 				A27A5C822BAE751800DADBEC /* LoanView.swift */,
+				A27A5C842BAF111400DADBEC /* MonthlyIncomeExpenseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 				A2B5B3162BA90D6400C9D05D /* CreateAccountValidationService.swift in Sources */,
 				A2B5B31C2BA9195100C9D05D /* RegistrationLoader.swift in Sources */,
 				A2B5B3032BA7CFAC00C9D05D /* LoginEndpoint.swift in Sources */,
+				A27A5C852BAF111400DADBEC /* MonthlyIncomeExpenseView.swift in Sources */,
 				A2B5B3252BA91BA900C9D05D /* RegistrationUIComposer.swift in Sources */,
 				A27A5C7F2BAE6F0200DADBEC /* CreditView.swift in Sources */,
 				A2672BC32BA7984A006A5634 /* PrivacyTextView.swift in Sources */,

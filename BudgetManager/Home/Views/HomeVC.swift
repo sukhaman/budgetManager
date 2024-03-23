@@ -44,6 +44,11 @@ class HomeVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    let monthlyIncomeExponseView: MonthlyIncomeExpenseView = {
+        let view = MonthlyIncomeExpenseView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = BudgetManagerColors.primaryGreen.color
@@ -64,6 +69,7 @@ class HomeVC: UIViewController {
         contentView.addSubview(creditView)
         contentView.addSubview(investmentView)
         contentView.addSubview(loanView)
+        contentView.addSubview(monthlyIncomeExponseView)
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -102,7 +108,12 @@ class HomeVC: UIViewController {
             loanView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             loanView.heightAnchor.constraint(equalToConstant: 50),
             
-            contentView.bottomAnchor.constraint(equalTo: loanView.bottomAnchor, constant: 20),
+            monthlyIncomeExponseView.topAnchor.constraint(equalTo: self.loanView.bottomAnchor, constant: 40),
+            monthlyIncomeExponseView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            monthlyIncomeExponseView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            monthlyIncomeExponseView.heightAnchor.constraint(equalToConstant: 80),
+            
+            contentView.bottomAnchor.constraint(equalTo: monthlyIncomeExponseView.bottomAnchor, constant: 20),
             scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
