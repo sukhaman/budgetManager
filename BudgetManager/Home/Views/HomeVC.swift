@@ -12,6 +12,12 @@ class HomeVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    let cashView: CashView = {
+        let view = CashView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = BudgetManagerColors.primaryGreen.color
@@ -26,6 +32,7 @@ class HomeVC: UIViewController {
     
     private func configureViewController() {
        self.view.addSubview(headerView)
+        view.addSubview(cashView)
         
         NSLayoutConstraint.activate([
         // Header view constraints
@@ -33,6 +40,11 @@ class HomeVC: UIViewController {
             headerView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 80),
+            
+            cashView.topAnchor.constraint(equalTo: self.headerView.bottomAnchor),
+            cashView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            cashView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            cashView.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
 }

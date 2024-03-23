@@ -47,6 +47,7 @@
 		A27A5C752BAD14BE00DADBEC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C742BAD14BE00DADBEC /* SettingsVC.swift */; };
 		A27A5C792BAE510600DADBEC /* HomeSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C782BAE510600DADBEC /* HomeSnapshotTests.swift */; };
 		A27A5C7B2BAE520600DADBEC /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C7A2BAE520600DADBEC /* HomeHeaderView.swift */; };
+		A27A5C7D2BAE688400DADBEC /* CashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C7C2BAE688400DADBEC /* CashView.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -133,6 +134,7 @@
 		A27A5C742BAD14BE00DADBEC /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		A27A5C782BAE510600DADBEC /* HomeSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSnapshotTests.swift; sourceTree = "<group>"; };
 		A27A5C7A2BAE520600DADBEC /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		A27A5C7C2BAE688400DADBEC /* CashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashView.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 			children = (
 				A2B5B30F2BA907A900C9D05D /* HomeVC.swift */,
 				A27A5C7A2BAE520600DADBEC /* HomeHeaderView.swift */,
+				A27A5C7C2BAE688400DADBEC /* CashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -843,6 +846,7 @@
 				A2B5B3282BA91E2000C9D05D /* RegistrationUserRequest.swift in Sources */,
 				A27A5C2D2BAB3FFF00DADBEC /* XCAssets+Generated.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
+				A27A5C7D2BAE688400DADBEC /* CashView.swift in Sources */,
 				A2B5B3052BA7D09F00C9D05D /* URL+Extensions.swift in Sources */,
 				A2672BD32BA79E2B006A5634 /* CreateAccountPresenter.swift in Sources */,
 				A27A5C6D2BABCA6300DADBEC /* LoginRouter.swift in Sources */,
