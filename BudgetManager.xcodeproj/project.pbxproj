@@ -55,6 +55,11 @@
 		A27A5C892BAF3E8F00DADBEC /* BudgetOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C882BAF3E8F00DADBEC /* BudgetOverviewVC.swift */; };
 		A27A5C8D2BAF773100DADBEC /* BudgetOverviewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C8C2BAF773100DADBEC /* BudgetOverviewSnapshotTests.swift */; };
 		A27A5C8F2BAF9BFB00DADBEC /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C8E2BAF9BFB00DADBEC /* CircleView.swift */; };
+		A27A5C932BAF9CB900DADBEC /* BUDGET_OVERVIEW_iPAD.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C902BAF9CB900DADBEC /* BUDGET_OVERVIEW_iPAD.png */; };
+		A27A5C942BAF9CB900DADBEC /* BUDGET_OVERVIEW_IPHONE.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C912BAF9CB900DADBEC /* BUDGET_OVERVIEW_IPHONE.png */; };
+		A27A5C962BAF9D1C00DADBEC /* BudgetTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C952BAF9D1B00DADBEC /* BudgetTypeCollectionView.swift */; };
+		A27A5C982BAFBA9C00DADBEC /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C972BAFBA9C00DADBEC /* UIImage+Extensions.swift */; };
+		A27A5C9A2BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C992BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -149,6 +154,11 @@
 		A27A5C882BAF3E8F00DADBEC /* BudgetOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetOverviewVC.swift; sourceTree = "<group>"; };
 		A27A5C8C2BAF773100DADBEC /* BudgetOverviewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetOverviewSnapshotTests.swift; sourceTree = "<group>"; };
 		A27A5C8E2BAF9BFB00DADBEC /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		A27A5C902BAF9CB900DADBEC /* BUDGET_OVERVIEW_iPAD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BUDGET_OVERVIEW_iPAD.png; sourceTree = "<group>"; };
+		A27A5C912BAF9CB900DADBEC /* BUDGET_OVERVIEW_IPHONE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BUDGET_OVERVIEW_IPHONE.png; sourceTree = "<group>"; };
+		A27A5C952BAF9D1B00DADBEC /* BudgetTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTypeCollectionView.swift; sourceTree = "<group>"; };
+		A27A5C972BAFBA9C00DADBEC /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		A27A5C992BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTypeInfoCell.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -358,6 +368,7 @@
 				A2672BBA2BA76C3E006A5634 /* UIControl+Extensions.swift */,
 				A2B5B3042BA7D09F00C9D05D /* URL+Extensions.swift */,
 				A2B5B3062BA7D0F800C9D05D /* RawRepresentable+Extensions.swift */,
+				A27A5C972BAFBA9C00DADBEC /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -545,6 +556,8 @@
 			children = (
 				A27A5C882BAF3E8F00DADBEC /* BudgetOverviewVC.swift */,
 				A27A5C8E2BAF9BFB00DADBEC /* CircleView.swift */,
+				A27A5C952BAF9D1B00DADBEC /* BudgetTypeCollectionView.swift */,
+				A27A5C992BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -560,9 +573,19 @@
 		A27A5C8B2BAF770E00DADBEC /* SnapshotTests */ = {
 			isa = PBXGroup;
 			children = (
+				A27A5C922BAF9CB900DADBEC /* snapshots */,
 				A27A5C8C2BAF773100DADBEC /* BudgetOverviewSnapshotTests.swift */,
 			);
 			path = SnapshotTests;
+			sourceTree = "<group>";
+		};
+		A27A5C922BAF9CB900DADBEC /* snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				A27A5C902BAF9CB900DADBEC /* BUDGET_OVERVIEW_iPAD.png */,
+				A27A5C912BAF9CB900DADBEC /* BUDGET_OVERVIEW_IPHONE.png */,
+			);
+			path = snapshots;
 			sourceTree = "<group>";
 		};
 		A2B5B2F22BA7BBBD00C9D05D /* IntegrationTests */ = {
@@ -862,8 +885,10 @@
 				A27A5C1E2BAB0BF900DADBEC /* LOGIN_LIGHT_VIEW_iPad.png in Resources */,
 				A27A5C1F2BAB0BF900DADBEC /* LOGIN_LIGHT_VIEW_iPhone.png in Resources */,
 				A27A5C1D2BAB0BF900DADBEC /* LOGIN_DARK_VIEW_iPhone.png in Resources */,
+				A27A5C942BAF9CB900DADBEC /* BUDGET_OVERVIEW_IPHONE.png in Resources */,
 				A27A5C262BAB0C0000DADBEC /* CREATE_ACCOUNT_DARK_VIEW_iPhone.png in Resources */,
 				A27A5C272BAB0C0000DADBEC /* CREATE_ACCOUNT_LIGHT_VIEW_iPad.png in Resources */,
+				A27A5C932BAF9CB900DADBEC /* BUDGET_OVERVIEW_iPAD.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,6 +902,7 @@
 				A27A5C8F2BAF9BFB00DADBEC /* CircleView.swift in Sources */,
 				A2672B962BA73B9D006A5634 /* LoginPresenter.swift in Sources */,
 				A2B5B2FD2BA7CB7000C9D05D /* LoginLoader.swift in Sources */,
+				A27A5C962BAF9D1C00DADBEC /* BudgetTypeCollectionView.swift in Sources */,
 				A2672BBB2BA76C3E006A5634 /* UIControl+Extensions.swift in Sources */,
 				A27A5C892BAF3E8F00DADBEC /* BudgetOverviewVC.swift in Sources */,
 				A2B5B31F2BA91A4400C9D05D /* RegistrationEndpoint.swift in Sources */,
@@ -886,6 +912,7 @@
 				A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */,
 				A2B5B3072BA7D0F800C9D05D /* RawRepresentable+Extensions.swift in Sources */,
 				A2672BB82BA76B64006A5634 /* PasswordTextField.swift in Sources */,
+				A27A5C9A2BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift in Sources */,
 				A2B5B3002BA7CC0800C9D05D /* User.swift in Sources */,
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
 				A27A5C832BAE751800DADBEC /* LoanView.swift in Sources */,
@@ -908,6 +935,7 @@
 				A27A5C7D2BAE688400DADBEC /* CashView.swift in Sources */,
 				A2B5B3052BA7D09F00C9D05D /* URL+Extensions.swift in Sources */,
 				A2672BD32BA79E2B006A5634 /* CreateAccountPresenter.swift in Sources */,
+				A27A5C982BAFBA9C00DADBEC /* UIImage+Extensions.swift in Sources */,
 				A27A5C6D2BABCA6300DADBEC /* LoginRouter.swift in Sources */,
 				A2672BBF2BA76E48006A5634 /* CreateAccountVC.swift in Sources */,
 			);

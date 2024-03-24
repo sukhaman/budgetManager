@@ -1,7 +1,4 @@
 //
-//  BudgetOverviewSnapshotTests.swift
-//  BudgetManagerSnapshotTests
-//
 //  Created by Sukhaman Singh on 3/23/24.
 //
 
