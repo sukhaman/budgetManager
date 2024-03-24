@@ -65,6 +65,7 @@
 		A27A5CA82BB0AFD800DADBEC /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5CA72BB0AFD800DADBEC /* ProgressBarView.swift */; };
 		A27A5CAC2BB0B06B00DADBEC /* SPENDING_OVERVIEW_iPAD.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A5CA92BB0B06A00DADBEC /* SPENDING_OVERVIEW_iPAD.png */; };
 		A27A5CAD2BB0B06B00DADBEC /* SPENDING_OVERVIEW_IPHONE.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A5CAA2BB0B06A00DADBEC /* SPENDING_OVERVIEW_IPHONE.png */; };
+		A27A5CAF2BB0B1D400DADBEC /* BudgetTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5CAE2BB0B1D400DADBEC /* BudgetTypeView.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -169,6 +170,7 @@
 		A27A5CA72BB0AFD800DADBEC /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		A27A5CA92BB0B06A00DADBEC /* SPENDING_OVERVIEW_iPAD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SPENDING_OVERVIEW_iPAD.png; sourceTree = "<group>"; };
 		A27A5CAA2BB0B06A00DADBEC /* SPENDING_OVERVIEW_IPHONE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SPENDING_OVERVIEW_IPHONE.png; sourceTree = "<group>"; };
+		A27A5CAE2BB0B1D400DADBEC /* BudgetTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTypeView.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -605,6 +607,7 @@
 			children = (
 				A27A5C9C2BB0687F00DADBEC /* SpendingOverviewVC.swift */,
 				A27A5CA72BB0AFD800DADBEC /* ProgressBarView.swift */,
+				A27A5CAE2BB0B1D400DADBEC /* BudgetTypeView.swift */,
 			);
 			path = MonthlySpending;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */,
 				A2B5B3192BA9192300C9D05D /* RegistrationViewModel.swift in Sources */,
 				A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */,
+				A27A5CAF2BB0B1D400DADBEC /* BudgetTypeView.swift in Sources */,
 				A2B5B3072BA7D0F800C9D05D /* RawRepresentable+Extensions.swift in Sources */,
 				A2672BB82BA76B64006A5634 /* PasswordTextField.swift in Sources */,
 				A27A5C9A2BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift in Sources */,

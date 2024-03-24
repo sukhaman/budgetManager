@@ -7,8 +7,8 @@ import UIKit
 struct BudgetType: Equatable {
     var id: Int
     var type: String
-    var limitAmount: Double
-    var spentAmount: Double
+    var limitAmount: Int
+    var spentAmount: Int
     var color: UIColor
     
 }

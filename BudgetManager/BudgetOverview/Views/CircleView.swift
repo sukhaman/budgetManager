@@ -30,12 +30,12 @@ class CircleView: UIView {
         var startAngle: CGFloat = -.pi / 2
         let circumference = 2 * CGFloat.pi * radius
         // Calculate total points
-        totalPoints = budgetLimit.reduce(0) { $0 + $1.limitAmount }
+        totalPoints = CGFloat(budgetLimit.reduce(0) { $0 + $1.limitAmount })
         // Draw arcs for each budget
         let arrangedList = budgetLimit.sorted{$0.limitAmount > $1.limitAmount }
         for  data in arrangedList {
             // Calculate the desired length for the budget's segment
-            let desiredLength = (data.limitAmount / totalPoints) * circumference
+            let desiredLength = (CGFloat(data.limitAmount) / totalPoints) * circumference
         // Calculate the end angle based on the desired length
             let endAngle = startAngle + (desiredLength / radius)
             // Set stroke color
