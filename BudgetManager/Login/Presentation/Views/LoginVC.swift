@@ -158,8 +158,6 @@ class LoginVC: UIViewController {
         }
         
         signInButton.addAction { [weak self] in
-            self?.router?.showScreen(loginScreen: .home(User(email: "sasda@test.com", username: "Username")))
-            return
             do {
                 let email  = try LoginValidationService().validateUserEmail(self?.emailTextField.text)
                 let password  = try LoginValidationService().validateUserPassword(self?.passwordTextField.text)
@@ -193,8 +191,7 @@ class LoginVC: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] user in
                 if let self, let user {
-                    let destVC = HomeVC(profile: user)
-                    self.show(destVC, sender: nil)
+                    self.router?.showScreen(loginScreen: .home(user))
                 }
             })
             .store(in: &cancellables)

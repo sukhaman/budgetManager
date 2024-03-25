@@ -32,7 +32,7 @@ class TabBarRouter: TabBarRouterProtocol {
         homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "list.bullet.clipboard"), tag: 0)
         
         // MARK: BUdget Controller
-        let budgetController = BudgetOverviewVC()
+        let budgetController = SpendingOverviewVC()
         budgetController.tabBarItem = UITabBarItem(title: "Report", image: UIImage(systemName: "banknote"), tag: 1)
         
         // MARK: Settings Controller

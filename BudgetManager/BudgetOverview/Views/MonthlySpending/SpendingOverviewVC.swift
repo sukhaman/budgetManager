@@ -5,38 +5,17 @@
 import UIKit
 
 class SpendingOverviewVC: UIViewController {
-    var labelMonthName: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .bold)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    
+    var budgetTypeTableView: UITableView = {
+       let tableView = UITableView()
+        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
-    var labelMoneyLeft: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    var progressBar: ProgressBarView = {
-        let view = ProgressBarView()
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    var labelMoneySpent: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    var budgetTypeView: BudgetTypeView = {
-        let view = BudgetTypeView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    var budgetTypes: [BudgetType] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -45,50 +24,85 @@ class SpendingOverviewVC: UIViewController {
     
     private func configureViewController() {
         view.backgroundColor = BudgetManagerColors.primaryGreen.color
-        view.addSubview(progressBar)
-        view.addSubview(labelMonthName)
-        view.addSubview(labelMoneyLeft)
-        view.addSubview(labelMoneySpent)
-        progressBar.spentAmount = 22 // Example: Amount Spent
-        progressBar.budgetAmount = 80 // Example: Budget Amount
-        progressBar.totalIncome = 100 // Example: Total Income
         
-        view.addSubview(budgetTypeView)
+       
+        self.budgetTypeTableView.register(BudgetTypeViewCell.self, forCellReuseIdentifier: BudgetTypeViewCell.reuseID)
+        self.budgetTypeTableView.register(MonthlyBudgetInfoCell.self, forCellReuseIdentifier: MonthlyBudgetInfoCell.reuseID)
+        view.addSubview(budgetTypeTableView)
+        budgetTypeTableView.delegate = self
+        budgetTypeTableView.dataSource = self
         NSLayoutConstraint.activate([
-            
-            labelMonthName.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            labelMonthName.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            labelMonthName.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            labelMonthName.heightAnchor.constraint(equalToConstant: 30),
-            
-            labelMoneyLeft.topAnchor.constraint(equalTo: self.labelMonthName.bottomAnchor, constant: 10),
-            labelMoneyLeft.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            labelMoneyLeft.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            labelMoneyLeft.heightAnchor.constraint(equalToConstant: 25),
-            
-            progressBar.topAnchor.constraint(equalTo: self.labelMoneyLeft.bottomAnchor, constant: 10),
-            progressBar.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            progressBar.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            progressBar.heightAnchor.constraint(equalToConstant: 10),
-            
-            
-            labelMoneySpent.topAnchor.constraint(equalTo: self.progressBar.bottomAnchor, constant: 5),
-            labelMoneySpent.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            labelMoneySpent.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            labelMoneySpent.heightAnchor.constraint(equalToConstant: 20),
-            
-            budgetTypeView.topAnchor.constraint(equalTo: self.labelMoneySpent.topAnchor, constant: 30),
-            budgetTypeView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            budgetTypeView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            budgetTypeView.heightAnchor.constraint(equalToConstant: 100)
+            budgetTypeTableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            budgetTypeTableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+            budgetTypeTableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            budgetTypeTableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
     func assignBudgetData() {
-        let autoInsuranceBudget = BudgetType(id: 2, type: "Auto Insurance", limitAmount: 230, spentAmount: 140, color: .red)
-        budgetTypeView.assignData(autoInsuranceBudget)
-        labelMonthName.text = "This month budget"
-        labelMoneyLeft.text = "Great job! You have some money left"
-        labelMoneySpent.text = "$1,234 of $12,345"
+        let budgetTypes =  [
+              BudgetType(id: 1, type: "Mortgage & Rent", limitAmount: 2300, spentAmount: 2300, color: BudgetManagerColors.primaryRed.color),
+              BudgetType(id: 2, type: "Auto Insurance", limitAmount: 220, spentAmount: 20, color: .brown),
+              BudgetType(id: 3, type: "Tolls", limitAmount: 80, spentAmount: 30, color: .yellow),
+              BudgetType(id: 4, type: "Mobile Bills", limitAmount: 200, spentAmount: 200, color: .cyan),
+              BudgetType(id: 5, type: "Babysitter & Daycare", limitAmount: 1500, spentAmount: 1500, color: .blue),
+              BudgetType(id: 6, type: "Groceries", limitAmount: 1200, spentAmount: 1000, color: .darkGray),
+              BudgetType(id: 7, type: "Restrauant", limitAmount: 300, spentAmount: 300, color: .lightGray),
+              BudgetType(id: 8, type: "Gas & Fuel", limitAmount: 500, spentAmount: 500, color: .purple),
+              BudgetType(id: 9, type: "Shopping", limitAmount: 200, spentAmount: 200, color: .magenta),
+          ]
+        
+        self.budgetTypes = budgetTypes
+        self.budgetTypeTableView.reloadData()
+        
+       // budgetTypeView.assignData(autoInsuranceBudget)
+       
     }
+    
+}
+
+extension SpendingOverviewVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+      
+        return self.budgetTypes.count + 1
+        }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: MonthlyBudgetInfoCell.reuseID, for: indexPath) as! MonthlyBudgetInfoCell
+            cell.assignData(budgetTypes)
+            return cell
+
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: BudgetTypeViewCell.reuseID, for: indexPath) as! BudgetTypeViewCell
+            
+            let budget = budgetTypes[indexPath.section - 1]
+            cell.assignData(budget)
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+         return 90
+        } else {
+            return 55
+        }
+    }
+    
 }

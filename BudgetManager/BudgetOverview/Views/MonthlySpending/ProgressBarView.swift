@@ -42,8 +42,7 @@ class ProgressBarView: UIView {
         
         let barHeight = rect.height
         let totalWidth = rect.width
-        let spentWidth = totalWidth * (spentAmount / totalIncome)
-        let budgetWidth = totalWidth * (budgetAmount / totalIncome)
+        let spentWidth = totalWidth * (spentAmount / budgetAmount)
         var progressBarRect = CGRect(x: 0, y: 0, width: rect.width * budgetAmount, height: rect.height)
     
         // Draw total income bar
