@@ -2,6 +2,10 @@
 //  Created by Sukhaman Singh on 3/24/24.
 //
 
+protocol BudgetTypeViewCellDelegate: AnyObject {
+    func buttonEditTapped(_ index: Int)
+}
+
 import UIKit
 
 class BudgetTypeViewCell: UITableViewCell {
@@ -45,7 +49,7 @@ class BudgetTypeViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+    weak var delegate: BudgetTypeViewCellDelegate?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configure()
@@ -105,5 +109,10 @@ class BudgetTypeViewCell: UITableViewCell {
             labelSpendMoney.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             labelSpendMoney.heightAnchor.constraint(equalToConstant: 20)
         ])
+        buttonEdit.addTarget(self, action: #selector(buttonEditTapped(_:)), for: .touchUpInside)
+    }
+    
+    @objc func buttonEditTapped(_ sender: UIButton) {
+        self.delegate?.buttonEditTapped(sender.tag)
     }
 }

@@ -16,10 +16,14 @@ class SpendingOverviewVC: UIViewController {
         return tableView
     }()
     var budgetTypes: [BudgetType] = []
+    var router: BudgetRouter?
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         assignBudgetData()
+        if let navigationController {
+            self.router = BudgetRouter(navigationController: navigationController)
+        }
     }
     
     private func configureViewController() {
@@ -78,6 +82,8 @@ extension SpendingOverviewVC: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: BudgetTypeViewCell.reuseID, for: indexPath) as! BudgetTypeViewCell
             
             let budget = budgetTypes[indexPath.section - 1]
+            cell.delegate = self
+            cell.buttonEdit.tag = indexPath.section - 1
             cell.assignData(budget)
             return cell
         }
@@ -105,4 +111,11 @@ extension SpendingOverviewVC: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+}
+
+extension SpendingOverviewVC: BudgetTypeViewCellDelegate {
+    func buttonEditTapped(_ index: Int) {
+        let budgetType = budgetTypes[index]
+        self.router?.show(.budgetEdit(budgetType))
+    }
 }

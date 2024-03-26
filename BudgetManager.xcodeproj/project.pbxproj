@@ -69,6 +69,8 @@
 		A27A5CB12BB0DE6400DADBEC /* MonthlyBudgetInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5CB02BB0DE6400DADBEC /* MonthlyBudgetInfoCell.swift */; };
 		A27A5CB52BB0ED8900DADBEC /* MonthlyBudgetInfoUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5CB42BB0ED8900DADBEC /* MonthlyBudgetInfoUnitTests.swift */; };
 		A27A5CB82BB0EF0100DADBEC /* SpendingOverview+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5CB72BB0EF0100DADBEC /* SpendingOverview+Helpers.swift */; };
+		A27A5CBB2BB10ACF00DADBEC /* BudgetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5CBA2BB10ACF00DADBEC /* BudgetRouter.swift */; };
+		A27A5CBE2BB10CE500DADBEC /* CreateBudgetTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5CBD2BB10CE500DADBEC /* CreateBudgetTypeVC.swift */; };
 		A2B5B2F42BA7BBD500C9D05D /* LoginIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */; };
 		A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */; };
 		A2B5B2FA2BA7CAD000C9D05D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */; };
@@ -177,6 +179,8 @@
 		A27A5CB02BB0DE6400DADBEC /* MonthlyBudgetInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBudgetInfoCell.swift; sourceTree = "<group>"; };
 		A27A5CB42BB0ED8900DADBEC /* MonthlyBudgetInfoUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBudgetInfoUnitTests.swift; sourceTree = "<group>"; };
 		A27A5CB72BB0EF0100DADBEC /* SpendingOverview+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpendingOverview+Helpers.swift"; sourceTree = "<group>"; };
+		A27A5CBA2BB10ACF00DADBEC /* BudgetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRouter.swift; sourceTree = "<group>"; };
+		A27A5CBD2BB10CE500DADBEC /* CreateBudgetTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetTypeVC.swift; sourceTree = "<group>"; };
 		A2B5B2F32BA7BBD500C9D05D /* LoginIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntegrationTests.swift; sourceTree = "<group>"; };
 		A2B5B2F62BA7BD2100C9D05D /* LoginValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidationService.swift; sourceTree = "<group>"; };
 		A2B5B2F92BA7CAD000C9D05D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -566,6 +570,7 @@
 		A27A5C862BAF3DDE00DADBEC /* BudgetOverview */ = {
 			isa = PBXGroup;
 			children = (
+				A27A5CB92BB10A9E00DADBEC /* Router */,
 				A27A5C872BAF3E7200DADBEC /* Views */,
 			);
 			path = BudgetOverview;
@@ -574,6 +579,7 @@
 		A27A5C872BAF3E7200DADBEC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A27A5CBC2BB10CC900DADBEC /* BudgetInsert */,
 				A27A5C9B2BB0685C00DADBEC /* MonthlySpending */,
 				A27A5C882BAF3E8F00DADBEC /* BudgetOverviewVC.swift */,
 				A27A5C8E2BAF9BFB00DADBEC /* CircleView.swift */,
@@ -669,6 +675,22 @@
 				A27A5CB72BB0EF0100DADBEC /* SpendingOverview+Helpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A27A5CB92BB10A9E00DADBEC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A27A5CBA2BB10ACF00DADBEC /* BudgetRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A27A5CBC2BB10CC900DADBEC /* BudgetInsert */ = {
+			isa = PBXGroup;
+			children = (
+				A27A5CBD2BB10CE500DADBEC /* CreateBudgetTypeVC.swift */,
+			);
+			path = BudgetInsert;
 			sourceTree = "<group>";
 		};
 		A2B5B2F22BA7BBBD00C9D05D /* IntegrationTests */ = {
@@ -1001,11 +1023,13 @@
 				A27A5C9A2BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift in Sources */,
 				A2B5B3002BA7CC0800C9D05D /* User.swift in Sources */,
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
+				A27A5CBB2BB10ACF00DADBEC /* BudgetRouter.swift in Sources */,
 				A27A5C832BAE751800DADBEC /* LoanView.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
 				A27A5C752BAD14BE00DADBEC /* SettingsVC.swift in Sources */,
 				A27A5C9D2BB0687F00DADBEC /* SpendingOverviewVC.swift in Sources */,
 				A2B5B3162BA90D6400C9D05D /* CreateAccountValidationService.swift in Sources */,
+				A27A5CBE2BB10CE500DADBEC /* CreateBudgetTypeVC.swift in Sources */,
 				A27A5CB12BB0DE6400DADBEC /* MonthlyBudgetInfoCell.swift in Sources */,
 				A27A5CA82BB0AFD800DADBEC /* ProgressBarView.swift in Sources */,
 				A2B5B31C2BA9195100C9D05D /* RegistrationLoader.swift in Sources */,
