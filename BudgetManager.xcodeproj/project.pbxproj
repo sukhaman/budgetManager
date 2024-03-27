@@ -90,6 +90,7 @@
 		A2B5B3222BA91B4800C9D05D /* APIRegistrationLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3212BA91B4800C9D05D /* APIRegistrationLoaderSpy.swift */; };
 		A2B5B3252BA91BA900C9D05D /* RegistrationUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3242BA91BA900C9D05D /* RegistrationUIComposer.swift */; };
 		A2B5B3282BA91E2000C9D05D /* RegistrationUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B5B3272BA91E2000C9D05D /* RegistrationUserRequest.swift */; };
+		A2DC30102BB25D5100CCA23B /* CreateBudgetTypeSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DC300F2BB25D5100CCA23B /* CreateBudgetTypeSnapshotTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +203,7 @@
 		A2B5B3272BA91E2000C9D05D /* RegistrationUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUserRequest.swift; sourceTree = "<group>"; };
 		A2B5B3292BA925DE00C9D05D /* BudgetManager.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BudgetManager.xctestplan; sourceTree = "<group>"; };
 		A2B5B32A2BA9261D00C9D05D /* BudgetManagerUI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BudgetManagerUI.xctestplan; sourceTree = "<group>"; };
+		A2DC300F2BB25D5100CCA23B /* CreateBudgetTypeSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetTypeSnapshotTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -639,6 +641,7 @@
 			children = (
 				A27A5CAB2BB0B06A00DADBEC /* snapshots */,
 				A27A5CA52BB08FF000DADBEC /* MonthlySpendingSnapshotTests.swift */,
+				A2DC300F2BB25D5100CCA23B /* CreateBudgetTypeSnapshotTests.swift */,
 			);
 			path = SnapshotTests;
 			sourceTree = "<group>";
@@ -1081,6 +1084,7 @@
 			files = (
 				A27A5C152BA92AE400DADBEC /* XCTestCase+Snapshot.swift in Sources */,
 				A27A5C8D2BAF773100DADBEC /* BudgetOverviewSnapshotTests.swift in Sources */,
+				A2DC30102BB25D5100CCA23B /* CreateBudgetTypeSnapshotTests.swift in Sources */,
 				A27A5C132BA92AD400DADBEC /* CreateSnapshotTests.swift in Sources */,
 				A27A5CA62BB08FF000DADBEC /* MonthlySpendingSnapshotTests.swift in Sources */,
 				A27A5C162BA92AE800DADBEC /* UIViewController+Snapshot.swift in Sources */,
