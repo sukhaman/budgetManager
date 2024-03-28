@@ -10,4 +10,8 @@ class SettingsVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 }

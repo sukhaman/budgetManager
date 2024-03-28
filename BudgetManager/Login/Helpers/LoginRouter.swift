@@ -15,30 +15,40 @@ enum LoginScreen {
 protocol LoginRouter {
     
     func showScreen(loginScreen: LoginScreen)
+    func showAlert(_ message: String)
 }
 
 class DefaultLoginRouter: LoginRouter {
-    weak var navigationControler: UINavigationController?
+    weak var navigationController: UINavigationController?
     
-    init(navigationControler: UINavigationController? = nil) {
-        self.navigationControler = navigationControler
+    init(_ navigationController: UINavigationController?) {
+        self.navigationController = navigationController
     }
     
     func showScreen(loginScreen: LoginScreen) {
         switch loginScreen {
         case .login:
             let destVC = LoginUIComposer.composedLogin(viewModel: LoginViewModel(loginLoader: APILoginLoader()))
-            navigationControler?.pushViewController(destVC, animated: true)
+            navigationController?.pushViewController(destVC, animated: true)
         case .forgotPassword:
             break
         case .signup:
             let destVC = RegistrationUIComposer.composedRegistration(viewModel: RegistrationViewModel(loader: APIRegistrationLoader()))
-            navigationControler?.pushViewController(destVC, animated: true)
+            navigationController?.pushViewController(destVC, animated: true)
         case .home(let user):
             let tabBarController = UITabBarController()
             _ = TabBarRouter(tabBarController: tabBarController, user: user)
-            navigationControler?.pushViewController(tabBarController, animated: true)
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabBarController)
         }
+    }
+    
+    func showAlert(_ message: String) {
+        let alertController = UIAlertController (title: nil, message:message, preferredStyle: .alert)
+        let OkAction = UIAlertAction(title: "OK", style:  .default , handler: { (actionSheetController) -> Void in
+            
+        })
+        alertController.addAction(OkAction)
+        navigationController?.present(alertController, animated: true , completion: nil)
     }
     func initialViewController() -> UIViewController {
        

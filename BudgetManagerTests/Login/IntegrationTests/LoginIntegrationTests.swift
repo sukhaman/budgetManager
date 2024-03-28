@@ -10,7 +10,9 @@ class LoginIntegrationTests: XCTestCase {
     func test_loginVC_shouldThrowMissingEmailAlert() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let mockNavigation = MockNavigationController(rootViewController: sut)
+        let mockNavigation = MockNavigationController()
+        let router = DefaultLoginRouter(mockNavigation)
+        sut.router = router
         sut.signInButton.sendActions(for: .touchUpInside)
         let alertController = mockNavigation.presentViewController as? UIAlertController
         XCTAssertNotNil(alertController)
@@ -22,7 +24,9 @@ class LoginIntegrationTests: XCTestCase {
     func test_loginVC_shouldThrowMissingInvalidEmailAlert() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let mockNavigation = MockNavigationController(rootViewController: sut)
+        let mockNavigation = MockNavigationController()
+        let router = DefaultLoginRouter(mockNavigation)
+        sut.router = router
         sut.emailTextField.text = "hdaks"
         sut.signInButton.sendActions(for: .touchUpInside)
         let alertController = mockNavigation.presentViewController as? UIAlertController
@@ -35,7 +39,9 @@ class LoginIntegrationTests: XCTestCase {
     func test_loginVC_shouldThrowMissingInvalidPasswordAlert() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let mockNavigation = MockNavigationController(rootViewController: sut)
+        let mockNavigation = MockNavigationController()
+        let router = DefaultLoginRouter(mockNavigation)
+        sut.router = router
         sut.emailTextField.text = "valid@email.com"
         sut.signInButton.sendActions(for: .touchUpInside)
         let alertController = mockNavigation.presentViewController as? UIAlertController
@@ -48,7 +54,9 @@ class LoginIntegrationTests: XCTestCase {
     func test_loginVC_loginRequestMade_shouldFinishWithError() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let mockNavigation = MockNavigationController(rootViewController: sut)
+        let mockNavigation = MockNavigationController()
+        let router = DefaultLoginRouter(mockNavigation)
+        sut.router = router
         sut.emailTextField.text = "valid@email.com"
         sut.passwordTextField.text = "password"
         sut.signInButton.sendActions(for: .touchUpInside)
@@ -67,8 +75,9 @@ class LoginIntegrationTests: XCTestCase {
     func test_loginVC_loginRequestMade_shouldFinishWithSuccess() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        let navigation = UINavigationController()
-        let router = DefaultLoginRouter(navigationControler: navigation)
+        let mockNavigation = MockNavigationController()
+        let router = DefaultLoginRouter(mockNavigation)
+        sut.router = router
         sut.router = router
         sut.emailTextField.text = "good@email.com"
         sut.passwordTextField.text = "password"
@@ -79,9 +88,9 @@ class LoginIntegrationTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 2.0)
         
-        let topVC = navigation.topViewController as? UITabBarController
+        let sceneDelegate = (UIApplication.shared.connectedScenes.first?.delegate) as? SceneDelegate
+        let topVC = sceneDelegate?.window?.rootViewController as? UITabBarController
         XCTAssertNotNil(topVC)
-
     }
     
     

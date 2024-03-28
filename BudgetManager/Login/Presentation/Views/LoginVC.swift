@@ -4,6 +4,7 @@
 
 import UIKit
 import Combine
+import Vision
 
 class LoginVC: UIViewController {
     
@@ -91,10 +92,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
-        if let navigationController {
-            self.router = DefaultLoginRouter(navigationControler: navigationController)
-        }
-        
+        self.router = DefaultLoginRouter(navigationController)
     }
     
     // Set up UI
@@ -158,24 +156,14 @@ class LoginVC: UIViewController {
         }
         
         signInButton.addAction { [weak self] in
-        
             do {
                 let email  = try LoginValidationService().validateUserEmail(self?.emailTextField.text)
                 let password  = try LoginValidationService().validateUserPassword(self?.passwordTextField.text)
                 self?.viewModel?.login(email, password: password)
             } catch {
-                self?.showAlert(error.localizedDescription)
+                self?.router?.showAlert(error.localizedDescription)
             }
         }
-    }
-    
-    private func showAlert(_ message: String) {
-        let alertController = UIAlertController (title: nil, message:message, preferredStyle: .alert)
-        let OkAction = UIAlertAction(title: "OK", style:  .default , handler: { (actionSheetController) -> Void in
-            
-        })
-        alertController.addAction(OkAction)
-        navigationController?.present(alertController, animated: true , completion: nil)
     }
     
     private func bindServerResponse() {
@@ -183,7 +171,7 @@ class LoginVC: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] errorMessage in
                 if let self, let errorMessage {
-                    self.showAlert(errorMessage.localizedDescription)
+                    self.router?.showAlert(errorMessage.localizedDescription)
                 }
             })
             .store(in: &cancellables)

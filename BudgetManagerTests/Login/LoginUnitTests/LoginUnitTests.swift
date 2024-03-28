@@ -60,7 +60,7 @@ class LoginUnitTests: XCTestCase {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
         let navigation = UINavigationController()
-        sut.router = DefaultLoginRouter(navigationControler: navigation)
+        sut.router = DefaultLoginRouter(navigation)
         sut.signupButton.sendActions(for: .touchUpInside)
         let topVC = navigation.topViewController as? CreateAccountVC
         topVC?.loadViewIfNeeded()

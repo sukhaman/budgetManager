@@ -12,21 +12,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     
+    fileprivate func defaultRootViewController(_ window: UIWindow) {
+        let navigationController = UINavigationController()
+        let loginRouter = DefaultLoginRouter(navigationController)
+        
+        // Choose the initial screen to show
+        loginRouter.showScreen(loginScreen: .login)
+        
+        window.rootViewController = navigationController
+        
+        window.makeKeyAndVisible()
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let navigationController = UINavigationController()
-        let loginRouter = DefaultLoginRouter(navigationControler: navigationController)
-        
-        // Choose the initial screen to show
-        loginRouter.showScreen(loginScreen: .login)
-        
-        window.rootViewController = navigationController
         self.window = window
-        window.makeKeyAndVisible()
+        defaultRootViewController(window)
         
     }
     
@@ -57,7 +62,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-    
+
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        if let window = self.window {
+            // change the root view controller
+            window.rootViewController = vc
+        }
+    }
     
 }
 
