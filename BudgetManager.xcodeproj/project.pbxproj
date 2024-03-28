@@ -92,6 +92,7 @@
 		A2DC30102BB25D5100CCA23B /* CreateBudgetTypeSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DC300F2BB25D5100CCA23B /* CreateBudgetTypeSnapshotTests.swift */; };
 		A2EEB1662BB4EADD00164AB4 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1652BB4EADD00164AB4 /* HomeRouter.swift */; };
 		A2EEB16A2BB4FE4C00164AB4 /* HomeIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1692BB4FE4C00164AB4 /* HomeIntegrationTests.swift */; };
+		A2EEB16D2BB6266600164AB4 /* NewEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB16C2BB6266600164AB4 /* NewEntryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +207,7 @@
 		A2DC300F2BB25D5100CCA23B /* CreateBudgetTypeSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBudgetTypeSnapshotTests.swift; sourceTree = "<group>"; };
 		A2EEB1652BB4EADD00164AB4 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		A2EEB1692BB4FE4C00164AB4 /* HomeIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIntegrationTests.swift; sourceTree = "<group>"; };
+		A2EEB16C2BB6266600164AB4 /* NewEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 		A2672B552BA732DE006A5634 /* BudgetManager */ = {
 			isa = PBXGroup;
 			children = (
+				A2EEB16B2BB6264100164AB4 /* NewEntry */,
 				A27A5C862BAF3DDE00DADBEC /* BudgetOverview */,
 				A27A5C722BAD134E00DADBEC /* Settings */,
 				A27A5C6E2BACF96300DADBEC /* TabBarController */,
@@ -883,6 +886,14 @@
 			path = IntegrationTests;
 			sourceTree = "<group>";
 		};
+		A2EEB16B2BB6264100164AB4 /* NewEntry */ = {
+			isa = PBXGroup;
+			children = (
+				A2EEB16C2BB6266600164AB4 /* NewEntryVC.swift */,
+			);
+			path = NewEntry;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1044,6 +1055,7 @@
 				A2B5B3072BA7D0F800C9D05D /* RawRepresentable+Extensions.swift in Sources */,
 				A2672BB82BA76B64006A5634 /* PasswordTextField.swift in Sources */,
 				A27A5C9A2BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift in Sources */,
+				A2EEB16D2BB6266600164AB4 /* NewEntryVC.swift in Sources */,
 				A2B5B3002BA7CC0800C9D05D /* User.swift in Sources */,
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
 				A27A5CBB2BB10ACF00DADBEC /* BudgetRouter.swift in Sources */,
