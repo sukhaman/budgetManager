@@ -4,6 +4,8 @@
 <dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © Sukhaman Singh. All rights reserved.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>For scanning receipts</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -26,6 +26,9 @@ class SpendingOverviewVC: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     private func configureViewController() {
         view.backgroundColor = BudgetManagerColors.primaryGreen.color
         
