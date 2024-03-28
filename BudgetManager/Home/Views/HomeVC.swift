@@ -49,10 +49,16 @@ class HomeVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    var router: HomeRouter?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = BudgetManagerColors.primaryGreen.color
         configureViewController()
+        router = HomeRouter(navigationController: navigationController)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     convenience init(profile: User? = nil) {
@@ -72,49 +78,62 @@ class HomeVC: UIViewController {
         contentView.addSubview(monthlyIncomeExponseView)
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             
         // Header view constraints
-            headerView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            headerView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            headerView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 80),
             
+            // Cash view constraints
             cashView.topAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: 20),
-            cashView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
-            cashView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            cashView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,constant: 20),
+            cashView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,constant: -20),
             cashView.heightAnchor.constraint(equalToConstant: 50),
             
+            // Credit view constraints
             creditView.topAnchor.constraint(equalTo: self.cashView.bottomAnchor, constant: 20),
-            creditView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
-            creditView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            creditView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,constant: 20),
+            creditView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,constant: -20),
             creditView.heightAnchor.constraint(equalToConstant: 50),
             
+            // Investment view constraints
             investmentView.topAnchor.constraint(equalTo: self.creditView.bottomAnchor, constant: 20),
-            investmentView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
-            investmentView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            investmentView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,constant: 20),
+            investmentView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,constant: -20),
             investmentView.heightAnchor.constraint(equalToConstant: 50),
             
+            // Loan view constraints
             loanView.topAnchor.constraint(equalTo: self.investmentView.bottomAnchor, constant: 20),
-            loanView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
-            loanView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            loanView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,constant: 20),
+            loanView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,constant: -20),
             loanView.heightAnchor.constraint(equalToConstant: 50),
             
+            // Monthly overview constraints
             monthlyIncomeExponseView.topAnchor.constraint(equalTo: self.loanView.bottomAnchor, constant: 40),
-            monthlyIncomeExponseView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
-            monthlyIncomeExponseView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            monthlyIncomeExponseView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,constant: 20),
+            monthlyIncomeExponseView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,constant: -20),
             monthlyIncomeExponseView.heightAnchor.constraint(equalToConstant: 80),
             
             contentView.bottomAnchor.constraint(equalTo: monthlyIncomeExponseView.bottomAnchor, constant: 20),
             scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+        
+        headerView.delegate = self
+    }
+}
+
+extension HomeVC: HomeHeaderViewDelegate {
+    func buttonAddTapped() {
+        self.router?.showAddAccount(.present)
     }
 }
