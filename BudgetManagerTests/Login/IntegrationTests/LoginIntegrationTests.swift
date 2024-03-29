@@ -78,7 +78,6 @@ class LoginIntegrationTests: XCTestCase {
         let mockNavigation = MockNavigationController()
         let router = DefaultLoginRouter(mockNavigation)
         sut.router = router
-        sut.router = router
         sut.emailTextField.text = "good@email.com"
         sut.passwordTextField.text = "password"
         sut.signInButton.sendActions(for: .touchUpInside)

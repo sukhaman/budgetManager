@@ -9,7 +9,7 @@ import UIKit
 @testable import BudgetManager
 
 
-extension SpendingOverviewVC {
+extension BudgetSpendingOverviewVC {
     
     func cell(row: Int, section: Int) -> UITableViewCell? {
         guard numberOfRows(in: section) > row else {

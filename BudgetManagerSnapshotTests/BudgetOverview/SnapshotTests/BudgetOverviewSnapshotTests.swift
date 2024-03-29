@@ -21,8 +21,8 @@ class BudgetOverviewSnapshotTests: XCTestCase {
     
     // MARK: Helpers
     
-    private func makeSUT() -> BudgetOverviewVC {
-        let viewController = BudgetOverviewVC()
+    private func makeSUT() -> MonthlySpendingVC {
+        let viewController = MonthlySpendingVC()
         return viewController
     }
 }

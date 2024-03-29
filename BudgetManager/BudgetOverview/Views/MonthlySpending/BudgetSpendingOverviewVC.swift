@@ -4,7 +4,7 @@
 
 import UIKit
 
-class SpendingOverviewVC: UIViewController {
+class BudgetSpendingOverviewVC: UIViewController {
     
     var budgetTypeTableView: UITableView = {
        let tableView = UITableView()
@@ -46,7 +46,7 @@ class SpendingOverviewVC: UIViewController {
         ])
     }
     
-    func assignBudgetData() {
+   private func assignBudgetData() {
         let budgetTypes =  [
               BudgetType(id: 1, type: "Mortgage & Rent", limitAmount: 2300, spentAmount: 2300, color: BudgetManagerColors.primaryRed.color),
               BudgetType(id: 2, type: "Auto Insurance", limitAmount: 220, spentAmount: 20, color: .brown),
@@ -68,7 +68,7 @@ class SpendingOverviewVC: UIViewController {
     
 }
 
-extension SpendingOverviewVC: UITableViewDataSource, UITableViewDelegate {
+extension BudgetSpendingOverviewVC: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
       
@@ -78,12 +78,17 @@ extension SpendingOverviewVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: MonthlyBudgetInfoCell.reuseID, for: indexPath) as! MonthlyBudgetInfoCell
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = UIColor.clear
+            cell.selectedBackgroundView = backgroundView
             cell.assignData(budgetTypes)
             return cell
 
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: BudgetTypeViewCell.reuseID, for: indexPath) as! BudgetTypeViewCell
-            
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = UIColor.clear
+            cell.selectedBackgroundView = backgroundView
             let budget = budgetTypes[indexPath.section - 1]
             cell.delegate = self
             cell.buttonEdit.tag = indexPath.section - 1
@@ -116,7 +121,7 @@ extension SpendingOverviewVC: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-extension SpendingOverviewVC: BudgetTypeViewCellDelegate {
+extension BudgetSpendingOverviewVC: BudgetTypeViewCellDelegate {
     func buttonEditTapped(_ index: Int) {
         let budgetType = budgetTypes[index]
         self.router?.show(.budgetEdit(budgetType))

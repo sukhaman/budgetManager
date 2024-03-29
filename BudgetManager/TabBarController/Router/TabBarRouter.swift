@@ -34,7 +34,7 @@ class TabBarRouter: TabBarRouterProtocol {
         homeNavigation.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "list.bullet.clipboard"), tag: 0)
         
         // MARK: BUdget Controller
-        let budgetController = SpendingOverviewVC()
+        let budgetController = MonthlySpendingVC()
         let budgetNavigation = UINavigationController(rootViewController: budgetController)
         budgetController.tabBarItem = UITabBarItem(title: "Report", image: UIImage(systemName: "banknote"), tag: 1)
         
@@ -74,7 +74,7 @@ class TabBarRouter: TabBarRouterProtocol {
             case .home:
                 return viewController is HomeVC
             case .monthly:
-                return viewController is SpendingOverviewVC
+                return viewController is BudgetSpendingOverviewVC
             case .settings:
                 return viewController is SettingsVC
             }

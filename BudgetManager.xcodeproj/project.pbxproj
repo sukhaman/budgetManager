@@ -51,7 +51,7 @@
 		A27A5C812BAE747500DADBEC /* InvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C802BAE747500DADBEC /* InvestmentView.swift */; };
 		A27A5C832BAE751800DADBEC /* LoanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C822BAE751800DADBEC /* LoanView.swift */; };
 		A27A5C852BAF111400DADBEC /* MonthlyIncomeExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C842BAF111400DADBEC /* MonthlyIncomeExpenseView.swift */; };
-		A27A5C892BAF3E8F00DADBEC /* BudgetOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C882BAF3E8F00DADBEC /* BudgetOverviewVC.swift */; };
+		A27A5C892BAF3E8F00DADBEC /* MonthlySpendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C882BAF3E8F00DADBEC /* MonthlySpendingVC.swift */; };
 		A27A5C8D2BAF773100DADBEC /* BudgetOverviewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C8C2BAF773100DADBEC /* BudgetOverviewSnapshotTests.swift */; };
 		A27A5C8F2BAF9BFB00DADBEC /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C8E2BAF9BFB00DADBEC /* CircleView.swift */; };
 		A27A5C932BAF9CB900DADBEC /* BUDGET_OVERVIEW_iPAD.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A5C902BAF9CB900DADBEC /* BUDGET_OVERVIEW_iPAD.png */; };
@@ -59,7 +59,7 @@
 		A27A5C962BAF9D1C00DADBEC /* BudgetTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C952BAF9D1B00DADBEC /* BudgetTypeCollectionView.swift */; };
 		A27A5C982BAFBA9C00DADBEC /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C972BAFBA9C00DADBEC /* UIImage+Extensions.swift */; };
 		A27A5C9A2BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C992BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift */; };
-		A27A5C9D2BB0687F00DADBEC /* SpendingOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C9C2BB0687F00DADBEC /* SpendingOverviewVC.swift */; };
+		A27A5C9D2BB0687F00DADBEC /* BudgetSpendingOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5C9C2BB0687F00DADBEC /* BudgetSpendingOverviewVC.swift */; };
 		A27A5CA62BB08FF000DADBEC /* MonthlySpendingSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5CA52BB08FF000DADBEC /* MonthlySpendingSnapshotTests.swift */; };
 		A27A5CA82BB0AFD800DADBEC /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A5CA72BB0AFD800DADBEC /* ProgressBarView.swift */; };
 		A27A5CAC2BB0B06B00DADBEC /* SPENDING_OVERVIEW_iPAD.png in Resources */ = {isa = PBXBuildFile; fileRef = A27A5CA92BB0B06A00DADBEC /* SPENDING_OVERVIEW_iPAD.png */; };
@@ -164,7 +164,7 @@
 		A27A5C802BAE747500DADBEC /* InvestmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentView.swift; sourceTree = "<group>"; };
 		A27A5C822BAE751800DADBEC /* LoanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanView.swift; sourceTree = "<group>"; };
 		A27A5C842BAF111400DADBEC /* MonthlyIncomeExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyIncomeExpenseView.swift; sourceTree = "<group>"; };
-		A27A5C882BAF3E8F00DADBEC /* BudgetOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetOverviewVC.swift; sourceTree = "<group>"; };
+		A27A5C882BAF3E8F00DADBEC /* MonthlySpendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlySpendingVC.swift; sourceTree = "<group>"; };
 		A27A5C8C2BAF773100DADBEC /* BudgetOverviewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetOverviewSnapshotTests.swift; sourceTree = "<group>"; };
 		A27A5C8E2BAF9BFB00DADBEC /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		A27A5C902BAF9CB900DADBEC /* BUDGET_OVERVIEW_iPAD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BUDGET_OVERVIEW_iPAD.png; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 		A27A5C952BAF9D1B00DADBEC /* BudgetTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTypeCollectionView.swift; sourceTree = "<group>"; };
 		A27A5C972BAFBA9C00DADBEC /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		A27A5C992BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTypeInfoCell.swift; sourceTree = "<group>"; };
-		A27A5C9C2BB0687F00DADBEC /* SpendingOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingOverviewVC.swift; sourceTree = "<group>"; };
+		A27A5C9C2BB0687F00DADBEC /* BudgetSpendingOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSpendingOverviewVC.swift; sourceTree = "<group>"; };
 		A27A5CA52BB08FF000DADBEC /* MonthlySpendingSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlySpendingSnapshotTests.swift; sourceTree = "<group>"; };
 		A27A5CA72BB0AFD800DADBEC /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		A27A5CA92BB0B06A00DADBEC /* SPENDING_OVERVIEW_iPAD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SPENDING_OVERVIEW_iPAD.png; sourceTree = "<group>"; };
@@ -580,7 +580,7 @@
 			children = (
 				A27A5CBC2BB10CC900DADBEC /* BudgetInsert */,
 				A27A5C9B2BB0685C00DADBEC /* MonthlySpending */,
-				A27A5C882BAF3E8F00DADBEC /* BudgetOverviewVC.swift */,
+				A27A5C882BAF3E8F00DADBEC /* MonthlySpendingVC.swift */,
 				A27A5C8E2BAF9BFB00DADBEC /* CircleView.swift */,
 				A27A5C952BAF9D1B00DADBEC /* BudgetTypeCollectionView.swift */,
 				A27A5C992BAFBE0C00DADBEC /* BudgetTypeInfoCell.swift */,
@@ -617,7 +617,7 @@
 		A27A5C9B2BB0685C00DADBEC /* MonthlySpending */ = {
 			isa = PBXGroup;
 			children = (
-				A27A5C9C2BB0687F00DADBEC /* SpendingOverviewVC.swift */,
+				A27A5C9C2BB0687F00DADBEC /* BudgetSpendingOverviewVC.swift */,
 				A27A5CA72BB0AFD800DADBEC /* ProgressBarView.swift */,
 				A27A5CAE2BB0B1D400DADBEC /* BudgetTypeViewCell.swift */,
 				A27A5CB02BB0DE6400DADBEC /* MonthlyBudgetInfoCell.swift */,
@@ -1044,7 +1044,7 @@
 				A2B5B2FD2BA7CB7000C9D05D /* LoginLoader.swift in Sources */,
 				A27A5C962BAF9D1C00DADBEC /* BudgetTypeCollectionView.swift in Sources */,
 				A2672BBB2BA76C3E006A5634 /* UIControl+Extensions.swift in Sources */,
-				A27A5C892BAF3E8F00DADBEC /* BudgetOverviewVC.swift in Sources */,
+				A27A5C892BAF3E8F00DADBEC /* MonthlySpendingVC.swift in Sources */,
 				A2B5B31F2BA91A4400C9D05D /* RegistrationEndpoint.swift in Sources */,
 				A2B5B3102BA907A900C9D05D /* HomeVC.swift in Sources */,
 				A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */,
@@ -1062,7 +1062,7 @@
 				A27A5C832BAE751800DADBEC /* LoanView.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
 				A27A5C752BAD14BE00DADBEC /* SettingsVC.swift in Sources */,
-				A27A5C9D2BB0687F00DADBEC /* SpendingOverviewVC.swift in Sources */,
+				A27A5C9D2BB0687F00DADBEC /* BudgetSpendingOverviewVC.swift in Sources */,
 				A2B5B3162BA90D6400C9D05D /* CreateAccountValidationService.swift in Sources */,
 				A27A5CBE2BB10CE500DADBEC /* CreateBudgetTypeVC.swift in Sources */,
 				A27A5CB12BB0DE6400DADBEC /* MonthlyBudgetInfoCell.swift in Sources */,

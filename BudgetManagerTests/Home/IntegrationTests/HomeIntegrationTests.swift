@@ -11,10 +11,9 @@ class HomeIntegrationTests: XCTestCase {
         let user = User(email: "saa@test.com", username: "Anyone")
         let sut = makeSUT(user)
         let mockNavigation = MockNavigationController(rootViewController: sut)
-        let router = HomeRouter(navigationController: mockNavigation)
         sut.loadViewIfNeeded()
         sut.headerView.delegate?.buttonAddTapped()
-        let topVC = mockNavigation.presentViewController as? AddAccountVC
+        let topVC = mockNavigation.presentViewController as? NewEntryVC
         topVC?.loadViewIfNeeded()
         XCTAssertNotNil(topVC)
     }

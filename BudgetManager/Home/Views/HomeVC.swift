@@ -76,7 +76,7 @@ class HomeVC: UIViewController {
         contentView.addSubview(investmentView)
         contentView.addSubview(loanView)
         contentView.addSubview(monthlyIncomeExponseView)
-        
+    
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
