@@ -910,6 +910,8 @@
 			dependencies = (
 			);
 			name = BudgetManager;
+			packageProductDependencies = (
+			);
 			productName = BudgetManager;
 			productReference = A2672B532BA732DE006A5634 /* BudgetManager.app */;
 			productType = "com.apple.product-type.application";
@@ -982,6 +984,8 @@
 				es,
 			);
 			mainGroup = A2672B4A2BA732DE006A5634;
+			packageReferences = (
+			);
 			productRefGroup = A2672B542BA732DE006A5634 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

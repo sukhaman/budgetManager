@@ -26,7 +26,7 @@ class BudgetTypeCollectionView: UIView, UICollectionViewDataSource, UICollection
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        flowLayout.itemSize = CGSize(width: 160, height: 50)
+        flowLayout.itemSize = CGSize(width: 160, height: 40)
         flowLayout.minimumLineSpacing = 5
         flowLayout.minimumInteritemSpacing = 0
         collectionView = UICollectionView(frame: bounds, collectionViewLayout: flowLayout)
@@ -63,6 +63,6 @@ class BudgetTypeCollectionView: UIView, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 160, height: 30)
+        return CGSize(width: 160, height: 40)
     }
 }

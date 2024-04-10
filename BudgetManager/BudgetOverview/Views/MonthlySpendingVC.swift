@@ -45,8 +45,8 @@ class MonthlySpendingVC: UIViewController {
             circleView.heightAnchor.constraint(equalToConstant: 200),
             
             collectionView.topAnchor.constraint(equalTo: circleView.bottomAnchor,constant: 30),
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }

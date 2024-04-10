@@ -34,15 +34,15 @@ class BudgetTypeInfoCell: UICollectionViewCell {
         addSubview(imageAvatar)
         addSubview(lblName)
         NSLayoutConstraint.activate([
-            imageAvatar.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 5),
-            imageAvatar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            imageAvatar.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 8),
+            imageAvatar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 8),
             imageAvatar.widthAnchor.constraint(equalToConstant: 10),
-            lblName.heightAnchor.constraint(equalToConstant: 10),
+            imageAvatar.heightAnchor.constraint(equalToConstant: 10),
             
             lblName.centerYAnchor.constraint(equalTo: imageAvatar.centerYAnchor),
-            lblName.leadingAnchor.constraint(equalTo: imageAvatar.trailingAnchor,constant: 5),
-            lblName.widthAnchor.constraint(equalToConstant: 120),
-            lblName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 5)
+            lblName.leadingAnchor.constraint(equalTo: imageAvatar.trailingAnchor,constant:5),
+            lblName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            lblName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
     }
