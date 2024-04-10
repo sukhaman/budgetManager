@@ -93,6 +93,7 @@
 		A2EEB1662BB4EADD00164AB4 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1652BB4EADD00164AB4 /* HomeRouter.swift */; };
 		A2EEB16A2BB4FE4C00164AB4 /* HomeIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1692BB4FE4C00164AB4 /* HomeIntegrationTests.swift */; };
 		A2EEB16D2BB6266600164AB4 /* NewEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB16C2BB6266600164AB4 /* NewEntryVC.swift */; };
+		A2EEB1A92BC626B500164AB4 /* AddTransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1A82BC626B500164AB4 /* AddTransactionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +209,7 @@
 		A2EEB1652BB4EADD00164AB4 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		A2EEB1692BB4FE4C00164AB4 /* HomeIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIntegrationTests.swift; sourceTree = "<group>"; };
 		A2EEB16C2BB6266600164AB4 /* NewEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryVC.swift; sourceTree = "<group>"; };
+		A2EEB1A82BC626B500164AB4 /* AddTransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 		A2672B552BA732DE006A5634 /* BudgetManager */ = {
 			isa = PBXGroup;
 			children = (
+				A2EEB1A62BC626A200164AB4 /* Transaction */,
 				A2EEB16B2BB6264100164AB4 /* NewEntry */,
 				A27A5C862BAF3DDE00DADBEC /* BudgetOverview */,
 				A27A5C722BAD134E00DADBEC /* Settings */,
@@ -894,6 +897,22 @@
 			path = NewEntry;
 			sourceTree = "<group>";
 		};
+		A2EEB1A62BC626A200164AB4 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				A2EEB1A72BC626A700164AB4 /* VIews */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		A2EEB1A72BC626A700164AB4 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				A2EEB1A82BC626B500164AB4 /* AddTransactionVC.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1052,6 +1071,7 @@
 				A2B5B31F2BA91A4400C9D05D /* RegistrationEndpoint.swift in Sources */,
 				A2B5B3102BA907A900C9D05D /* HomeVC.swift in Sources */,
 				A2672B572BA732DE006A5634 /* AppDelegate.swift in Sources */,
+				A2EEB1A92BC626B500164AB4 /* AddTransactionVC.swift in Sources */,
 				A2B5B3192BA9192300C9D05D /* RegistrationViewModel.swift in Sources */,
 				A2B5B2F72BA7BD2100C9D05D /* LoginValidationService.swift in Sources */,
 				A2EEB1662BB4EADD00164AB4 /* HomeRouter.swift in Sources */,
