@@ -94,6 +94,9 @@
 		A2EEB16A2BB4FE4C00164AB4 /* HomeIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1692BB4FE4C00164AB4 /* HomeIntegrationTests.swift */; };
 		A2EEB16D2BB6266600164AB4 /* NewEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB16C2BB6266600164AB4 /* NewEntryVC.swift */; };
 		A2EEB1A92BC626B500164AB4 /* AddTransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1A82BC626B500164AB4 /* AddTransactionVC.swift */; };
+		A2EEB1AD2BC629B500164AB4 /* AddTransactionSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1AC2BC629B500164AB4 /* AddTransactionSnapshotTests.swift */; };
+		A2EEB1B12BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png in Resources */ = {isa = PBXBuildFile; fileRef = A2EEB1AE2BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png */; };
+		A2EEB1B22BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png in Resources */ = {isa = PBXBuildFile; fileRef = A2EEB1AF2BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +213,9 @@
 		A2EEB1692BB4FE4C00164AB4 /* HomeIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIntegrationTests.swift; sourceTree = "<group>"; };
 		A2EEB16C2BB6266600164AB4 /* NewEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryVC.swift; sourceTree = "<group>"; };
 		A2EEB1A82BC626B500164AB4 /* AddTransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionVC.swift; sourceTree = "<group>"; };
+		A2EEB1AC2BC629B500164AB4 /* AddTransactionSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionSnapshotTests.swift; sourceTree = "<group>"; };
+		A2EEB1AE2BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADD_TRANSACTION_iPAD.png; sourceTree = "<group>"; };
+		A2EEB1AF2BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADD_TRANSACTION_IPHONE.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +467,7 @@
 		A27A5C0B2BA92A8E00DADBEC /* BudgetManagerSnapshotTests */ = {
 			isa = PBXGroup;
 			children = (
+				A2EEB1AA2BC6299700164AB4 /* AddTransaction */,
 				A27A5CA32BB08FC200DADBEC /* MonthlySpending */,
 				A27A5C8A2BAF767500DADBEC /* BudgetOverview */,
 				A27A5C762BAE50E400DADBEC /* Home */,
@@ -913,6 +920,32 @@
 			path = VIews;
 			sourceTree = "<group>";
 		};
+		A2EEB1AA2BC6299700164AB4 /* AddTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				A2EEB1AB2BC629A500164AB4 /* SnapshotTests */,
+			);
+			path = AddTransaction;
+			sourceTree = "<group>";
+		};
+		A2EEB1AB2BC629A500164AB4 /* SnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2EEB1B02BC62A5700164AB4 /* snapshots */,
+				A2EEB1AC2BC629B500164AB4 /* AddTransactionSnapshotTests.swift */,
+			);
+			path = SnapshotTests;
+			sourceTree = "<group>";
+		};
+		A2EEB1B02BC62A5700164AB4 /* snapshots */ = {
+			isa = PBXGroup;
+			children = (
+				A2EEB1AE2BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png */,
+				A2EEB1AF2BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png */,
+			);
+			path = snapshots;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1041,6 +1074,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A27A5C252BAB0C0000DADBEC /* CREATE_ACCOUNT_DARK_VIEW_iPad.png in Resources */,
+				A2EEB1B12BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png in Resources */,
 				A27A5C1C2BAB0BF900DADBEC /* LOGIN_DARK_VIEW_iPad.png in Resources */,
 				A27A5C282BAB0C0000DADBEC /* CREATE_ACCOUNT_LIGHT_VIEW_iPhone.png in Resources */,
 				A27A5C1E2BAB0BF900DADBEC /* LOGIN_LIGHT_VIEW_iPad.png in Resources */,
@@ -1048,6 +1082,7 @@
 				A27A5C1D2BAB0BF900DADBEC /* LOGIN_DARK_VIEW_iPhone.png in Resources */,
 				A27A5CAC2BB0B06B00DADBEC /* SPENDING_OVERVIEW_iPAD.png in Resources */,
 				A27A5C942BAF9CB900DADBEC /* BUDGET_OVERVIEW_IPHONE.png in Resources */,
+				A2EEB1B22BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png in Resources */,
 				A27A5C262BAB0C0000DADBEC /* CREATE_ACCOUNT_DARK_VIEW_iPhone.png in Resources */,
 				A27A5C272BAB0C0000DADBEC /* CREATE_ACCOUNT_LIGHT_VIEW_iPad.png in Resources */,
 				A27A5C932BAF9CB900DADBEC /* BUDGET_OVERVIEW_iPAD.png in Resources */,
@@ -1142,6 +1177,7 @@
 				A27A5C8D2BAF773100DADBEC /* BudgetOverviewSnapshotTests.swift in Sources */,
 				A2DC30102BB25D5100CCA23B /* CreateBudgetTypeSnapshotTests.swift in Sources */,
 				A27A5C132BA92AD400DADBEC /* CreateSnapshotTests.swift in Sources */,
+				A2EEB1AD2BC629B500164AB4 /* AddTransactionSnapshotTests.swift in Sources */,
 				A27A5CA62BB08FF000DADBEC /* MonthlySpendingSnapshotTests.swift in Sources */,
 				A27A5C162BA92AE800DADBEC /* UIViewController+Snapshot.swift in Sources */,
 				A27A5C142BA92ADC00DADBEC /* LoginSnapshotTests.swift in Sources */,
