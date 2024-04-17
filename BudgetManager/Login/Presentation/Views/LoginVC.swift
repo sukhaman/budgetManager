@@ -167,6 +167,7 @@ class LoginVC: UIViewController, UIDocumentPickerDelegate {
         }
         
         signInButton.addAction { [weak self] in
+           
             do {
                 let email  = try LoginValidationService().validateUserEmail(self?.emailTextField.text)
                 let password  = try LoginValidationService().validateUserPassword(self?.passwordTextField.text)

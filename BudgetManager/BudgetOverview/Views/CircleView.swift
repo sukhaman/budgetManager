@@ -5,7 +5,7 @@
 import UIKit
 
 class CircleView: UIView {
-    var budgetTypes: [BudgetType] = []
+    var budgetTypes: [Budget] = []
     let distanceFromEdge: CGFloat = 10
     private var timer: Timer?
     private var currentProgress: CGFloat = 0
@@ -46,16 +46,42 @@ class CircleView: UIView {
         var startAngle: CGFloat = -.pi / 2
         let circumference = 2 * CGFloat.pi * radius
         // Calculate total points
-        totalPoints = CGFloat(budgetTypes.reduce(0) { $0 + $1.limitAmount })
+        totalPoints = CGFloat(budgetTypes.reduce(0) { $0 + $1.estimated })
         // Draw arcs for each budget
-        let arrangedList = budgetTypes.sorted{$0.limitAmount > $1.limitAmount }
-        for  data in arrangedList {
+        let arrangedList = budgetTypes.sorted{$0.estimated > $1.estimated }
+        for  budget in arrangedList {
             // Calculate the desired length for the budget's segment
-            let desiredLength = (CGFloat(data.limitAmount) / totalPoints) * circumference
+            let desiredLength = (CGFloat(budget.estimated) / totalPoints) * circumference
         // Calculate the end angle based on the desired length
             let endAngle = startAngle + (desiredLength / radius)
             // Set stroke color
-            context.setStrokeColor(data.color.cgColor)
+            var color = UIColor.brown
+            if budget.category == "Mortgage & Rent" {
+                color = BudgetManagerColors.mortgageColor.color
+            } else if budget.category == "Auto Insurance" {
+                color = BudgetManagerColors.autoInsuranceColor.color
+            } else if budget.category == "Gas & Fuel" {
+                color = BudgetManagerColors.gasFuelColor.color
+            } else if budget.category == "Toll" {
+                color = BudgetManagerColors.tolls.color
+            } else if budget.category == "Mobile Bills" {
+                color = BudgetManagerColors.mobileBillsColor.color
+            } else if budget.category == "Utilities Bills" {
+                color = BudgetManagerColors.utilitiesColor.color
+            } else if budget.category == "Groceries" {
+                color = BudgetManagerColors.groceriesColor.color
+            } else if budget.category == "Daycare" {
+                color = BudgetManagerColors.daycareColor.color
+            } else if budget.category == "Financial" {
+                color = BudgetManagerColors.lifeInsuranceColor.color
+            } else if budget.category == "Eat Outs" {
+                color = BudgetManagerColors.eatOutColor.color
+            } else if budget.category == "Shopping" {
+                color = BudgetManagerColors.shoppingColor.color
+            } else if budget.category == "Misc" {
+                color = BudgetManagerColors.miscColor.color
+            }
+            context.setStrokeColor(color.cgColor)
             context.setLineWidth(5) // Adjust width as needed
 
             // Create arc path
@@ -94,11 +120,11 @@ class CircleView: UIView {
         ])
     }
     
-    private func calculateSpending(_ types: [BudgetType]) {
+    private func calculateSpending(_ types: [Budget]) {
         var spentAmount = 0
         
         for type in types {
-        spentAmount = spentAmount + type.spentAmount
+            spentAmount = spentAmount + Int(type.actual)
         }
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal

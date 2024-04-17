@@ -98,6 +98,10 @@
 		A2EEB1B12BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png in Resources */ = {isa = PBXBuildFile; fileRef = A2EEB1AE2BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png */; };
 		A2EEB1B22BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png in Resources */ = {isa = PBXBuildFile; fileRef = A2EEB1AF2BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png */; };
 		A2EEB1F92BCDEC3300164AB4 /* Budget.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1F72BCDEC3300164AB4 /* Budget.xcdatamodeld */; };
+		A2EEB2012BCF5EB100164AB4 /* BudgetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB2002BCF5EB100164AB4 /* BudgetList.swift */; };
+		A2EEB2042BCF5EF600164AB4 /* BudgetListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB2032BCF5EF600164AB4 /* BudgetListVC.swift */; };
+		A2EEB2062BCF623900164AB4 /* BudgetTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = A2EEB2052BCF623900164AB4 /* BudgetTypes.json */; };
+		A2EEB2082BCF62AE00164AB4 /* BudgetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB2072BCF62AE00164AB4 /* BudgetListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +222,10 @@
 		A2EEB1AE2BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADD_TRANSACTION_iPAD.png; sourceTree = "<group>"; };
 		A2EEB1AF2BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADD_TRANSACTION_IPHONE.png; sourceTree = "<group>"; };
 		A2EEB1F82BCDEC3300164AB4 /* Budget.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Budget.xcdatamodel; sourceTree = "<group>"; };
+		A2EEB2002BCF5EB100164AB4 /* BudgetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetList.swift; sourceTree = "<group>"; };
+		A2EEB2032BCF5EF600164AB4 /* BudgetListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListVC.swift; sourceTree = "<group>"; };
+		A2EEB2052BCF623900164AB4 /* BudgetTypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BudgetTypes.json; sourceTree = "<group>"; };
+		A2EEB2072BCF62AE00164AB4 /* BudgetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +316,7 @@
 				A27A5C4A2BABABF100DADBEC /* LaunchScreen.storyboard */,
 				A2672B642BA732E0006A5634 /* Info.plist */,
 				A2EEB1F72BCDEC3300164AB4 /* Budget.xcdatamodeld */,
+				A2EEB2052BCF623900164AB4 /* BudgetTypes.json */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -582,6 +591,7 @@
 		A27A5C862BAF3DDE00DADBEC /* BudgetOverview */ = {
 			isa = PBXGroup;
 			children = (
+				A2EEB1FE2BCF5E9F00164AB4 /* BudgetTypeList */,
 				A27A5CB92BB10A9E00DADBEC /* Router */,
 				A27A5C872BAF3E7200DADBEC /* Views */,
 			);
@@ -949,6 +959,32 @@
 			path = snapshots;
 			sourceTree = "<group>";
 		};
+		A2EEB1FE2BCF5E9F00164AB4 /* BudgetTypeList */ = {
+			isa = PBXGroup;
+			children = (
+				A2EEB2022BCF5EEC00164AB4 /* Views */,
+				A2EEB1FF2BCF5EA600164AB4 /* Model */,
+			);
+			path = BudgetTypeList;
+			sourceTree = "<group>";
+		};
+		A2EEB1FF2BCF5EA600164AB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2EEB2002BCF5EB100164AB4 /* BudgetList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A2EEB2022BCF5EEC00164AB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2EEB2032BCF5EF600164AB4 /* BudgetListVC.swift */,
+				A2EEB2072BCF62AE00164AB4 /* BudgetListCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1057,6 +1093,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2EEB2062BCF623900164AB4 /* BudgetTypes.json in Resources */,
 				A27A5C302BAB465500DADBEC /* CreateAccount.strings in Resources */,
 				A2672B602BA732E0006A5634 /* Assets.xcassets in Resources */,
 				A2672BB52BA7488C006A5634 /* Colors.xcassets in Resources */,
@@ -1120,8 +1157,10 @@
 				A2EEB16D2BB6266600164AB4 /* NewEntryVC.swift in Sources */,
 				A2B5B3002BA7CC0800C9D05D /* User.swift in Sources */,
 				A2672B9C2BA73C5E006A5634 /* LoginUIComposer.swift in Sources */,
+				A2EEB2082BCF62AE00164AB4 /* BudgetListCell.swift in Sources */,
 				A27A5CBB2BB10ACF00DADBEC /* BudgetRouter.swift in Sources */,
 				A27A5C832BAE751800DADBEC /* LoanView.swift in Sources */,
+				A2EEB2012BCF5EB100164AB4 /* BudgetList.swift in Sources */,
 				A2672B8D2BA739C6006A5634 /* LoginVC.swift in Sources */,
 				A27A5C752BAD14BE00DADBEC /* SettingsVC.swift in Sources */,
 				A27A5C9D2BB0687F00DADBEC /* BudgetSpendingOverviewVC.swift in Sources */,
@@ -1143,6 +1182,7 @@
 				A27A5C2D2BAB3FFF00DADBEC /* XCAssets+Generated.swift in Sources */,
 				A2672B592BA732DE006A5634 /* SceneDelegate.swift in Sources */,
 				A27A5C7D2BAE688400DADBEC /* CashView.swift in Sources */,
+				A2EEB2042BCF5EF600164AB4 /* BudgetListVC.swift in Sources */,
 				A2B5B3052BA7D09F00C9D05D /* URL+Extensions.swift in Sources */,
 				A2672BD32BA79E2B006A5634 /* CreateAccountPresenter.swift in Sources */,
 				A2EEB1F92BCDEC3300164AB4 /* Budget.xcdatamodeld in Sources */,

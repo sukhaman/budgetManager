@@ -82,17 +82,17 @@ class MonthlyBudgetInfoCell: UITableViewCell {
         
     }
     
-    func assignData(_ types: [BudgetType]) {
+    func assignData(_ types: [Budget]) {
         labelMonthName.text = "This month budget"
        
         
         
-        var budgetAmount = 0
-        var spentAmount = 0
+        var budgetAmount: Double = 0
+        var spentAmount: Double = 0
         
         for type in types {
-            budgetAmount = budgetAmount + type.limitAmount
-            spentAmount = spentAmount + type.spentAmount
+            budgetAmount = budgetAmount + type.estimated
+            spentAmount = spentAmount + type.actual
         }
         if budgetAmount - spentAmount > 0 {
             labelMoneyLeft.text = "Great job! You have some money left"

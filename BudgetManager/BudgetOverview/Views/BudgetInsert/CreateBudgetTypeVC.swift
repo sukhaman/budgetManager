@@ -3,8 +3,9 @@
 //
 
 import UIKit
+import CoreData
 
-class CreateBudgetTypeVC: UIViewController {
+class CreateBudgetTypeVC: UIViewController, UITextFieldDelegate {
     var labelBudgetTypeTitle: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -48,17 +49,19 @@ class CreateBudgetTypeVC: UIViewController {
         return button
     }()
     var router: BudgetRouter?
-    var budgetType: BudgetType?
-    var limitAmount: Int = 0
+    var budgetType: Budget?
+    var limitAmount: Double = 0
     var budgetCreateTitle = "Create"
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
+        navigationController?.setNavigationBarHidden(false, animated: false)
         if let navigationController {
             self.router = BudgetRouter(navigationController: navigationController)
         }
         assignData()
         setNavigationItems()
+        fetchBudget()
     }
     
     @objc func btnBackTapped() {
@@ -66,16 +69,16 @@ class CreateBudgetTypeVC: UIViewController {
     }
     
     @objc func btnCreateTapped() {
-        
+        saveBudget()
     }
     
     private func assignData() {
         if let budgetType {
-            labelBudgetTypeTitle.text = "\(budgetType.type) budget"
-            labelBudgetDescription.text =  "We'll set a budget of $\(budgetType.limitAmount) each month for \(budgetType.type) that starts over at the beginning of every month."
-            limitAmount = budgetType.limitAmount
+            labelBudgetTypeTitle.text = "\(budgetType.category ?? "") budget"
+            labelBudgetDescription.text =  "We'll set a budget of $\(budgetType.estimated) each month for \(budgetType.category ?? "") that starts over at the beginning of every month."
+            limitAmount = budgetType.estimated
             textField.text = "$\(limitAmount)"
-            budgetCreateTitle = "Edit"
+            budgetCreateTitle = budgetType.estimated == 0 ? "Add" : "Edit"
             
         }
     }
@@ -96,6 +99,7 @@ class CreateBudgetTypeVC: UIViewController {
         view.addSubview(labelBudgetTypeTitle)
         
         view.addSubview(textField)
+        textField.delegate = self
         textField.addSubview(buttonMinus)
         textField.addSubview(buttonPlus)
         view.addSubview(labelBudgetDescription)
@@ -125,18 +129,75 @@ class CreateBudgetTypeVC: UIViewController {
             labelBudgetDescription.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             labelBudgetDescription.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             labelBudgetDescription.heightAnchor.constraint(equalToConstant: 50),
+            
         ])
+        
         
       
         buttonPlus.addAction {
             self.limitAmount += 1
             self.textField.text = "$\(self.limitAmount)"
+            self.budgetType?.estimated = self.limitAmount
         }
         
         buttonMinus.addAction {
             self.limitAmount -= 1
             self.textField.text = "$\(self.limitAmount)"
+            self.budgetType?.estimated = self.limitAmount
         }
         
+    }
+    
+    func saveBudget() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Budget> = Budget.fetchRequest()
+        
+        do {
+            // Execute the fetch request to get an array of Transaction objects
+            let budgets = try context.fetch(fetchRequest)
+            let budget = Budget(context: context)
+            budget.category = budgetType?.category
+            budget.actual = Double(budgetType?.actual ?? 0)
+            budget.estimated = Double(budgetType?.estimated ?? 0)
+           try  context.save()
+            self.navigationController?.popToRootViewController(animated: true)
+        } catch {
+            
+        }
+
+    }
+    
+    func fetchBudget() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Budget> = Budget.fetchRequest()
+        
+        do {
+            // Execute the fetch request to get an array of Transaction objects
+            let budgets = try context.fetch(fetchRequest)
+            var totalBudgetAmount: Double = 0
+            var totalSpentAmount: Double = 0
+            for budget in budgets {
+                totalBudgetAmount += budget.estimated
+                totalSpentAmount += budget.actual
+            }
+            print("Budget limit is set for \(totalBudgetAmount) and already spent money \(totalSpentAmount)")
+           try  context.save()
+        } catch {
+            
+        }
+
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == self.textField {
+            guard let text = textField.text else { return false }
+            let newString = (text as NSString).replacingCharacters(in: range, with: string)
+            textField.text = newString
+            self.limitAmount = Double(newString.replacingOccurrences(of: "$", with: "")) ?? 0
+            self.budgetType?.estimated = self.limitAmount
+            return false
+        } else {
+            return true
+        }
     }
 }

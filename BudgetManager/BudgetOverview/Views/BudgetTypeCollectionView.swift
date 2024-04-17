@@ -8,7 +8,7 @@ class BudgetTypeCollectionView: UIView, UICollectionViewDataSource, UICollection
     
     
     var collectionView: UICollectionView!
-    public private (set) var budgetTypes = [BudgetType]()
+    public private (set) var budgetList = [Budget]()
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -18,8 +18,8 @@ class BudgetTypeCollectionView: UIView, UICollectionViewDataSource, UICollection
         self.init()
         configure()
     }
-    func assignData(_ types: [BudgetType]) {
-        self.budgetTypes = types
+    func assignData(_ types: [Budget]) {
+        self.budgetList = types
         self.collectionView.reloadData()
     }
     private func configure() {
@@ -49,16 +49,16 @@ class BudgetTypeCollectionView: UIView, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return budgetTypes.count
+        return budgetList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: BudgetTypeInfoCell = collectionView.dequeueReusableCell(withReuseIdentifier: BudgetTypeInfoCell.reuseID, for: indexPath) as! BudgetTypeInfoCell
         
-        let budget = self.budgetTypes[indexPath.item]
-        cell.lblName.text = budget.type
-        cell.imageAvatar.image = UIImage.from(color: budget.color,size: CGSize(width: 5, height: 5))
+        let budget = self.budgetList[indexPath.item]
+        cell.updateUI(budget)
+        
         return cell
     }
     

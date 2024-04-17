@@ -10,13 +10,13 @@ class BudgetOverviewSnapshotTests: XCTestCase {
     func test_budgetOverviewVC_iPhoneDevice() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        record(snapshot: sut.snapshot(for: .iPhone(style: .light)), named: "BUDGET_OVERVIEW_IPHONE")
+        assert(snapshot: sut.snapshot(for: .iPhone(style: .light)), named: "BUDGET_OVERVIEW_IPHONE")
     }
     
     func test_budgetOverviewVC_iPadDevice() {
         let sut = makeSUT()
         sut.loadViewIfNeeded()
-        record(snapshot: sut.snapshot(for: .iPad(style: .light)), named: "BUDGET_OVERVIEW_iPAD")
+        assert(snapshot: sut.snapshot(for: .iPad(style: .light)), named: "BUDGET_OVERVIEW_iPAD")
     }
     
     // MARK: Helpers

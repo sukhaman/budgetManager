@@ -22,12 +22,24 @@ internal typealias AssetColorTypeAlias = ColorAsset.Color
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum BudgetManagerColors {
+  internal static let autoInsuranceColor = ColorAsset(name: "autoInsuranceColor")
+  internal static let daycareColor = ColorAsset(name: "daycareColor")
+  internal static let eatOutColor = ColorAsset(name: "eatOutColor")
+  internal static let gasFuelColor = ColorAsset(name: "gasFuelColor")
+  internal static let groceriesColor = ColorAsset(name: "groceriesColor")
+  internal static let lifeInsuranceColor = ColorAsset(name: "lifeInsuranceColor")
+  internal static let miscColor = ColorAsset(name: "miscColor")
+  internal static let mobileBillsColor = ColorAsset(name: "mobileBillsColor")
+  internal static let mortgageColor = ColorAsset(name: "mortgageColor")
   internal static let primaryGreen = ColorAsset(name: "primaryGreen")
   internal static let primaryRed = ColorAsset(name: "primaryRed")
   internal static let primaryYellow = ColorAsset(name: "primaryYellow")
   internal static let secondaryGreen = ColorAsset(name: "secondaryGreen")
+  internal static let shoppingColor = ColorAsset(name: "shoppingColor")
   internal static let tabBarBGColor = ColorAsset(name: "tabBarBGColor")
   internal static let textFieldBGColor = ColorAsset(name: "textFieldBGColor")
+  internal static let tolls = ColorAsset(name: "tolls")
+  internal static let utilitiesColor = ColorAsset(name: "utilitiesColor")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

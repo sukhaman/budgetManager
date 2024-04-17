@@ -61,13 +61,13 @@ class BudgetTypeViewCell: UITableViewCell {
     }
     
     
-    func assignData(_ budget: BudgetType) {
-        labelBudgetName.text = budget.type
-        labelSpendMoney.text = "$\(budget.spentAmount) of $\(budget.limitAmount)"
+    func assignData(_ budget: Budget) {
+        labelBudgetName.text = budget.category
+        labelSpendMoney.text = "$\(budget.actual) of $\(budget.estimated)"
         
-        progressBar.spentAmount = CGFloat(budget.spentAmount)
-        progressBar.budgetAmount = CGFloat(budget.limitAmount)
-        let moneyLeft = budget.limitAmount - budget.spentAmount
+        progressBar.spentAmount = CGFloat(budget.actual)
+        progressBar.budgetAmount = CGFloat(budget.estimated)
+        let moneyLeft = budget.estimated - budget.actual
         var status = "Left"
         if moneyLeft < 0 {
             status = "Over"

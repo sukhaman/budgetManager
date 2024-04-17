@@ -28,7 +28,7 @@ class HomeIntegrationTests: XCTestCase {
         topVC?.loadViewIfNeeded()
         XCTAssertNotNil(topVC)
         topVC?.buttonBudget.sendActions(for: .touchUpInside)
-        let budgetVC = mockNavigation.pushedViewController as? AddBudgetTypeVC
+        let budgetVC = mockNavigation.pushedViewController as? BudgetListVC
         budgetVC?.loadViewIfNeeded()
         XCTAssertNotNil(budgetVC)
     }

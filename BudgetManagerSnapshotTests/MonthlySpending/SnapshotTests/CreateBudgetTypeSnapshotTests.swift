@@ -4,6 +4,7 @@
 
 import XCTest
 @testable import BudgetManager
+import CoreData
 
 class CreateBudgetTypeSnapshotTests: XCTestCase {
     
@@ -23,7 +24,13 @@ class CreateBudgetTypeSnapshotTests: XCTestCase {
     
     private func makeSUT() -> CreateBudgetTypeVC {
         let viewControler = CreateBudgetTypeVC()
-        viewControler.budgetType = BudgetType(id: 2, type: "Rent", limitAmount: 1230, spentAmount: 1200, color: .red)
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Budget> = Budget.fetchRequest()
+        let budget = Budget(context: context)
+        budget.category = "Mortgage & Rent"
+        budget.actual = Double(0)
+        budget.estimated = Double(2300)
+        viewControler.budgetType = budget
         return viewControler
     }
 }

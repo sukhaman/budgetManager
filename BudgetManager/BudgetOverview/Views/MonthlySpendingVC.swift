@@ -3,15 +3,7 @@
 //
 
 import UIKit
-
-struct BudgetType: Equatable {
-    var id: Int
-    var type: String
-    var limitAmount: Int
-    var spentAmount: Int
-    var color: UIColor
-    
-}
+import CoreData
 
 
 class MonthlySpendingVC: UIViewController {
@@ -32,6 +24,7 @@ class MonthlySpendingVC: UIViewController {
         configureViewController()
         assignBudgetData()
     }
+    private var budgetList = [Budget]()
     
     private func configureViewController() {
         view.backgroundColor = BudgetManagerColors.primaryGreen.color
@@ -47,25 +40,32 @@ class MonthlySpendingVC: UIViewController {
             collectionView.topAnchor.constraint(equalTo: circleView.bottomAnchor,constant: 30),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 200)
+            collectionView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
     
    private func assignBudgetData() {
-        let budgetTypes =  [
-              BudgetType(id: 1, type: "Mortgage & Rent", limitAmount: 2300, spentAmount: 2300, color: BudgetManagerColors.primaryRed.color),
-              BudgetType(id: 2, type: "Auto Insurance", limitAmount: 220, spentAmount: 20, color: .brown),
-              BudgetType(id: 3, type: "Tolls", limitAmount: 80, spentAmount: 30, color: .yellow),
-              BudgetType(id: 4, type: "Mobile Bills", limitAmount: 200, spentAmount: 200, color: .cyan),
-              BudgetType(id: 5, type: "Babysitter & Daycare", limitAmount: 1500, spentAmount: 1500, color: .blue),
-              BudgetType(id: 6, type: "Groceries", limitAmount: 1200, spentAmount: 1000, color: .darkGray),
-              BudgetType(id: 7, type: "Restrauant", limitAmount: 300, spentAmount: 300, color: .lightGray),
-              BudgetType(id: 8, type: "Gas & Fuel", limitAmount: 500, spentAmount: 500, color: .purple),
-              BudgetType(id: 9, type: "Shopping", limitAmount: 200, spentAmount: 200, color: .magenta),
-          ]
-        
-        circleView.budgetTypes = budgetTypes
-        collectionView.assignData(budgetTypes)
+       let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+       let fetchRequest: NSFetchRequest<Budget> = Budget.fetchRequest()
+       
+       do {
+           // Execute the fetch request to get an array of Transaction objects
+           let budgets = try context.fetch(fetchRequest)
+           var totalBudgetAmount: Double = 0
+           var totalSpentAmount: Double = 0
+           self.budgetList = budgets
+           circleView.budgetTypes = budgetList
+           collectionView.assignData(budgetList)
+           for budget in budgets {
+               totalBudgetAmount += budget.estimated
+               totalSpentAmount += budget.actual
+           }
+           print("Budget limit is set for \(totalBudgetAmount) and already spent money \(totalSpentAmount)")
+          try  context.save()
+       } catch {
+           
+       }
+       
        // budgetTypeView.assignData(autoInsuranceBudget)
        
     }

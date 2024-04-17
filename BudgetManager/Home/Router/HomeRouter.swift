@@ -30,7 +30,7 @@ class HomeRouter: HomeRouterProtocol {
             destVC.transitioningDelegate = destVC
             navigationController?.present(destVC, animated: false)
         case .addBudget:
-           let destVC = CreateBudgetTypeVC()
+           let destVC = BudgetListVC()
             navigationController?.pushViewController(destVC, animated: false)
         }
     }

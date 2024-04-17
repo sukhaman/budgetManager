@@ -15,7 +15,7 @@ class BudgetSpendingOverviewVC: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-    var budgetTypes: [BudgetType] = []
+    var budgetTypes: [Budget] = []
     var router: BudgetRouter?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,7 @@ class BudgetSpendingOverviewVC: UIViewController {
     }
     
    private func assignBudgetData() {
+       /*
         let budgetTypes =  [
               BudgetType(id: 1, type: "Mortgage & Rent", limitAmount: 2300, spentAmount: 2300, color: BudgetManagerColors.primaryRed.color),
               BudgetType(id: 2, type: "Auto Insurance", limitAmount: 220, spentAmount: 20, color: .brown),
@@ -58,8 +59,8 @@ class BudgetSpendingOverviewVC: UIViewController {
               BudgetType(id: 8, type: "Gas & Fuel", limitAmount: 500, spentAmount: 500, color: .purple),
               BudgetType(id: 9, type: "Shopping", limitAmount: 200, spentAmount: 200, color: .magenta),
           ]
-        
-        self.budgetTypes = budgetTypes
+        */
+      //  self.budgetTypes = budgetTypes
         self.budgetTypeTableView.reloadData()
         
        // budgetTypeView.assignData(autoInsuranceBudget)

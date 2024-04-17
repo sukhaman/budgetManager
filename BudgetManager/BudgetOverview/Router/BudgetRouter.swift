@@ -10,7 +10,7 @@ protocol BudgetRouterProtocol {
 }
 
 enum BudgetItem {
-    case budgetEdit(_ type: BudgetType)
+    case budgetEdit(_ type: Budget)
     
 }
 

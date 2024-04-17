@@ -47,4 +47,40 @@ class BudgetTypeInfoCell: UICollectionViewCell {
         
     }
     
+    func updateUI(_ budget: Budget) {
+        lblName.text = budget.category
+        setColorForBudgetType(budget)
+    }
+    
+    private func setColorForBudgetType(_ budget: Budget) {
+        
+        var color = UIColor.brown
+        if budget.category == "Mortgage & Rent" {
+            color = BudgetManagerColors.mortgageColor.color
+        } else if budget.category == "Auto Insurance" {
+            color = BudgetManagerColors.autoInsuranceColor.color
+        } else if budget.category == "Gas & Fuel" {
+            color = BudgetManagerColors.gasFuelColor.color
+        } else if budget.category == "Toll" {
+            color = BudgetManagerColors.tolls.color
+        } else if budget.category == "Mobile Bills" {
+            color = BudgetManagerColors.mobileBillsColor.color
+        } else if budget.category == "Utilities Bills" {
+            color = BudgetManagerColors.utilitiesColor.color
+        } else if budget.category == "Groceries" {
+            color = BudgetManagerColors.groceriesColor.color
+        } else if budget.category == "Daycare" {
+            color = BudgetManagerColors.daycareColor.color
+        } else if budget.category == "Financial" {
+            color = BudgetManagerColors.lifeInsuranceColor.color
+        } else if budget.category == "Eat Outs" {
+            color = BudgetManagerColors.eatOutColor.color
+        } else if budget.category == "Shopping" {
+            color = BudgetManagerColors.shoppingColor.color
+        } else if budget.category == "Misc" {
+            color = BudgetManagerColors.miscColor.color
+        }
+        imageAvatar.image = UIImage.from(color: color,size: CGSize(width: 5, height: 5))
+    }
+    
 }
