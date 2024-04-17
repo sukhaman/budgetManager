@@ -6,7 +6,7 @@ import UIKit
 import Combine
 import Vision
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UIDocumentPickerDelegate {
     
     let loginView: UIView = {
         let view = UIView()
@@ -22,7 +22,7 @@ class LoginVC: UIViewController {
             .foregroundColor: UIColor.white,
         ]
         let attributedPlaceholder = NSAttributedString(string: LoginPresenter.email, attributes: attributes)
-
+        
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
         textField.backgroundColor =  BudgetManagerColors.textFieldBGColor.color
@@ -39,7 +39,7 @@ class LoginVC: UIViewController {
             .foregroundColor: UIColor.white,
         ]
         let attributedPlaceholder = NSAttributedString(string: LoginPresenter.password, attributes: attributes)
-
+        
         // Assign the attributed placeholder text to the text field
         textField.attributedPlaceholder = attributedPlaceholder
         textField.backgroundColor =  BudgetManagerColors.textFieldBGColor.color
@@ -52,7 +52,7 @@ class LoginVC: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.setTitle(LoginPresenter.forgotPassword, for: .normal)
         var buttonConfig = UIButton.Configuration.borderless()
-         // Adjust contentInsets to provide padding
+        // Adjust contentInsets to provide padding
         buttonConfig.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
         // Apply configuration to the button
         button.configuration = buttonConfig
@@ -74,7 +74,7 @@ class LoginVC: UIViewController {
         let button = UIButton(type: .system)
         button.setTitleColor(.white, for: .normal)
         var buttonConfig = UIButton.Configuration.borderless()
-         // Adjust contentInsets to provide padding
+        // Adjust contentInsets to provide padding
         buttonConfig.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
         // Apply configuration to the button
         button.configuration = buttonConfig
@@ -88,11 +88,13 @@ class LoginVC: UIViewController {
         }
     }
     private var cancellables: Set<AnyCancellable> = []
+    
     var router: LoginRouter?
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         self.router = DefaultLoginRouter(navigationController)
+    
     }
     
     // Set up UI
@@ -147,6 +149,15 @@ class LoginVC: UIViewController {
         assignActionEvents()
     }
     
+
+    
+    func getDocumentsDirectory() -> URL? {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+    }
+
+    
+
+    
     // Actions
     
     private func assignActionEvents() {
@@ -156,8 +167,6 @@ class LoginVC: UIViewController {
         }
         
         signInButton.addAction { [weak self] in
-            self?.router?.showScreen(loginScreen: .home(User(email: "sasda@test.com", username: "Username")))
-            return
             do {
                 let email  = try LoginValidationService().validateUserEmail(self?.emailTextField.text)
                 let password  = try LoginValidationService().validateUserPassword(self?.passwordTextField.text)

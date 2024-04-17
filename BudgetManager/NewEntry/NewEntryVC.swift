@@ -50,6 +50,7 @@ class NewEntryVC: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    var router: HomeRouter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +92,12 @@ class NewEntryVC: UIViewController {
             buttonAccount.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,constant: 20),
             buttonAccount.heightAnchor.constraint(equalToConstant: 30),
         ])
+        
+        buttonBudget.addAction {
+            self.dismiss(animated: true) {
+                self.router?.showAddAccount(.addBudget)
+            }
+        }
     }
 }
 

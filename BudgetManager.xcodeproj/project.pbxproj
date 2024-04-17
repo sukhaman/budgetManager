@@ -97,6 +97,7 @@
 		A2EEB1AD2BC629B500164AB4 /* AddTransactionSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1AC2BC629B500164AB4 /* AddTransactionSnapshotTests.swift */; };
 		A2EEB1B12BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png in Resources */ = {isa = PBXBuildFile; fileRef = A2EEB1AE2BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png */; };
 		A2EEB1B22BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png in Resources */ = {isa = PBXBuildFile; fileRef = A2EEB1AF2BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png */; };
+		A2EEB1F92BCDEC3300164AB4 /* Budget.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2EEB1F72BCDEC3300164AB4 /* Budget.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +217,7 @@
 		A2EEB1AC2BC629B500164AB4 /* AddTransactionSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionSnapshotTests.swift; sourceTree = "<group>"; };
 		A2EEB1AE2BC62A5700164AB4 /* ADD_TRANSACTION_iPAD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADD_TRANSACTION_iPAD.png; sourceTree = "<group>"; };
 		A2EEB1AF2BC62A5700164AB4 /* ADD_TRANSACTION_IPHONE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADD_TRANSACTION_IPHONE.png; sourceTree = "<group>"; };
+		A2EEB1F82BCDEC3300164AB4 /* Budget.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Budget.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 				A2672BB42BA7488C006A5634 /* Colors.xcassets */,
 				A27A5C4A2BABABF100DADBEC /* LaunchScreen.storyboard */,
 				A2672B642BA732E0006A5634 /* Info.plist */,
+				A2EEB1F72BCDEC3300164AB4 /* Budget.xcdatamodeld */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -907,17 +910,17 @@
 		A2EEB1A62BC626A200164AB4 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
-				A2EEB1A72BC626A700164AB4 /* VIews */,
+				A2EEB1A72BC626A700164AB4 /* Views */,
 			);
 			path = Transaction;
 			sourceTree = "<group>";
 		};
-		A2EEB1A72BC626A700164AB4 /* VIews */ = {
+		A2EEB1A72BC626A700164AB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A2EEB1A82BC626B500164AB4 /* AddTransactionVC.swift */,
 			);
-			path = VIews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A2EEB1AA2BC6299700164AB4 /* AddTransaction */ = {
@@ -1142,6 +1145,7 @@
 				A27A5C7D2BAE688400DADBEC /* CashView.swift in Sources */,
 				A2B5B3052BA7D09F00C9D05D /* URL+Extensions.swift in Sources */,
 				A2672BD32BA79E2B006A5634 /* CreateAccountPresenter.swift in Sources */,
+				A2EEB1F92BCDEC3300164AB4 /* Budget.xcdatamodeld in Sources */,
 				A27A5C982BAFBA9C00DADBEC /* UIImage+Extensions.swift in Sources */,
 				A27A5C6D2BABCA6300DADBEC /* LoginRouter.swift in Sources */,
 				A2672BBF2BA76E48006A5634 /* CreateAccountVC.swift in Sources */,
@@ -1513,6 +1517,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A2EEB1F72BCDEC3300164AB4 /* Budget.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A2EEB1F82BCDEC3300164AB4 /* Budget.xcdatamodel */,
+			);
+			currentVersion = A2EEB1F82BCDEC3300164AB4 /* Budget.xcdatamodel */;
+			name = Budget.xcdatamodeld;
+			path = /Users/spsingh/budgetManager/BudgetManager/SupportingFiles/Budget.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A2672B4B2BA732DE006A5634 /* Project object */;
 }

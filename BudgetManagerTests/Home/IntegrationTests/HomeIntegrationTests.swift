@@ -18,6 +18,21 @@ class HomeIntegrationTests: XCTestCase {
         XCTAssertNotNil(topVC)
     }
     
+    func testHomeController_addAccountTapped_b() {
+        let user = User(email: "saa@test.com", username: "Anyone")
+        let sut = makeSUT(user)
+        let mockNavigation = MockNavigationController(rootViewController: sut)
+        sut.loadViewIfNeeded()
+        sut.headerView.delegate?.buttonAddTapped()
+        let topVC = mockNavigation.presentViewController as? NewEntryVC
+        topVC?.loadViewIfNeeded()
+        XCTAssertNotNil(topVC)
+        topVC?.buttonBudget.sendActions(for: .touchUpInside)
+        let budgetVC = mockNavigation.pushedViewController as? AddBudgetTypeVC
+        budgetVC?.loadViewIfNeeded()
+        XCTAssertNotNil(budgetVC)
+    }
+    
     // MARK: Helpers
     
     private func makeSUT(_ user: User) -> HomeVC {

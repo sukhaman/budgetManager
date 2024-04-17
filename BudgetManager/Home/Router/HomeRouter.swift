@@ -10,6 +10,7 @@ protocol HomeRouterProtocol {
 
 enum HomeItem {
     case present
+    case addBudget
     
 }
 
@@ -24,9 +25,13 @@ class HomeRouter: HomeRouterProtocol {
         switch item {
         case .present:
             let destVC = NewEntryVC()
+            destVC.router = self
             destVC.modalPresentationStyle = .custom
             destVC.transitioningDelegate = destVC
             navigationController?.present(destVC, animated: false)
+        case .addBudget:
+           let destVC = CreateBudgetTypeVC()
+            navigationController?.pushViewController(destVC, animated: false)
         }
     }
 }

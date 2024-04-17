@@ -64,7 +64,7 @@ class HomeHeaderView: UIView {
         addSubview(nameLabel)
         addSubview(alertButton)
         addSubview(addButton)
-        addButton.isHidden = true
+//        addButton.isHidden = true
         NSLayoutConstraint.activate([
             greetingLabel.topAnchor.constraint(equalTo: self.topAnchor),
             greetingLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
